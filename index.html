@@ -366,6 +366,7 @@ section{
     border-radius:12px;
     text-align:center;
     transition:.35s;
+    cursor:pointer;
 }
 
 .player::before{
@@ -606,6 +607,186 @@ tbody tr:hover{
     background:linear-gradient(90deg,transparent,#1c2529,transparent);
 }
 
+/* PLAYER PROFILE MODAL */
+
+.player-modal{
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(12px);
+}
+
+.player-modal.active{
+    display:flex;
+}
+
+.modal-box{
+    position:relative;
+    width:100%;
+    max-width:500px;
+    max-height:90vh;
+    overflow-y:auto;
+    padding:35px 25px 30px;
+    text-align:center;
+    background:
+        linear-gradient(145deg,#101719,#050708);
+    border:1px solid rgba(0,229,255,.45);
+    border-radius:16px;
+    box-shadow:
+        0 0 50px rgba(0,229,255,.12),
+        0 25px 80px rgba(0,0,0,.7);
+    animation:modalOpen .25s ease;
+}
+
+@keyframes modalOpen{
+
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+.modal-close{
+    position:absolute;
+    top:14px;
+    right:16px;
+    width:35px;
+    height:35px;
+    border:1px solid #293237;
+    border-radius:50%;
+    background:#080c0e;
+    color:#9ba4a9;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.modal-close:hover{
+    color:#00e5ff;
+    border-color:#00e5ff;
+}
+
+.modal-photo{
+    width:180px;
+    height:180px;
+    margin:5px auto 20px;
+    border-radius:50%;
+    overflow:hidden;
+    border:2px solid #00e5ff;
+    box-shadow:
+        0 0 0 7px rgba(0,229,255,.035),
+        0 0 35px rgba(0,229,255,.12);
+}
+
+.modal-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.modal-photo img.noozy{
+    object-position:center 35%;
+}
+
+.modal-photo img.ryuk{
+    object-position:center 35%;
+}
+
+.modal-photo img.akatsuki{
+    object-position:center 25%;
+}
+
+.modal-box h2{
+    font-size:28px;
+    letter-spacing:1px;
+}
+
+.modal-role{
+    display:inline-block;
+    margin-top:8px;
+    padding:5px 14px;
+    border:1px solid rgba(0,229,255,.5);
+    border-radius:20px;
+    color:#00e5ff;
+    font-size:10px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.modal-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:25px;
+}
+
+.modal-stat{
+    padding:15px 8px;
+    background:#080d0f;
+    border:1px solid #1d272b;
+    border-radius:8px;
+}
+
+.modal-stat span{
+    display:block;
+    color:#657076;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.modal-stat strong{
+    display:block;
+    margin-top:5px;
+    color:#00e5ff;
+    font-size:22px;
+}
+
+.modal-bio{
+    margin-top:22px;
+    padding:16px;
+    background:rgba(0,229,255,.025);
+    border:1px solid #172125;
+    border-radius:8px;
+    color:#7d888e;
+    font-size:13px;
+}
+
+.facebook-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:20px;
+    padding:11px 24px;
+    border:1px solid #00e5ff;
+    border-radius:5px;
+    color:#00e5ff;
+    background:rgba(0,229,255,.04);
+    text-decoration:none;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.facebook-btn:hover{
+    background:#00e5ff;
+    color:#020506;
+}
+
 /* FOOTER */
 
 footer{
@@ -744,9 +925,23 @@ footer strong{
         height:140px;
     }
 
+    .modal-box{
+        padding:30px 18px 25px;
+    }
+
+    .modal-photo{
+        width:145px;
+        height:145px;
+    }
+
+    .modal-box h2{
+        font-size:23px;
+    }
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -906,7 +1101,7 @@ footer strong{
             <h2>Active Roster</h2>
 
             <p>
-                Meet the current NEXVORA E-SPORTS lineup
+                Tap any player card to view profile
             </p>
 
         </div>
@@ -919,7 +1114,7 @@ footer strong{
 
         <!-- MONARCH -->
 
-        <div class="player">
+        <div class="player" onclick="openPlayer('monarch')">
 
             <div class="player-photo">
 
@@ -949,7 +1144,7 @@ footer strong{
 
         <!-- NOOZY -->
 
-        <div class="player">
+        <div class="player" onclick="openPlayer('noozy')">
 
             <div class="player-photo">
 
@@ -980,7 +1175,7 @@ footer strong{
 
         <!-- AKATSUKI -->
 
-        <div class="player">
+        <div class="player" onclick="openPlayer('akatsuki')">
 
             <div class="player-photo">
 
@@ -1011,7 +1206,7 @@ footer strong{
 
         <!-- GREY -->
 
-        <div class="player">
+        <div class="player" onclick="openPlayer('grey')">
 
             <div class="player-photo">
 
@@ -1041,7 +1236,7 @@ footer strong{
 
         <!-- RYUK -->
 
-        <div class="player">
+        <div class="player" onclick="openPlayer('ryuk')">
 
             <div class="player-photo">
 
@@ -1072,7 +1267,7 @@ footer strong{
 
         <!-- UDSOB -->
 
-        <div class="player">
+        <div class="player" onclick="openPlayer('udsob')">
 
             <div class="player-photo">
 
@@ -1347,6 +1542,111 @@ footer strong{
 </section>
 
 
+<!-- PLAYER PROFILE MODAL -->
+
+<div class="player-modal" id="playerModal">
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closePlayer()"
+            aria-label="Close player profile"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-photo">
+
+            <img
+                id="modalImage"
+                src=""
+                alt="Player"
+            >
+
+        </div>
+
+
+        <h2 id="modalName">
+            Player Name
+        </h2>
+
+
+        <span
+            class="modal-role"
+            id="modalRole"
+        >
+            ROLE
+        </span>
+
+
+        <div class="modal-stats">
+
+            <div class="modal-stat">
+
+                <span>
+                    Tournament
+                </span>
+
+                <strong id="modalTournament">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="modal-stat">
+
+                <span>
+                    Scrims
+                </span>
+
+                <strong id="modalScrim">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="modal-stat">
+
+                <span>
+                    Total Kills
+                </span>
+
+                <strong id="modalTotal">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="modal-bio"
+            id="modalBio"
+        >
+            NEXVORA E-SPORTS player.
+        </div>
+
+
+        <a
+            class="facebook-btn"
+            id="modalFacebook"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            FACEBOOK
+        </a>
+
+    </div>
+
+</div>
+
+
 <!-- FOOTER -->
 
 <footer>
@@ -1360,6 +1660,186 @@ footer strong{
     </div>
 
 </footer>
+
+
+<script>
+
+/* PLAYER DATA */
+
+const players = {
+
+    monarch: {
+        name: "NXvesMONARCH",
+        role: "IGL",
+        image: "players/monarch.png.png",
+        imageClass: "",
+        tournament: 0,
+        scrim: 0,
+        total: 0,
+        bio: "In-game leader of NEXVORA E-SPORTS.",
+        facebook: "#"
+    },
+
+    noozy: {
+        name: "NXvesNooZY",
+        role: "Assaulter",
+        image: "players/noozy.png.png",
+        imageClass: "noozy",
+        tournament: 0,
+        scrim: 0,
+        total: 0,
+        bio: "Assaulter of NEXVORA E-SPORTS.",
+        facebook: "#"
+    },
+
+    akatsuki: {
+        name: "NXvesAkaTsukI",
+        role: "Supporter",
+        image: "players/akatsuki.png.png",
+        imageClass: "akatsuki",
+        tournament: 0,
+        scrim: 0,
+        total: 0,
+        bio: "Supporter of NEXVORA E-SPORTS.",
+        facebook: "#"
+    },
+
+    grey: {
+        name: "NXvesGrey",
+        role: "Fragger",
+        image: "players/grey.png.png",
+        imageClass: "",
+        tournament: 0,
+        scrim: 0,
+        total: 0,
+        bio: "Fragger of NEXVORA E-SPORTS.",
+        facebook: "#"
+    },
+
+    ryuk: {
+        name: "NXvesRYUK",
+        role: "Supporter",
+        image: "players/ryuk.png.png",
+        imageClass: "ryuk",
+        tournament: 0,
+        scrim: 0,
+        total: 0,
+        bio: "Supporter of NEXVORA E-SPORTS.",
+        facebook: "#"
+    },
+
+    udsob: {
+        name: "NXvesUDSOB",
+        role: "Supporter",
+        image: "players/udsob.png.png",
+        imageClass: "",
+        tournament: 0,
+        scrim: 0,
+        total: 0,
+        bio: "Supporter of NEXVORA E-SPORTS.",
+        facebook: "#"
+    }
+
+};
+
+
+/* OPEN PLAYER PROFILE */
+
+function openPlayer(playerId){
+
+    const player = players[playerId];
+
+    if(!player){
+        return;
+    }
+
+
+    const modalImage = document.getElementById("modalImage");
+
+    modalImage.src = player.image;
+
+    modalImage.className = player.imageClass;
+
+
+    document.getElementById("modalName").textContent =
+        player.name;
+
+
+    document.getElementById("modalRole").textContent =
+        player.role;
+
+
+    document.getElementById("modalTournament").textContent =
+        player.tournament;
+
+
+    document.getElementById("modalScrim").textContent =
+        player.scrim;
+
+
+    document.getElementById("modalTotal").textContent =
+        player.total;
+
+
+    document.getElementById("modalBio").textContent =
+        player.bio;
+
+
+    document.getElementById("modalFacebook").href =
+        player.facebook;
+
+
+    document.getElementById("playerModal").classList.add("active");
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* CLOSE PLAYER PROFILE */
+
+function closePlayer(){
+
+    document.getElementById("playerModal").classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+document.getElementById("playerModal").addEventListener(
+    "click",
+    function(event){
+
+        if(event.target === this){
+
+            closePlayer();
+
+        }
+
+    }
+);
+
+
+/* CLOSE WITH ESC KEY */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closePlayer();
+
+        }
+
+    }
+);
+
+</script>
 
 
 </body>
