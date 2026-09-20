@@ -7,11 +7,16 @@
 <title>NEXVORA E-SPORTS</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -20,11 +25,13 @@ body{
     line-height:1.6;
 }
 
+/* HEADER */
+
 header{
     position:sticky;
     top:0;
     z-index:100;
-    background:rgba(5,6,7,.94);
+    background:rgba(5,6,7,.96);
     backdrop-filter:blur(12px);
     border-bottom:1px solid #202428;
 }
@@ -32,14 +39,26 @@ header{
 .nav{
     max-width:1200px;
     margin:auto;
-    padding:18px 25px;
+    padding:14px 25px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.team-logo{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+
 .logo{
-    font-size:25px;
+    font-size:21px;
     font-weight:900;
     letter-spacing:2px;
 }
@@ -53,6 +72,7 @@ nav a{
     text-decoration:none;
     margin-left:25px;
     font-size:14px;
+    font-weight:bold;
     transition:.3s;
 }
 
@@ -60,20 +80,30 @@ nav a:hover{
     color:#00e5ff;
 }
 
+/* HERO */
+
 .hero{
-    min-height:620px;
+    min-height:650px;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
     padding:80px 20px;
     background:
-    radial-gradient(circle at 50% 40%,rgba(0,229,255,.12),transparent 35%),
+    radial-gradient(circle at 50% 40%,rgba(0,229,255,.14),transparent 35%),
     linear-gradient(180deg,#07090b,#050607);
 }
 
+.hero-logo{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+    margin-bottom:20px;
+    filter:drop-shadow(0 0 20px rgba(0,229,255,.18));
+}
+
 .hero h1{
-    font-size:clamp(45px,8vw,90px);
+    font-size:clamp(42px,8vw,90px);
     font-weight:1000;
     letter-spacing:5px;
 }
@@ -106,6 +136,8 @@ nav a:hover{
     color:#000;
 }
 
+/* SECTION */
+
 section{
     max-width:1200px;
     margin:auto;
@@ -124,7 +156,7 @@ section{
     color:#737c83;
 }
 
-/* Stats */
+/* STATS */
 
 .stats{
     display:grid;
@@ -137,6 +169,12 @@ section{
     border:1px solid #202428;
     padding:28px;
     border-radius:12px;
+    transition:.3s;
+}
+
+.stat:hover{
+    border-color:#00e5ff;
+    transform:translateY(-3px);
 }
 
 .stat h3{
@@ -152,52 +190,70 @@ section{
     color:#00e5ff;
 }
 
-/* Roster */
+/* ROSTER */
 
 .roster{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
 .player{
+    position:relative;
+    overflow:hidden;
     background:linear-gradient(145deg,#101417,#080a0c);
     border:1px solid #242a2e;
     padding:25px;
-    border-radius:12px;
+    border-radius:14px;
     text-align:center;
     transition:.3s;
 }
 
 .player:hover{
-    transform:translateY(-5px);
+    transform:translateY(-6px);
     border-color:#00e5ff;
+    box-shadow:0 10px 35px rgba(0,229,255,.08);
 }
 
-.avatar{
-    width:90px;
-    height:90px;
+.player-photo{
+    width:150px;
+    height:150px;
     margin:auto;
     border-radius:50%;
-    background:linear-gradient(135deg,#00e5ff,#07343b);
+    overflow:hidden;
+    background:linear-gradient(135deg,#101b1e,#061013);
+    border:2px solid #00e5ff;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:27px;
-    font-weight:900;
-    color:#000;
+}
+
+.player-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .player h3{
-    margin-top:15px;
+    margin-top:18px;
+    font-size:19px;
+    letter-spacing:.5px;
 }
 
-.player p{
-    color:#737c83;
-    font-size:13px;
+.role{
+    display:inline-block;
+    margin-top:8px;
+    padding:5px 13px;
+    border:1px solid #00e5ff;
+    border-radius:20px;
+    color:#00e5ff;
+    font-size:11px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
 
-/* Table */
+/* TABLE */
 
 .table-wrap{
     overflow-x:auto;
@@ -233,7 +289,7 @@ td{
     font-weight:bold;
 }
 
-/* Tournament */
+/* TOURNAMENT */
 
 .tournaments{
     display:grid;
@@ -246,6 +302,12 @@ td{
     border:1px solid #202428;
     border-radius:12px;
     padding:25px;
+    transition:.3s;
+}
+
+.tournament:hover{
+    border-color:#00e5ff;
+    transform:translateY(-4px);
 }
 
 .tournament .badge{
@@ -266,7 +328,7 @@ td{
     font-size:14px;
 }
 
-/* Footer */
+/* FOOTER */
 
 footer{
     border-top:1px solid #202428;
@@ -279,9 +341,10 @@ footer strong{
     color:#00e5ff;
 }
 
-/* Mobile */
+/* MOBILE */
 
 @media(max-width:800px){
+
     .stats{
         grid-template-columns:repeat(2,1fr);
     }
@@ -297,9 +360,11 @@ footer strong{
     nav{
         display:none;
     }
+
 }
 
 @media(max-width:500px){
+
     .stats{
         grid-template-columns:1fr;
     }
@@ -309,17 +374,45 @@ footer strong{
     }
 
     .hero{
-        min-height:500px;
+        min-height:560px;
     }
+
+    .hero-logo{
+        width:120px;
+        height:120px;
+    }
+
+    .player-photo{
+        width:130px;
+        height:130px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
+
     <div class="nav">
-        <div class="logo">NEXVORA <span>ESPORTS</span></div>
+
+        <div class="brand">
+
+            <img
+                class="team-logo"
+                src="assets/Nexvora Logo.png"
+                alt="NEXVORA E-SPORTS Logo"
+            >
+
+            <div class="logo">
+                NEXVORA <span>ESPORTS</span>
+            </div>
+
+        </div>
 
         <nav>
             <a href="#home">Home</a>
@@ -327,14 +420,27 @@ footer strong{
             <a href="#stats">Stats</a>
             <a href="#tournaments">Tournaments</a>
         </nav>
+
     </div>
+
 </header>
+
 
 <!-- HERO -->
 
 <div class="hero" id="home">
+
     <div>
-        <h1>NEXVORA <span>E-SPORTS</span></h1>
+
+        <img
+            class="hero-logo"
+            src="assets/Nexvora Logo.png"
+            alt="NEXVORA E-SPORTS Logo"
+        >
+
+        <h1>
+            NEXVORA <span>E-SPORTS</span>
+        </h1>
 
         <p>
             Professional PUBG MOBILE esports team.
@@ -342,24 +448,34 @@ footer strong{
             scrim statistics and competitive journey.
         </p>
 
-        <a class="btn" href="#stats">VIEW TEAM STATS</a>
+        <a class="btn" href="#roster">
+            VIEW OUR ROSTER
+        </a>
+
     </div>
+
 </div>
+
 
 <!-- TEAM STATS -->
 
 <section id="stats">
 
     <div class="section-title">
+
         <h2>TEAM STATISTICS</h2>
-        <p>Overall competitive statistics</p>
+
+        <p>
+            Overall competitive statistics
+        </p>
+
     </div>
 
     <div class="stats">
 
         <div class="stat">
             <h3>Active Players</h3>
-            <strong>4</strong>
+            <strong>6</strong>
         </div>
 
         <div class="stat">
@@ -378,74 +494,203 @@ footer strong{
         </div>
 
     </div>
+
 </section>
+
 
 <!-- ROSTER -->
 
 <section id="roster">
 
     <div class="section-title">
+
         <h2>ACTIVE ROSTER</h2>
-        <p>Meet the current NEXVORA E-SPORTS lineup</p>
+
+        <p>
+            Meet the current NEXVORA E-SPORTS lineup
+        </p>
+
     </div>
+
 
     <div class="roster">
 
-        <div class="player">
-            <div class="avatar">G</div>
-            <h3>NXvesGrey</h3>
-            <p>Player</p>
-        </div>
+
+        <!-- MONARCH -->
 
         <div class="player">
-            <div class="avatar">N</div>
+
+            <div class="player-photo">
+
+                <img
+                    src="assets/players/monarch.png.png"
+                    alt="NXvesMONARCH"
+                >
+
+            </div>
+
+            <h3>NXvesMONARCH</h3>
+
+            <span class="role">
+                IGL
+            </span>
+
+        </div>
+
+
+        <!-- NOOZY -->
+
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    src="assets/players/noozy.png.png"
+                    alt="NXvesNooZY"
+                >
+
+            </div>
+
             <h3>NXvesNooZY</h3>
-            <p>Player</p>
+
+            <span class="role">
+                Assaulter
+            </span>
+
         </div>
 
-        <div class="player">
-            <div class="avatar">M</div>
-            <h3>NXvesMONARCH18</h3>
-            <p>Player</p>
-        </div>
+
+        <!-- AKATSUKI -->
 
         <div class="player">
-            <div class="avatar">A</div>
-            <h3>NXvesAkatsukl</h3>
-            <p>Player</p>
+
+            <div class="player-photo">
+
+                <img
+                    src="assets/players/akatsuki.png.png"
+                    alt="NXvesAkaTsukI"
+                >
+
+            </div>
+
+            <h3>NXvesAkaTsukI</h3>
+
+            <span class="role">
+                Supporter
+            </span>
+
+        </div>
+
+
+        <!-- GREY -->
+
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    src="assets/players/grey.png.png"
+                    alt="NXvesGrey"
+                >
+
+            </div>
+
+            <h3>NXvesGrey</h3>
+
+            <span class="role">
+                Fragger
+            </span>
+
+        </div>
+
+
+        <!-- RYUK -->
+
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    src="assets/players/ryuk.png.png"
+                    alt="NXvesRYUK"
+                >
+
+            </div>
+
+            <h3>NXvesRYUK</h3>
+
+            <span class="role">
+                Supporter
+            </span>
+
+        </div>
+
+
+        <!-- UDSOB -->
+
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    src="assets/players/udsob.png.png"
+                    alt="NXvesUDSOB"
+                >
+
+            </div>
+
+            <h3>NXvesUDSOB</h3>
+
+            <span class="role">
+                Supporter
+            </span>
+
         </div>
 
     </div>
+
 </section>
+
 
 <!-- PLAYER LEADERBOARD -->
 
 <section>
 
     <div class="section-title">
+
         <h2>PLAYER LEADERBOARD</h2>
-        <p>Combined tournament and scrim statistics</p>
+
+        <p>
+            Combined tournament and scrim statistics
+        </p>
+
     </div>
+
 
     <div class="table-wrap">
 
         <table>
 
             <thead>
+
                 <tr>
                     <th>#</th>
                     <th>Player</th>
+                    <th>Role</th>
                     <th>Tournament Kills</th>
                     <th>Scrim Kills</th>
                     <th>Total Kills</th>
                 </tr>
+
             </thead>
+
 
             <tbody>
 
                 <tr>
                     <td>01</td>
-                    <td>NXvesNooZY</td>
+                    <td>NXvesMONARCH</td>
+                    <td>IGL</td>
                     <td>0</td>
                     <td>0</td>
                     <td class="total">0</td>
@@ -453,7 +698,8 @@ footer strong{
 
                 <tr>
                     <td>02</td>
-                    <td>NXvesMONARCH18</td>
+                    <td>NXvesNooZY</td>
+                    <td>Assaulter</td>
                     <td>0</td>
                     <td>0</td>
                     <td class="total">0</td>
@@ -461,7 +707,8 @@ footer strong{
 
                 <tr>
                     <td>03</td>
-                    <td>NXvesGrey</td>
+                    <td>NXvesAkaTsukI</td>
+                    <td>Supporter</td>
                     <td>0</td>
                     <td>0</td>
                     <td class="total">0</td>
@@ -469,7 +716,26 @@ footer strong{
 
                 <tr>
                     <td>04</td>
-                    <td>NXvesAkatsukl</td>
+                    <td>NXvesGrey</td>
+                    <td>Fragger</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="total">0</td>
+                </tr>
+
+                <tr>
+                    <td>05</td>
+                    <td>NXvesRYUK</td>
+                    <td>Supporter</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td class="total">0</td>
+                </tr>
+
+                <tr>
+                    <td>06</td>
+                    <td>NXvesUDSOB</td>
+                    <td>Supporter</td>
                     <td>0</td>
                     <td>0</td>
                     <td class="total">0</td>
@@ -480,43 +746,94 @@ footer strong{
         </table>
 
     </div>
+
 </section>
+
 
 <!-- TOURNAMENTS -->
 
 <section id="tournaments">
 
     <div class="section-title">
+
         <h2>TOURNAMENT HISTORY</h2>
-        <p>NEXVORA E-SPORTS competitive record</p>
+
+        <p>
+            NEXVORA E-SPORTS competitive record
+        </p>
+
     </div>
+
 
     <div class="tournaments">
 
-        <div class="tournament">
-            <span class="badge">TOURNAMENT</span>
-            <h3>Upcoming Tournament</h3>
-            <p>Match statistics and results will be updated here.</p>
-        </div>
 
         <div class="tournament">
-            <span class="badge">SCRIMS</span>
-            <h3>Scrim Statistics</h3>
-            <p>Player kills and team performance will be tracked here.</p>
+
+            <span class="badge">
+                TOURNAMENT
+            </span>
+
+            <h3>
+                Upcoming Tournament
+            </h3>
+
+            <p>
+                Match statistics and results will be updated here.
+            </p>
+
         </div>
 
+
         <div class="tournament">
-            <span class="badge">ACHIEVEMENT</span>
-            <h3>Team Achievements</h3>
-            <p>Our tournament achievements and milestones.</p>
+
+            <span class="badge">
+                SCRIMS
+            </span>
+
+            <h3>
+                Scrim Statistics
+            </h3>
+
+            <p>
+                Player kills and team performance will be tracked here.
+            </p>
+
         </div>
+
+
+        <div class="tournament">
+
+            <span class="badge">
+                ACHIEVEMENT
+            </span>
+
+            <h3>
+                Team Achievements
+            </h3>
+
+            <p>
+                Our tournament achievements and milestones.
+            </p>
+
+        </div>
+
 
     </div>
+
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
-    © 2026 <strong>NEXVORA E-SPORTS</strong> — All Rights Reserved.
+
+    © 2026
+    <strong>NEXVORA E-SPORTS</strong>
+    — All Rights Reserved.
+
 </footer>
+
 
 </body>
 </html>
