@@ -40,12 +40,9 @@ body{
 
 body::before{
     content:"";
-
     position:fixed;
     inset:0;
-
     pointer-events:none;
-
     z-index:-2;
 
     background:
@@ -59,7 +56,6 @@ body::before{
 
 body::after{
     content:"";
-
     position:fixed;
 
     width:500px;
@@ -71,7 +67,6 @@ body::after{
     transform:translate(-50%,-50%);
 
     pointer-events:none;
-
     z-index:-3;
 
     background:radial-gradient(
@@ -159,15 +154,12 @@ body::after{
 
 header{
     position:sticky;
-
     top:0;
-
     z-index:1000;
 
     background:rgba(3,5,6,.72);
 
     backdrop-filter:blur(18px);
-
     -webkit-backdrop-filter:blur(18px);
 
     border-bottom:1px solid rgba(0,229,255,.08);
@@ -216,7 +208,9 @@ header.scrolled .nav{
 }
 
 
-/* HEADER BRAND */
+/* =========================
+   HEADER BRAND
+========================= */
 
 .brand{
     display:flex;
@@ -224,8 +218,6 @@ header.scrolled .nav{
     align-items:center;
 
     gap:12px;
-
-    /* Hidden at Home */
 
     opacity:0;
 
@@ -290,7 +282,9 @@ header.scrolled .team-logo{
 }
 
 
-/* NAV */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
     display:flex;
@@ -326,16 +320,15 @@ nav a::after{
     position:absolute;
 
     left:0;
-
     bottom:-8px;
 
     width:0;
-
     height:2px;
 
     background:#00e5ff;
 
-    box-shadow:0 0 10px rgba(0,229,255,.5);
+    box-shadow:
+        0 0 10px rgba(0,229,255,.5);
 
     transition:width .3s ease;
 }
@@ -455,7 +448,9 @@ nav a:hover::after{
 }
 
 
-/* HERO BADGE */
+/* =========================
+   HERO BADGE
+========================= */
 
 .hero-badge{
     display:inline-block;
@@ -496,7 +491,9 @@ nav a:hover::after{
 }
 
 
-/* HERO LOGO */
+/* =========================
+   HERO LOGO
+========================= */
 
 .hero-logo{
     display:block;
@@ -525,6 +522,7 @@ nav a:hover::after{
 
     from{
         opacity:0;
+
         transform:
             translateY(35px)
             scale(.82);
@@ -532,6 +530,7 @@ nav a:hover::after{
 
     to{
         opacity:1;
+
         transform:
             translateY(0)
             scale(1);
@@ -560,7 +559,9 @@ nav a:hover::after{
 }
 
 
-/* HERO TITLE */
+/* =========================
+   HERO TITLE
+========================= */
 
 .hero h1{
     font-size:clamp(34px,5vw,60px);
@@ -573,13 +574,15 @@ nav a:hover::after{
 
     text-transform:uppercase;
 
-    animation:heroTitleIn 1s cubic-bezier(.2,.65,.3,1) .18s both;
+    animation:
+        heroTitleIn 1s cubic-bezier(.2,.65,.3,1) .18s both;
 }
 
 @keyframes heroTitleIn{
 
     from{
         opacity:0;
+
         transform:
             translateY(25px)
             scale(.96);
@@ -587,6 +590,7 @@ nav a:hover::after{
 
     to{
         opacity:1;
+
         transform:
             translateY(0)
             scale(1);
@@ -607,7 +611,8 @@ nav a:hover::after{
 
     font-size:16px;
 
-    animation:heroFadeIn 1s ease .4s both;
+    animation:
+        heroFadeIn 1s ease .4s both;
 }
 
 .hero-line{
@@ -621,7 +626,8 @@ nav a:hover::after{
     box-shadow:
         0 0 15px rgba(0,229,255,.5);
 
-    animation:heroLineIn 1s ease .55s both;
+    animation:
+        heroLineIn 1s ease .55s both;
 }
 
 @keyframes heroLineIn{
@@ -661,7 +667,8 @@ nav a:hover::after{
 
     flex-wrap:wrap;
 
-    animation:heroFadeIn 1s ease .65s both;
+    animation:
+        heroFadeIn 1s ease .65s both;
 }
 
 
@@ -1456,7 +1463,6 @@ tbody tr:hover{
     object-position:center 35%;
 }
 
-
 .management-label{
     color:#667177;
 
@@ -1544,7 +1550,9 @@ tbody tr:hover{
 }
 
 
-/* OFFICIAL PAGE */
+/* =========================
+   OFFICIAL PAGE
+========================= */
 
 .official-page{
     position:relative;
@@ -2257,7 +2265,7 @@ footer strong{
 
 
 /* =========================
-   MOBILE
+   TABLET
 ========================= */
 
 @media(max-width:900px){
@@ -2287,24 +2295,99 @@ footer strong{
 }
 
 
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:650px){
+
+    /*
+       IMPORTANT:
+       Mobile header is now a dedicated
+       full-width navigation bar.
+       Desktop remains unchanged.
+    */
 
     .nav{
         padding:8px 15px;
+
+        min-height:64px;
+
+        display:block;
     }
 
-    .team-logo{
-        width:50px;
-        height:50px;
-    }
 
-    .logo{
-        font-size:16px;
-    }
+    /*
+       Hide the invisible desktop brand
+       on mobile so it cannot take space
+       or cover the navigation.
+    */
 
-    nav{
+    .brand{
         display:none;
     }
+
+
+    /*
+       MOBILE NAVIGATION
+    */
+
+    nav{
+        display:flex !important;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        gap:18px;
+
+        width:100%;
+
+        max-width:100%;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        white-space:nowrap;
+
+        scrollbar-width:none;
+
+        -ms-overflow-style:none;
+
+        padding:4px 0;
+
+        margin:0;
+
+        flex-shrink:0;
+    }
+
+    nav::-webkit-scrollbar{
+        display:none;
+    }
+
+    nav a{
+        display:block !important;
+
+        flex-shrink:0;
+
+        margin-left:0;
+
+        font-size:10px;
+
+        letter-spacing:.6px;
+
+        padding:5px 0;
+    }
+
+    nav a::after{
+        bottom:-2px;
+    }
+
+
+    /* =========================
+       MOBILE HERO
+    ========================= */
 
     .hero{
         min-height:650px;
@@ -2321,9 +2404,6 @@ footer strong{
         width:270px;
         height:270px;
     }
-
-
-    /* MOBILE HERO LOGO */
 
     .hero-logo{
         width:185px;
@@ -2342,6 +2422,11 @@ footer strong{
         font-size:14px;
     }
 
+
+    /* =========================
+       MOBILE SECTIONS
+    ========================= */
+
     section{
         padding:70px 18px;
     }
@@ -2354,13 +2439,28 @@ footer strong{
         font-size:28px;
     }
 
+
+    /* =========================
+       MOBILE STATS
+    ========================= */
+
     .stats{
         grid-template-columns:1fr 1fr;
     }
 
+
+    /* =========================
+       MOBILE ROSTER
+    ========================= */
+
     .roster{
         grid-template-columns:1fr;
     }
+
+
+    /* =========================
+       MOBILE MANAGEMENT
+    ========================= */
 
     .management-card{
         padding:28px 20px;
@@ -2369,6 +2469,11 @@ footer strong{
     .official-page{
         padding:28px 20px;
     }
+
+
+    /* =========================
+       MOBILE BACK TOP
+    ========================= */
 
     .back-top{
         right:15px;
@@ -2382,6 +2487,10 @@ footer strong{
 
 }
 
+
+/* =========================
+   SMALL MOBILE
+========================= */
 
 @media(max-width:420px){
 
@@ -2480,8 +2589,6 @@ footer strong{
         </div>
 
 
-        <!-- NAVIGATION -->
-
         <nav>
 
             <a href="#home">
@@ -2523,28 +2630,22 @@ footer strong{
             BANGLADESH • PUBG MOBILE ESPORTS
         </div>
 
-
         <img
             class="hero-logo"
             src="assets/Nexvora Logo.png.png"
             alt="NEXVORA E-SPORTS Logo"
         >
 
-
         <h1>
             NEXVORA <span>E-SPORTS</span>
         </h1>
 
-
-        <div class="hero-line">
-        </div>
-
+        <div class="hero-line"></div>
 
         <p class="hero-subtitle">
             Competitive PUBG MOBILE esports team.
             Built for competition, teamwork and the pursuit of excellence.
         </p>
-
 
         <div class="hero-buttons">
 
@@ -2853,6 +2954,8 @@ footer strong{
                 <img
                     src="players/monarch.png.png"
                     alt="NXvesMONARCH"
+                    loading="lazy"
+                    decoding="async"
                 >
 
             </div>
@@ -2913,6 +3016,8 @@ footer strong{
                     class="noozy"
                     src="players/noozy.png.png"
                     alt="NXvesNooZY"
+                    loading="lazy"
+                    decoding="async"
                 >
 
             </div>
@@ -2973,6 +3078,8 @@ footer strong{
                     class="akatsuki"
                     src="players/akatsuki.png.png"
                     alt="NXvesAkaTsukI"
+                    loading="lazy"
+                    decoding="async"
                 >
 
             </div>
@@ -3032,6 +3139,8 @@ footer strong{
                 <img
                     src="players/grey.png.png"
                     alt="NXvesGrey"
+                    loading="lazy"
+                    decoding="async"
                 >
 
             </div>
@@ -3092,6 +3201,8 @@ footer strong{
                     class="ryuk"
                     src="players/ryuk.png.png"
                     alt="NXvesRYUK"
+                    loading="lazy"
+                    decoding="async"
                 >
 
             </div>
@@ -3151,6 +3262,8 @@ footer strong{
                 <img
                     src="players/udsob.png.png"
                     alt="NXvesUDSOB"
+                    loading="lazy"
+                    decoding="async"
                 >
 
             </div>
@@ -3224,8 +3337,6 @@ footer strong{
     </div>
 
 
-    <!-- OWNER + MANAGER -->
-
     <div class="management">
 
 
@@ -3237,6 +3348,8 @@ footer strong{
                 class="management-photo"
                 src="players/udsob.png.png"
                 alt="Syed Hasibul Hassan Udsob"
+                loading="lazy"
+                decoding="async"
             >
 
             <div class="management-label">
@@ -3271,6 +3384,8 @@ footer strong{
                 class="management-photo"
                 src="players/noozy.png.png"
                 alt="Shamiulla Shitul"
+                loading="lazy"
+                decoding="async"
             >
 
             <div class="management-label">
@@ -3567,148 +3682,82 @@ footer strong{
 
 <script>
 
-
 /* =========================
    PLAYER DATA
 ========================= */
 
 const players = {
 
-    monarch: {
-
+    monarch:{
         name:"NXvesMONARCH",
-
         role:"IGL",
-
         image:"players/monarch.png.png",
-
         imageClass:"",
-
         tournament:0,
-
         scrim:0,
-
         total:0,
-
         bio:"In-game leader of NEXVORA E-SPORTS.",
-
         facebook:"https://www.facebook.com/profile.php?id=61577703813474"
-
     },
 
-
-    noozy: {
-
+    noozy:{
         name:"NXvesNooZY",
-
         role:"Assaulter",
-
         image:"players/noozy.png.png",
-
         imageClass:"noozy",
-
         tournament:0,
-
         scrim:0,
-
         total:0,
-
         bio:"Assaulter of NEXVORA E-SPORTS.",
-
         facebook:"https://www.facebook.com/shamiulla.shitul"
-
     },
 
-
-    akatsuki: {
-
+    akatsuki:{
         name:"NXvesAkaTsukI",
-
         role:"Supporter",
-
         image:"players/akatsuki.png.png",
-
         imageClass:"akatsuki",
-
         tournament:0,
-
         scrim:0,
-
         total:0,
-
         bio:"Supporter of NEXVORA E-SPORTS.",
-
         facebook:"https://www.facebook.com/profile.php?id=61594401750690"
-
     },
 
-
-    grey: {
-
+    grey:{
         name:"NXvesGrey",
-
         role:"Fragger",
-
         image:"players/grey.png.png",
-
         imageClass:"",
-
         tournament:0,
-
         scrim:0,
-
         total:0,
-
         bio:"Fragger of NEXVORA E-SPORTS.",
-
         facebook:"https://www.facebook.com/nahid.hasan.joy.738354"
-
     },
 
-
-    ryuk: {
-
+    ryuk:{
         name:"NXvesRYUK",
-
         role:"Supporter",
-
         image:"players/ryuk.png.png",
-
         imageClass:"ryuk",
-
         tournament:0,
-
         scrim:0,
-
         total:0,
-
         bio:"Supporter of NEXVORA E-SPORTS.",
-
         facebook:"https://www.facebook.com/Piyash.yash"
-
     },
 
-
-    udsob: {
-
+    udsob:{
         name:"NXvesUDSOB",
-
         role:"Supporter",
-
         image:"players/udsob.png.png",
-
         imageClass:"",
-
         tournament:0,
-
         scrim:0,
-
         total:0,
-
         bio:"Supporter of NEXVORA E-SPORTS.",
-
         facebook:"https://www.facebook.com/syed.hasibul.hassan.udsob"
-
     }
 
 };
@@ -3726,60 +3775,47 @@ function openPlayer(playerId){
         return;
     }
 
-
     const modal =
         document.getElementById("playerModal");
-
 
     const modalImage =
         document.getElementById("modalImage");
 
-
     modalImage.src =
         player.image;
-
 
     modalImage.alt =
         player.name;
 
-
     modalImage.className =
         player.imageClass;
-
 
     document.getElementById("modalName")
         .textContent =
         player.name;
 
-
     document.getElementById("modalRole")
         .textContent =
         player.role;
-
 
     document.getElementById("modalTournament")
         .textContent =
         player.tournament;
 
-
     document.getElementById("modalScrim")
         .textContent =
         player.scrim;
-
 
     document.getElementById("modalTotal")
         .textContent =
         player.total;
 
-
     document.getElementById("modalBio")
         .textContent =
         player.bio;
 
-
     const facebook =
         document.getElementById("modalFacebook");
-
 
     if(
         player.facebook &&
@@ -3812,7 +3848,6 @@ function openPlayer(playerId){
 
     }
 
-
     modal.classList.add("active");
 
     modal.setAttribute(
@@ -3835,15 +3870,12 @@ function closePlayer(){
     const modal =
         document.getElementById("playerModal");
 
-
     modal.classList.remove("active");
-
 
     modal.setAttribute(
         "aria-hidden",
         "true"
     );
-
 
     document.body.style.overflow =
         "";
@@ -3933,12 +3965,6 @@ function handleScroll(){
         window.scrollY;
 
 
-    /*
-       Header brand starts hidden.
-       Once user scrolls down 35px,
-       logo + name smoothly appear.
-    */
-
     if(scrollY > 35){
 
         siteHeader.classList.add(
@@ -3953,10 +3979,6 @@ function handleScroll(){
 
     }
 
-
-    /*
-       Back to top button
-    */
 
     if(scrollY > 500){
 
@@ -4008,7 +4030,6 @@ const revealElements =
         ".reveal"
     );
 
-
 const revealObserver =
     new IntersectionObserver(
         function(entries){
@@ -4023,13 +4044,6 @@ const revealObserver =
                         );
 
                     }else{
-
-                        /*
-                           Remove this part if you want
-                           animations to happen only once.
-                           Keeping it makes the animation
-                           replay when scrolling back.
-                        */
 
                         entry.target.classList.remove(
                             "show"
@@ -4066,7 +4080,6 @@ revealElements.forEach(
 ========================= */
 
 handleScroll();
-
 
 </script>
 
