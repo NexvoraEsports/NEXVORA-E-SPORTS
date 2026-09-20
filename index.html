@@ -859,6 +859,267 @@ tbody tr:hover{
 
 
 /* =========================
+   MANAGEMENT
+========================= */
+
+.management{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin-bottom:20px;
+}
+
+.management-card{
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(145deg,#0c1113,#07090a);
+
+    border:1px solid #1d2529;
+
+    border-radius:12px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.management-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:2px;
+
+    background:
+        linear-gradient(90deg,transparent,#00e5ff,transparent);
+
+    opacity:.6;
+}
+
+.management-card:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(0,229,255,.45);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+
+.management-icon{
+    width:82px;
+    height:82px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:2px solid rgba(0,229,255,.65);
+
+    background:rgba(0,229,255,.035);
+
+    color:#00e5ff;
+
+    font-size:28px;
+
+    font-weight:900;
+
+    box-shadow:
+        0 0 0 7px rgba(0,229,255,.025),
+        0 0 30px rgba(0,229,255,.08);
+}
+
+.management-label{
+    color:#667177;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.management-card h3{
+    margin-top:8px;
+
+    font-size:22px;
+
+    letter-spacing:.8px;
+}
+
+.management-role{
+    display:inline-block;
+
+    margin-top:9px;
+
+    padding:5px 14px;
+
+    border:1px solid rgba(0,229,255,.45);
+
+    border-radius:20px;
+
+    color:#00e5ff;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.3px;
+}
+
+.management-facebook{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:18px;
+
+    padding:10px 20px;
+
+    border:1px solid #30383d;
+
+    border-radius:5px;
+
+    color:#8d989e;
+
+    background:#080b0d;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.management-facebook:hover{
+    border-color:#00e5ff;
+
+    color:#00e5ff;
+
+    background:rgba(0,229,255,.04);
+}
+
+
+/* OFFICIAL PAGE */
+
+.official-page{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:32px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(145deg,#101719,#06090a);
+
+    border:1px solid rgba(0,229,255,.3);
+
+    border-radius:12px;
+
+    transition:.3s;
+}
+
+.official-page:hover{
+    border-color:rgba(0,229,255,.65);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.4),
+        0 0 30px rgba(0,229,255,.06);
+}
+
+.official-page-label{
+    color:#00e5ff;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+.official-page h3{
+    margin-top:8px;
+
+    font-size:25px;
+
+    letter-spacing:1px;
+}
+
+.official-page p{
+    color:#687278;
+
+    margin-top:6px;
+
+    font-size:13px;
+}
+
+.official-page-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:18px;
+
+    padding:12px 25px;
+
+    border:1px solid #00e5ff;
+
+    border-radius:5px;
+
+    color:#00e5ff;
+
+    background:rgba(0,229,255,.04);
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.2px;
+
+    transition:.3s;
+}
+
+.official-page-btn:hover{
+    background:#00e5ff;
+
+    color:#020506;
+
+    box-shadow:0 0 25px rgba(0,229,255,.2);
+}
+
+
+/* =========================
    TOURNAMENTS
 ========================= */
 
@@ -1283,6 +1544,10 @@ footer strong{
         grid-template-columns:1fr;
     }
 
+    .management{
+        grid-template-columns:1fr;
+    }
+
     nav a{
         margin-left:15px;
 
@@ -1367,6 +1632,14 @@ footer strong{
         grid-template-columns:1fr;
     }
 
+    .management-card{
+        padding:28px 20px;
+    }
+
+    .official-page{
+        padding:28px 20px;
+    }
+
 }
 
 
@@ -1436,8 +1709,7 @@ footer strong{
         </div>
 
 
-        <!-- NAVIGATION ORDER:
-             HOME → STATS → ROSTER → TOURNAMENTS -->
+        <!-- NAVIGATION -->
 
         <nav>
 
@@ -1451,6 +1723,10 @@ footer strong{
 
             <a href="#roster">
                 Roster
+            </a>
+
+            <a href="#management">
+                Management
             </a>
 
             <a href="#tournaments">
@@ -1517,10 +1793,6 @@ footer strong{
 
 <!-- =========================
      STATS SECTION
-     
-     BOTH:
-     PLAYER LEADERBOARD
-     + TEAM STATISTICS
 ========================= -->
 
 <section id="stats">
@@ -1546,7 +1818,7 @@ footer strong{
     </div>
 
 
-    <!-- PLAYER LEADERBOARD FIRST -->
+    <!-- PLAYER LEADERBOARD -->
 
     <div style="margin-bottom:55px;">
 
@@ -1609,164 +1881,57 @@ footer strong{
                 <tbody>
 
                     <tr>
-                        <td class="rank">
-                            01
-                        </td>
-
-                        <td>
-                            NXvesMONARCH
-                        </td>
-
-                        <td>
-                            IGL
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td class="total">
-                            0
-                        </td>
+                        <td class="rank">01</td>
+                        <td>NXvesMONARCH</td>
+                        <td>IGL</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="total">0</td>
                     </tr>
 
-
                     <tr>
-                        <td class="rank">
-                            02
-                        </td>
-
-                        <td>
-                            NXvesNooZY
-                        </td>
-
-                        <td>
-                            Assaulter
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td class="total">
-                            0
-                        </td>
+                        <td class="rank">02</td>
+                        <td>NXvesNooZY</td>
+                        <td>Assaulter</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="total">0</td>
                     </tr>
 
-
                     <tr>
-                        <td class="rank">
-                            03
-                        </td>
-
-                        <td>
-                            NXvesAkaTsukI
-                        </td>
-
-                        <td>
-                            Supporter
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td class="total">
-                            0
-                        </td>
+                        <td class="rank">03</td>
+                        <td>NXvesAkaTsukI</td>
+                        <td>Supporter</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="total">0</td>
                     </tr>
 
-
                     <tr>
-                        <td class="rank">
-                            04
-                        </td>
-
-                        <td>
-                            NXvesGrey
-                        </td>
-
-                        <td>
-                            Fragger
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td class="total">
-                            0
-                        </td>
+                        <td class="rank">04</td>
+                        <td>NXvesGrey</td>
+                        <td>Fragger</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="total">0</td>
                     </tr>
 
-
                     <tr>
-                        <td class="rank">
-                            05
-                        </td>
-
-                        <td>
-                            NXvesRYUK
-                        </td>
-
-                        <td>
-                            Supporter
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td class="total">
-                            0
-                        </td>
+                        <td class="rank">05</td>
+                        <td>NXvesRYUK</td>
+                        <td>Supporter</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="total">0</td>
                     </tr>
 
-
                     <tr>
-                        <td class="rank">
-                            06
-                        </td>
-
-                        <td>
-                            NXvesUDSOB
-                        </td>
-
-                        <td>
-                            Supporter
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td>
-                            0
-                        </td>
-
-                        <td class="total">
-                            0
-                        </td>
+                        <td class="rank">06</td>
+                        <td>NXvesUDSOB</td>
+                        <td>Supporter</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="total">0</td>
                     </tr>
 
                 </tbody>
@@ -1778,7 +1943,7 @@ footer strong{
     </div>
 
 
-    <!-- TEAM STATISTICS SECOND -->
+    <!-- TEAM STATISTICS -->
 
     <div>
 
@@ -1911,7 +2076,6 @@ footer strong{
                 PLAYER PROFILE
             </span>
 
-
             <div class="player-photo">
 
                 <img
@@ -1921,16 +2085,13 @@ footer strong{
 
             </div>
 
-
             <h3>
                 NXvesMONARCH
             </h3>
 
-
             <span class="role">
                 IGL
             </span>
-
 
             <div class="player-kills">
 
@@ -1943,7 +2104,6 @@ footer strong{
                 </strong>
 
             </div>
-
 
             <div class="tap-profile">
 
@@ -1975,7 +2135,6 @@ footer strong{
                 PLAYER PROFILE
             </span>
 
-
             <div class="player-photo">
 
                 <img
@@ -1986,16 +2145,13 @@ footer strong{
 
             </div>
 
-
             <h3>
                 NXvesNooZY
             </h3>
 
-
             <span class="role">
                 Assaulter
             </span>
-
 
             <div class="player-kills">
 
@@ -2008,7 +2164,6 @@ footer strong{
                 </strong>
 
             </div>
-
 
             <div class="tap-profile">
 
@@ -2040,7 +2195,6 @@ footer strong{
                 PLAYER PROFILE
             </span>
 
-
             <div class="player-photo">
 
                 <img
@@ -2051,16 +2205,13 @@ footer strong{
 
             </div>
 
-
             <h3>
                 NXvesAkaTsukI
             </h3>
 
-
             <span class="role">
                 Supporter
             </span>
-
 
             <div class="player-kills">
 
@@ -2073,7 +2224,6 @@ footer strong{
                 </strong>
 
             </div>
-
 
             <div class="tap-profile">
 
@@ -2105,7 +2255,6 @@ footer strong{
                 PLAYER PROFILE
             </span>
 
-
             <div class="player-photo">
 
                 <img
@@ -2115,16 +2264,13 @@ footer strong{
 
             </div>
 
-
             <h3>
                 NXvesGrey
             </h3>
 
-
             <span class="role">
                 Fragger
             </span>
-
 
             <div class="player-kills">
 
@@ -2137,7 +2283,6 @@ footer strong{
                 </strong>
 
             </div>
-
 
             <div class="tap-profile">
 
@@ -2169,7 +2314,6 @@ footer strong{
                 PLAYER PROFILE
             </span>
 
-
             <div class="player-photo">
 
                 <img
@@ -2180,16 +2324,13 @@ footer strong{
 
             </div>
 
-
             <h3>
                 NXvesRYUK
             </h3>
 
-
             <span class="role">
                 Supporter
             </span>
-
 
             <div class="player-kills">
 
@@ -2202,7 +2343,6 @@ footer strong{
                 </strong>
 
             </div>
-
 
             <div class="tap-profile">
 
@@ -2234,7 +2374,6 @@ footer strong{
                 PLAYER PROFILE
             </span>
 
-
             <div class="player-photo">
 
                 <img
@@ -2244,16 +2383,13 @@ footer strong{
 
             </div>
 
-
             <h3>
                 NXvesUDSOB
             </h3>
 
-
             <span class="role">
                 Supporter
             </span>
-
 
             <div class="player-kills">
 
@@ -2266,7 +2402,6 @@ footer strong{
                 </strong>
 
             </div>
-
 
             <div class="tap-profile">
 
@@ -2291,6 +2426,151 @@ footer strong{
 
 
 <!-- =========================
+     MANAGEMENT
+========================= -->
+
+<section id="management">
+
+    <div class="section-heading">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                03 / MANAGEMENT
+            </div>
+
+            <h2>
+                Team Management
+            </h2>
+
+            <p>
+                The people behind NEXVORA E-SPORTS
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- OWNER + MANAGER -->
+
+    <div class="management">
+
+
+        <!-- OWNER -->
+
+        <div class="management-card">
+
+            <div class="management-icon">
+                O
+            </div>
+
+            <div class="management-label">
+                OWNER
+            </div>
+
+            <!-- CHANGE OWNER NAME HERE -->
+
+            <h3>
+                OWNER NAME
+            </h3>
+
+            <span class="management-role">
+                TEAM OWNER
+            </span>
+
+
+            <!-- CHANGE OWNER FACEBOOK LINK HERE -->
+
+            <a
+                class="management-facebook"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                FACEBOOK
+            </a>
+
+        </div>
+
+
+        <!-- MANAGER -->
+
+        <div class="management-card">
+
+            <div class="management-icon">
+                M
+            </div>
+
+            <div class="management-label">
+                MANAGER
+            </div>
+
+            <!-- CHANGE MANAGER NAME HERE -->
+
+            <h3>
+                MANAGER NAME
+            </h3>
+
+            <span class="management-role">
+                TEAM MANAGER
+            </span>
+
+
+            <!-- CHANGE MANAGER FACEBOOK LINK HERE -->
+
+            <a
+                class="management-facebook"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                FACEBOOK
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- OFFICIAL FACEBOOK PAGE -->
+
+    <div class="official-page">
+
+        <div class="official-page-label">
+            OFFICIAL TEAM PAGE
+        </div>
+
+        <h3>
+            NEXVORA E-SPORTS
+        </h3>
+
+        <p>
+            Follow our official Facebook page for announcements,
+            tournament updates and team news.
+        </p>
+
+
+        <!-- CHANGE TEAM FACEBOOK PAGE LINK HERE -->
+
+        <a
+            class="official-page-btn"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            VISIT OFFICIAL FACEBOOK PAGE →
+        </a>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================
      TOURNAMENTS
 ========================= -->
 
@@ -2301,7 +2581,7 @@ footer strong{
         <div class="section-title">
 
             <div class="section-number">
-                03 / COMPETITION
+                04 / COMPETITION
             </div>
 
             <h2>
@@ -2535,7 +2815,7 @@ const players = {
 
         bio:"In-game leader of NEXVORA E-SPORTS.",
 
-        facebook:"https://www.facebook.com/profile.php?id=61577703813474#"
+        facebook:"https://www.facebook.com/profile.php?id=61577703813474"
 
     },
 
@@ -2581,7 +2861,7 @@ const players = {
 
         bio:"Supporter of NEXVORA E-SPORTS.",
 
-        facebook:"https://www.facebook.com/profile.php?id=61594401750690#"
+        facebook:"https://www.facebook.com/profile.php?id=61594401750690"
 
     },
 
@@ -2604,7 +2884,7 @@ const players = {
 
         bio:"Fragger of NEXVORA E-SPORTS.",
 
-        facebook:"https://www.facebook.com/nahid.hasan.joy.738354#"
+        facebook:"https://www.facebook.com/nahid.hasan.joy.738354"
 
     },
 
@@ -2627,7 +2907,7 @@ const players = {
 
         bio:"Supporter of NEXVORA E-SPORTS.",
 
-        facebook:"https://www.facebook.com/Piyash.yash#"
+        facebook:"https://www.facebook.com/Piyash.yash"
 
     },
 
@@ -2650,7 +2930,7 @@ const players = {
 
         bio:"Supporter of NEXVORA E-SPORTS.",
 
-        facebook:"https://www.facebook.com/syed.hasibul.hassan.udsob#"
+        facebook:"https://www.facebook.com/syed.hasibul.hassan.udsob"
 
     }
 
