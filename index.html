@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1477,6 +1476,262 @@ tbody tr:hover{
 
 
 /* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievements{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.achievement{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    min-height:190px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c1113,
+            #07090a
+        );
+
+    border:1px solid #1d2529;
+
+    border-radius:12px;
+
+    transition:.35s;
+}
+
+.achievement:hover{
+    transform:translateY(-7px);
+
+    border-color:rgba(0,229,255,.45);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35);
+}
+
+.achievement-number{
+    color:#00e5ff;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.achievement h3{
+    margin-top:15px;
+
+    font-size:20px;
+}
+
+.achievement p{
+    color:#737e84;
+
+    margin-top:8px;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   MATCH RESULTS
+========================================================= */
+
+.matches{
+    display:grid;
+
+    gap:14px;
+}
+
+.match{
+    display:grid;
+
+    grid-template-columns:130px 1fr 130px;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px 22px;
+
+    background:#080b0d;
+
+    border:1px solid #1b2327;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.match:hover{
+    border-color:rgba(0,229,255,.4);
+
+    transform:translateX(4px);
+}
+
+.match-type{
+    color:#00e5ff;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+.match-info h3{
+    font-size:16px;
+}
+
+.match-info p{
+    color:#687278;
+
+    font-size:12px;
+
+    margin-top:3px;
+}
+
+.match-result{
+    text-align:right;
+
+    color:#8d989e;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.news-card{
+    background:
+        linear-gradient(
+            145deg,
+            #0c1113,
+            #07090a
+        );
+
+    border:1px solid #1d2529;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    transition:.35s;
+}
+
+.news-card:hover{
+    transform:translateY(-6px);
+
+    border-color:rgba(0,229,255,.45);
+}
+
+.news-date{
+    color:#00e5ff;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+.news-card h3{
+    margin-top:12px;
+
+    font-size:19px;
+}
+
+.news-card p{
+    color:#737e84;
+
+    font-size:13px;
+
+    margin-top:8px;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social-grid{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.social-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:150px;
+
+    padding:12px 20px;
+
+    border:1px solid #30383d;
+
+    border-radius:5px;
+
+    background:#080b0d;
+
+    color:#9ba4a9;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.2px;
+
+    transition:.3s;
+}
+
+.social-btn:hover{
+    border-color:#00e5ff;
+
+    color:#00e5ff;
+
+    background:rgba(0,229,255,.04);
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================================
    TOURNAMENTS
 ========================================================= */
 
@@ -1985,7 +2240,9 @@ footer strong{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .tournaments{
+    .tournaments,
+    .achievements,
+    .news-grid{
         grid-template-columns:1fr;
     }
 
@@ -1997,6 +2254,10 @@ footer strong{
         margin-left:15px;
 
         font-size:11px;
+    }
+
+    .match{
+        grid-template-columns:100px 1fr 100px;
     }
 }
 
@@ -2124,6 +2385,25 @@ footer strong{
         padding:28px 20px;
     }
 
+    .match{
+        grid-template-columns:1fr;
+
+        gap:7px;
+    }
+
+    .match-result{
+        text-align:left;
+    }
+
+    .social-grid{
+        flex-direction:column;
+    }
+
+    .social-btn{
+        width:100%;
+        max-width:300px;
+    }
+
     .back-top{
         right:15px;
         bottom:15px;
@@ -2242,6 +2522,10 @@ footer strong{
             <a href="#management">Management</a>
 
             <a href="#tournaments">Tournaments</a>
+
+            <a href="#achievements">Achievements</a>
+
+            <a href="#news">News</a>
 
         </nav>
 
@@ -2640,7 +2924,7 @@ footer strong{
 
 
 <!-- =========================================================
-     TOURNAMENTS
+     TOURNAMENTS / MATCH RESULTS
 ========================================================= -->
 
 <section id="tournaments">
@@ -2717,6 +3001,324 @@ footer strong{
             </p>
 
         </div>
+
+    </div>
+
+
+    <div style="margin-top:45px;">
+
+        <div class="section-heading reveal" style="margin-bottom:25px;">
+
+            <div class="section-title">
+
+                <div class="section-number">
+                    MATCH HISTORY
+                </div>
+
+                <h2>
+                    Match Results
+                </h2>
+
+                <p>
+                    Recent competitive matches
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="matches">
+
+            <div class="match reveal">
+
+                <div class="match-type">
+                    UPCOMING
+                </div>
+
+                <div class="match-info">
+
+                    <h3>
+                        Next Competitive Match
+                    </h3>
+
+                    <p>
+                        Match information will be announced here.
+                    </p>
+
+                </div>
+
+                <div class="match-result">
+                    COMING SOON
+                </div>
+
+            </div>
+
+
+            <div class="match reveal">
+
+                <div class="match-type">
+                    SCRIM
+                </div>
+
+                <div class="match-info">
+
+                    <h3>
+                        Scrim Performance
+                    </h3>
+
+                    <p>
+                        Scrim results will be recorded here.
+                    </p>
+
+                </div>
+
+                <div class="match-result">
+                    UPDATED SOON
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================================================
+     ACHIEVEMENTS
+========================================================= -->
+
+<section id="achievements">
+
+    <div class="section-heading reveal">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                05 / ACHIEVEMENTS
+            </div>
+
+            <h2>
+                Team Achievements
+            </h2>
+
+            <p>
+                Competitive milestones of NEXVORA E-SPORTS
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="achievements">
+
+        <div class="achievement reveal reveal-delay-1">
+
+            <div class="achievement-number">
+                ACHIEVEMENT 01
+            </div>
+
+            <h3>
+                Quarter Finalist
+            </h3>
+
+            <p>
+                Reached the Quarter Final stage in a competitive PUBG MOBILE tournament.
+            </p>
+
+        </div>
+
+
+        <div class="achievement reveal reveal-delay-2">
+
+            <div class="achievement-number">
+                ACHIEVEMENT 02
+            </div>
+
+            <h3>
+                Semi Finalist
+            </h3>
+
+            <p>
+                Advanced to the Semi Final stage through strong competitive performance.
+            </p>
+
+        </div>
+
+
+        <div class="achievement reveal reveal-delay-3">
+
+            <div class="achievement-number">
+                ACHIEVEMENT 03
+            </div>
+
+            <h3>
+                Pre Final Qualification
+            </h3>
+
+            <p>
+                Qualified for the Pre Final stage after progressing through competition.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================================================
+     NEWS
+========================================================= -->
+
+<section id="news">
+
+    <div class="section-heading reveal">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                06 / UPDATES
+            </div>
+
+            <h2>
+                Latest News
+            </h2>
+
+            <p>
+                Team announcements and updates
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="news-grid">
+
+        <div class="news-card reveal reveal-delay-1">
+
+            <div class="news-date">
+                20 SEPTEMBER 2026
+            </div>
+
+            <h3>
+                Player Statistics Tracking Started
+            </h3>
+
+            <p>
+                NEXVORA E-SPORTS player tournament and scrim statistics are now being tracked.
+            </p>
+
+        </div>
+
+
+        <div class="news-card reveal reveal-delay-2">
+
+            <div class="news-date">
+                TEAM UPDATE
+            </div>
+
+            <h3>
+                Official Team Website
+            </h3>
+
+            <p>
+                The official NEXVORA E-SPORTS website is being used to showcase roster,
+                statistics and competitive achievements.
+            </p>
+
+        </div>
+
+
+        <div class="news-card reveal reveal-delay-3">
+
+            <div class="news-date">
+                NEXVORA E-SPORTS
+            </div>
+
+            <h3>
+                Built For Competition
+            </h3>
+
+            <p>
+                Team performance, player records and competitive milestones will be updated regularly.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================================================
+     SOCIAL
+========================================================= -->
+
+<section>
+
+    <div class="section-heading reveal">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                07 / CONNECT
+            </div>
+
+            <h2>
+                Follow NEXVORA
+            </h2>
+
+            <p>
+                Official team and player links
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="social-grid reveal">
+
+        <a
+            class="social-btn"
+            href="https://www.facebook.com/profile.php?id=61593886864309"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            OFFICIAL FACEBOOK
+        </a>
+
+        <a
+            class="social-btn"
+            href="https://www.facebook.com/syed.hasibul.hassan.udsob"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            OWNER FACEBOOK
+        </a>
+
+        <a
+            class="social-btn"
+            href="https://www.facebook.com/shamiulla.shitul"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            MANAGER FACEBOOK
+        </a>
 
     </div>
 
@@ -2874,6 +3476,19 @@ footer strong{
 
 /* =========================================================
    PLAYER DATA
+   =========================================================
+
+   IMPORTANT:
+
+   এখান থেকেই player kills edit করবে।
+
+   শুধু:
+       tournament: সংখ্যা,
+       scrim: সংখ্যা
+
+   change করলেই website-এর সব জায়গায়
+   Total Kills automatically calculate হবে।
+
 ========================================================= */
 
 const players = {
@@ -3684,4 +4299,3 @@ handleScroll();
 
 </body>
 </html>
-```
