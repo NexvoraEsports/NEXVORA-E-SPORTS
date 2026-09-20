@@ -27,8 +27,6 @@ body{
     overflow-x:hidden;
 }
 
-/* BACKGROUND */
-
 body::before{
     content:"";
     position:fixed;
@@ -40,6 +38,7 @@ body::before{
         linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);
     background-size:45px 45px;
 }
+
 
 /* HEADER */
 
@@ -120,6 +119,7 @@ nav a:hover{
 nav a:hover::after{
     width:100%;
 }
+
 
 /* HERO */
 
@@ -256,6 +256,7 @@ nav a:hover::after{
     background:#080b0d;
 }
 
+
 /* SECTION */
 
 section{
@@ -296,6 +297,7 @@ section{
     margin-top:8px;
     font-size:14px;
 }
+
 
 /* STATS */
 
@@ -348,6 +350,7 @@ section{
     font-weight:900;
 }
 
+
 /* ROSTER */
 
 .roster{
@@ -362,11 +365,12 @@ section{
     background:
         linear-gradient(145deg,rgba(15,21,24,.98),rgba(5,8,9,.98));
     border:1px solid #20292d;
-    padding:28px 22px 22px;
+    padding:28px 22px 18px;
     border-radius:12px;
     text-align:center;
     transition:.35s;
     cursor:pointer;
+    outline:none;
 }
 
 .player::before{
@@ -378,6 +382,7 @@ section{
     height:2px;
     background:linear-gradient(90deg,transparent,#00e5ff,transparent);
     opacity:.5;
+    transition:.3s;
 }
 
 .player::after{
@@ -389,13 +394,53 @@ section{
     bottom:-60px;
     border-radius:50%;
     background:rgba(0,229,255,.04);
+    transition:.3s;
 }
 
 .player:hover{
     transform:translateY(-7px);
-    border-color:rgba(0,229,255,.5);
-    box-shadow:0 18px 45px rgba(0,0,0,.4);
+    border-color:rgba(0,229,255,.6);
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.4),
+        0 0 25px rgba(0,229,255,.06);
 }
+
+.player:hover::before{
+    opacity:1;
+}
+
+.player:hover::after{
+    background:rgba(0,229,255,.08);
+}
+
+.player:focus-visible{
+    border-color:#00e5ff;
+    box-shadow:
+        0 0 0 2px rgba(0,229,255,.15),
+        0 0 30px rgba(0,229,255,.12);
+}
+
+
+/* PROFILE INDICATOR */
+
+.profile-label{
+    position:absolute;
+    top:12px;
+    left:14px;
+    color:#4f5a60;
+    font-size:8px;
+    font-weight:900;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.player:hover .profile-label{
+    color:#00e5ff;
+}
+
+
+/* PLAYER PHOTO */
 
 .player-photo{
     position:relative;
@@ -422,6 +467,7 @@ section{
     transform:scale(1.04);
 }
 
+
 /* PLAYER IMAGE POSITIONING */
 
 .player-photo img.noozy{
@@ -436,6 +482,7 @@ section{
     object-position:center 25%;
 }
 
+
 /* PLAYER NAME */
 
 .player h3{
@@ -443,6 +490,7 @@ section{
     font-size:19px;
     letter-spacing:.7px;
 }
+
 
 /* ROLE */
 
@@ -459,6 +507,7 @@ section{
     text-transform:uppercase;
     letter-spacing:1.3px;
 }
+
 
 /* TOTAL KILLS */
 
@@ -484,6 +533,41 @@ section{
     font-size:27px;
     font-weight:900;
 }
+
+
+/* TAP INDICATOR */
+
+.tap-profile{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px solid rgba(255,255,255,.04);
+    color:#566168;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.tap-profile .arrow{
+    color:#566168;
+    font-size:13px;
+    transition:.3s;
+}
+
+.player:hover .tap-profile{
+    color:#00e5ff;
+}
+
+.player:hover .tap-profile .arrow{
+    color:#00e5ff;
+    transform:translateX(4px);
+}
+
 
 /* LEADERBOARD */
 
@@ -540,6 +624,7 @@ tbody tr:hover{
     color:#00e5ff;
     font-weight:900;
 }
+
 
 /* TOURNAMENTS */
 
@@ -598,6 +683,7 @@ tbody tr:hover{
     max-width:300px;
 }
 
+
 /* DIVIDER */
 
 .divider{
@@ -606,6 +692,7 @@ tbody tr:hover{
     margin:auto;
     background:linear-gradient(90deg,transparent,#1c2529,transparent);
 }
+
 
 /* PLAYER PROFILE MODAL */
 
@@ -787,6 +874,14 @@ tbody tr:hover{
     color:#020506;
 }
 
+.facebook-btn.disabled{
+    color:#59656b;
+    border-color:#293237;
+    background:#080c0e;
+    cursor:not-allowed;
+}
+
+
 /* FOOTER */
 
 footer{
@@ -811,6 +906,7 @@ footer strong{
 .footer-text{
     font-size:12px;
 }
+
 
 /* MOBILE */
 
@@ -946,6 +1042,7 @@ footer strong{
 
 <body>
 
+
 <!-- HEADER -->
 
 <header>
@@ -967,10 +1064,12 @@ footer strong{
         </div>
 
         <nav>
+
             <a href="#home">Home</a>
             <a href="#roster">Roster</a>
             <a href="#stats">Stats</a>
             <a href="#tournaments">Tournaments</a>
+
         </nav>
 
     </div>
@@ -1044,38 +1143,27 @@ footer strong{
 
     </div>
 
+
     <div class="stats">
 
         <div class="stat">
-
             <h3>Active Players</h3>
-
             <strong>6</strong>
-
         </div>
 
         <div class="stat">
-
             <h3>Tournament Kills</h3>
-
             <strong>0</strong>
-
         </div>
 
         <div class="stat">
-
             <h3>Scrim Kills</h3>
-
             <strong>0</strong>
-
         </div>
 
         <div class="stat">
-
             <h3>Total Kills</h3>
-
             <strong>0</strong>
-
         </div>
 
     </div>
@@ -1114,7 +1202,18 @@ footer strong{
 
         <!-- MONARCH -->
 
-        <div class="player" onclick="openPlayer('monarch')">
+        <div
+            class="player"
+            onclick="openPlayer('monarch')"
+            tabindex="0"
+            role="button"
+            aria-label="View NXvesMONARCH profile"
+            onkeydown="handleCardKey(event,'monarch')"
+        >
+
+            <span class="profile-label">
+                PLAYER PROFILE
+            </span>
 
             <div class="player-photo">
 
@@ -1139,12 +1238,35 @@ footer strong{
 
             </div>
 
+            <div class="tap-profile">
+
+                <span>
+                    TAP TO VIEW PROFILE
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
+
         </div>
 
 
         <!-- NOOZY -->
 
-        <div class="player" onclick="openPlayer('noozy')">
+        <div
+            class="player"
+            onclick="openPlayer('noozy')"
+            tabindex="0"
+            role="button"
+            aria-label="View NXvesNooZY profile"
+            onkeydown="handleCardKey(event,'noozy')"
+        >
+
+            <span class="profile-label">
+                PLAYER PROFILE
+            </span>
 
             <div class="player-photo">
 
@@ -1170,12 +1292,35 @@ footer strong{
 
             </div>
 
+            <div class="tap-profile">
+
+                <span>
+                    TAP TO VIEW PROFILE
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
+
         </div>
 
 
         <!-- AKATSUKI -->
 
-        <div class="player" onclick="openPlayer('akatsuki')">
+        <div
+            class="player"
+            onclick="openPlayer('akatsuki')"
+            tabindex="0"
+            role="button"
+            aria-label="View NXvesAkaTsukI profile"
+            onkeydown="handleCardKey(event,'akatsuki')"
+        >
+
+            <span class="profile-label">
+                PLAYER PROFILE
+            </span>
 
             <div class="player-photo">
 
@@ -1201,12 +1346,35 @@ footer strong{
 
             </div>
 
+            <div class="tap-profile">
+
+                <span>
+                    TAP TO VIEW PROFILE
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
+
         </div>
 
 
         <!-- GREY -->
 
-        <div class="player" onclick="openPlayer('grey')">
+        <div
+            class="player"
+            onclick="openPlayer('grey')"
+            tabindex="0"
+            role="button"
+            aria-label="View NXvesGrey profile"
+            onkeydown="handleCardKey(event,'grey')"
+        >
+
+            <span class="profile-label">
+                PLAYER PROFILE
+            </span>
 
             <div class="player-photo">
 
@@ -1231,12 +1399,35 @@ footer strong{
 
             </div>
 
+            <div class="tap-profile">
+
+                <span>
+                    TAP TO VIEW PROFILE
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
+
         </div>
 
 
         <!-- RYUK -->
 
-        <div class="player" onclick="openPlayer('ryuk')">
+        <div
+            class="player"
+            onclick="openPlayer('ryuk')"
+            tabindex="0"
+            role="button"
+            aria-label="View NXvesRYUK profile"
+            onkeydown="handleCardKey(event,'ryuk')"
+        >
+
+            <span class="profile-label">
+                PLAYER PROFILE
+            </span>
 
             <div class="player-photo">
 
@@ -1262,12 +1453,35 @@ footer strong{
 
             </div>
 
+            <div class="tap-profile">
+
+                <span>
+                    TAP TO VIEW PROFILE
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </div>
+
         </div>
 
 
         <!-- UDSOB -->
 
-        <div class="player" onclick="openPlayer('udsob')">
+        <div
+            class="player"
+            onclick="openPlayer('udsob')"
+            tabindex="0"
+            role="button"
+            aria-label="View NXvesUDSOB profile"
+            onkeydown="handleCardKey(event,'udsob')"
+        >
+
+            <span class="profile-label">
+                PLAYER PROFILE
+            </span>
 
             <div class="player-photo">
 
@@ -1289,6 +1503,18 @@ footer strong{
                 <span>Total Kills</span>
 
                 <strong>0</strong>
+
+            </div>
+
+            <div class="tap-profile">
+
+                <span>
+                    TAP TO VIEW PROFILE
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
 
             </div>
 
@@ -1334,15 +1560,10 @@ footer strong{
                 <tr>
 
                     <th>#</th>
-
                     <th>Player</th>
-
                     <th>Role</th>
-
                     <th>Tournament Kills</th>
-
                     <th>Scrim Kills</th>
-
                     <th>Total Kills</th>
 
                 </tr>
@@ -1353,99 +1574,57 @@ footer strong{
             <tbody>
 
                 <tr>
-
                     <td class="rank">01</td>
-
                     <td>NXvesMONARCH</td>
-
                     <td>IGL</td>
-
                     <td>0</td>
-
                     <td>0</td>
-
                     <td class="total">0</td>
-
                 </tr>
 
                 <tr>
-
                     <td class="rank">02</td>
-
                     <td>NXvesNooZY</td>
-
                     <td>Assaulter</td>
-
                     <td>0</td>
-
                     <td>0</td>
-
                     <td class="total">0</td>
-
                 </tr>
 
                 <tr>
-
                     <td class="rank">03</td>
-
                     <td>NXvesAkaTsukI</td>
-
                     <td>Supporter</td>
-
                     <td>0</td>
-
                     <td>0</td>
-
                     <td class="total">0</td>
-
                 </tr>
 
                 <tr>
-
                     <td class="rank">04</td>
-
                     <td>NXvesGrey</td>
-
                     <td>Fragger</td>
-
                     <td>0</td>
-
                     <td>0</td>
-
                     <td class="total">0</td>
-
                 </tr>
 
                 <tr>
-
                     <td class="rank">05</td>
-
                     <td>NXvesRYUK</td>
-
                     <td>Supporter</td>
-
                     <td>0</td>
-
                     <td>0</td>
-
                     <td class="total">0</td>
-
                 </tr>
 
                 <tr>
-
                     <td class="rank">06</td>
-
                     <td>NXvesUDSOB</td>
-
                     <td>Supporter</td>
-
                     <td>0</td>
-
                     <td>0</td>
-
                     <td class="total">0</td>
-
                 </tr>
 
             </tbody>
@@ -1544,9 +1723,18 @@ footer strong{
 
 <!-- PLAYER PROFILE MODAL -->
 
-<div class="player-modal" id="playerModal">
+<div
+    class="player-modal"
+    id="playerModal"
+    aria-hidden="true"
+>
 
-    <div class="modal-box">
+    <div
+        class="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalName"
+    >
 
         <button
             class="modal-close"
@@ -1664,6 +1852,7 @@ footer strong{
 
 <script>
 
+
 /* PLAYER DATA */
 
 const players = {
@@ -1754,9 +1943,13 @@ function openPlayer(playerId){
     }
 
 
+    const modal = document.getElementById("playerModal");
+
     const modalImage = document.getElementById("modalImage");
 
     modalImage.src = player.image;
+
+    modalImage.alt = player.name;
 
     modalImage.className = player.imageClass;
 
@@ -1785,12 +1978,35 @@ function openPlayer(playerId){
         player.bio;
 
 
-    document.getElementById("modalFacebook").href =
-        player.facebook;
+    const facebook = document.getElementById("modalFacebook");
 
 
-    document.getElementById("playerModal").classList.add("active");
+    if(player.facebook && player.facebook !== "#"){
 
+        facebook.href = player.facebook;
+
+        facebook.textContent = "FACEBOOK";
+
+        facebook.classList.remove("disabled");
+
+        facebook.style.pointerEvents = "auto";
+
+    }else{
+
+        facebook.href = "#";
+
+        facebook.textContent = "FACEBOOK LINK NOT ADDED";
+
+        facebook.classList.add("disabled");
+
+        facebook.style.pointerEvents = "none";
+
+    }
+
+
+    modal.classList.add("active");
+
+    modal.setAttribute("aria-hidden","false");
 
     document.body.style.overflow = "hidden";
 
@@ -1801,9 +2017,28 @@ function openPlayer(playerId){
 
 function closePlayer(){
 
-    document.getElementById("playerModal").classList.remove("active");
+    const modal = document.getElementById("playerModal");
+
+    modal.classList.remove("active");
+
+    modal.setAttribute("aria-hidden","true");
 
     document.body.style.overflow = "";
+
+}
+
+
+/* KEYBOARD SUPPORT FOR PLAYER CARDS */
+
+function handleCardKey(event,playerId){
+
+    if(event.key === "Enter" || event.key === " "){
+
+        event.preventDefault();
+
+        openPlayer(playerId);
+
+    }
 
 }
 
@@ -1838,6 +2073,7 @@ document.addEventListener(
 
     }
 );
+
 
 </script>
 
