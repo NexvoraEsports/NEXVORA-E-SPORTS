@@ -802,6 +802,23 @@ section{
 
 
 /* =========================
+   STATS DATE NOTE
+========================= */
+
+.stats-date{
+    color:#4f5a60 !important;
+
+    margin-top:5px !important;
+
+    font-size:10px !important;
+
+    letter-spacing:.5px;
+
+    font-style:italic;
+}
+
+
+/* =========================
    STATS
 ========================= */
 
@@ -2301,13 +2318,6 @@ footer strong{
 
 @media(max-width:650px){
 
-    /*
-       IMPORTANT:
-       Mobile header is now a dedicated
-       full-width navigation bar.
-       Desktop remains unchanged.
-    */
-
     .nav{
         padding:8px 15px;
 
@@ -2316,21 +2326,9 @@ footer strong{
         display:block;
     }
 
-
-    /*
-       Hide the invisible desktop brand
-       on mobile so it cannot take space
-       or cover the navigation.
-    */
-
     .brand{
         display:none;
     }
-
-
-    /*
-       MOBILE NAVIGATION
-    */
 
     nav{
         display:flex !important;
@@ -2385,9 +2383,7 @@ footer strong{
     }
 
 
-    /* =========================
-       MOBILE HERO
-    ========================= */
+    /* MOBILE HERO */
 
     .hero{
         min-height:650px;
@@ -2423,9 +2419,7 @@ footer strong{
     }
 
 
-    /* =========================
-       MOBILE SECTIONS
-    ========================= */
+    /* MOBILE SECTIONS */
 
     section{
         padding:70px 18px;
@@ -2440,27 +2434,21 @@ footer strong{
     }
 
 
-    /* =========================
-       MOBILE STATS
-    ========================= */
+    /* MOBILE STATS */
 
     .stats{
         grid-template-columns:1fr 1fr;
     }
 
 
-    /* =========================
-       MOBILE ROSTER
-    ========================= */
+    /* MOBILE ROSTER */
 
     .roster{
         grid-template-columns:1fr;
     }
 
 
-    /* =========================
-       MOBILE MANAGEMENT
-    ========================= */
+    /* MOBILE MANAGEMENT */
 
     .management-card{
         padding:28px 20px;
@@ -2471,9 +2459,7 @@ footer strong{
     }
 
 
-    /* =========================
-       MOBILE BACK TOP
-    ========================= */
+    /* MOBILE BACK TOP */
 
     .back-top{
         right:15px;
@@ -2709,6 +2695,10 @@ footer strong{
 
                 <p>
                     Combined tournament and scrim statistics
+                </p>
+
+                <p class="stats-date">
+                    Stats counted from 20 September 2026
                 </p>
 
             </div>
