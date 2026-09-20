@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 
@@ -10,9 +9,9 @@
 
 <style>
 
-/* =========================
+/* =========================================================
    GLOBAL
-========================= */
+========================================================= */
 
 *{
     margin:0;
@@ -33,10 +32,14 @@ body{
     overflow-x:hidden;
 }
 
+a{
+    -webkit-tap-highlight-color:transparent;
+}
 
-/* =========================
+
+/* =========================================================
    ANIMATED BACKGROUND
-========================= */
+========================================================= */
 
 body::before{
     content:"";
@@ -79,7 +82,6 @@ body::after{
 }
 
 @keyframes gridMove{
-
     from{
         background-position:0 0;
     }
@@ -87,11 +89,9 @@ body::after{
     to{
         background-position:45px 45px;
     }
-
 }
 
 @keyframes backgroundGlow{
-
     from{
         opacity:.45;
         transform:translate(-50%,-50%) scale(.9);
@@ -101,13 +101,12 @@ body::after{
         opacity:1;
         transform:translate(-50%,-50%) scale(1.1);
     }
-
 }
 
 
-/* =========================
+/* =========================================================
    SCROLL REVEAL
-========================= */
+========================================================= */
 
 .reveal{
     opacity:0;
@@ -148,9 +147,9 @@ body::after{
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header{
     position:sticky;
@@ -182,7 +181,6 @@ header.scrolled{
 
 .nav{
     max-width:1250px;
-
     margin:auto;
 
     padding:10px 25px;
@@ -190,9 +188,7 @@ header.scrolled{
     min-height:76px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     transition:
@@ -208,15 +204,13 @@ header.scrolled .nav{
 }
 
 
-/* =========================
-   HEADER BRAND
-========================= */
+/* =========================================================
+   BRAND
+========================================================= */
 
 .brand{
     display:flex;
-
     align-items:center;
-
     gap:12px;
 
     opacity:0;
@@ -267,14 +261,9 @@ header.scrolled .team-logo{
 
 .logo{
     font-size:20px;
-
     font-weight:900;
-
     letter-spacing:2px;
-
     white-space:nowrap;
-
-    transition:.3s;
 }
 
 .logo span{
@@ -282,13 +271,12 @@ header.scrolled .team-logo{
 }
 
 
-/* =========================
+/* =========================================================
    NAVIGATION
-========================= */
+========================================================= */
 
 nav{
     display:flex;
-
     align-items:center;
 }
 
@@ -302,11 +290,9 @@ nav a{
     margin-left:28px;
 
     font-size:13px;
-
     font-weight:800;
 
     text-transform:uppercase;
-
     letter-spacing:.8px;
 
     transition:
@@ -335,7 +321,6 @@ nav a::after{
 
 nav a:hover{
     color:#00e5ff;
-
     transform:translateY(-1px);
 }
 
@@ -344,9 +329,9 @@ nav a:hover::after{
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
     position:relative;
@@ -354,9 +339,7 @@ nav a:hover::after{
     min-height:720px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
@@ -424,7 +407,6 @@ nav a:hover::after{
 }
 
 @keyframes heroRing{
-
     0%,100%{
         transform:translate(-50%,-50%) scale(1);
         opacity:.55;
@@ -434,29 +416,20 @@ nav a:hover::after{
         transform:translate(-50%,-50%) scale(1.05);
         opacity:1;
     }
-
 }
 
 .hero-content{
     position:relative;
-
     z-index:2;
 
     width:100%;
-
     max-width:900px;
 }
-
-
-/* =========================
-   HERO BADGE
-========================= */
 
 .hero-badge{
     display:inline-block;
 
     padding:7px 16px;
-
     margin-bottom:18px;
 
     border:1px solid rgba(0,229,255,.35);
@@ -468,7 +441,6 @@ nav a:hover::after{
     border-radius:30px;
 
     font-size:11px;
-
     font-weight:900;
 
     letter-spacing:2px;
@@ -477,7 +449,6 @@ nav a:hover::after{
 }
 
 @keyframes heroBadgeIn{
-
     from{
         opacity:0;
         transform:translateY(-15px);
@@ -487,13 +458,7 @@ nav a:hover::after{
         opacity:1;
         transform:translateY(0);
     }
-
 }
-
-
-/* =========================
-   HERO LOGO
-========================= */
 
 .hero-logo{
     display:block;
@@ -512,14 +477,9 @@ nav a:hover::after{
     animation:
         heroLogoIn 1.1s cubic-bezier(.2,.65,.3,1) both,
         heroFloat 5s ease-in-out 1.1s infinite;
-
-    transition:
-        filter .3s ease,
-        transform .3s ease;
 }
 
 @keyframes heroLogoIn{
-
     from{
         opacity:0;
 
@@ -535,11 +495,9 @@ nav a:hover::after{
             translateY(0)
             scale(1);
     }
-
 }
 
 @keyframes heroFloat{
-
     0%,100%{
         transform:translateY(0);
     }
@@ -547,7 +505,6 @@ nav a:hover::after{
     50%{
         transform:translateY(-7px);
     }
-
 }
 
 .hero-logo:hover{
@@ -557,11 +514,6 @@ nav a:hover::after{
 
     transform:scale(1.03);
 }
-
-
-/* =========================
-   HERO TITLE
-========================= */
 
 .hero h1{
     font-size:clamp(34px,5vw,60px);
@@ -579,7 +531,6 @@ nav a:hover::after{
 }
 
 @keyframes heroTitleIn{
-
     from{
         opacity:0;
 
@@ -595,7 +546,6 @@ nav a:hover::after{
             translateY(0)
             scale(1);
     }
-
 }
 
 .hero h1 span{
@@ -625,37 +575,6 @@ nav a:hover::after{
 
     box-shadow:
         0 0 15px rgba(0,229,255,.5);
-
-    animation:
-        heroLineIn 1s ease .55s both;
-}
-
-@keyframes heroLineIn{
-
-    from{
-        width:0;
-        opacity:0;
-    }
-
-    to{
-        width:80px;
-        opacity:1;
-    }
-
-}
-
-@keyframes heroFadeIn{
-
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
 }
 
 .hero-buttons{
@@ -666,15 +585,24 @@ nav a:hover::after{
     gap:12px;
 
     flex-wrap:wrap;
+}
 
-    animation:
-        heroFadeIn 1s ease .65s both;
+@keyframes heroFadeIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 
-/* =========================
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .btn{
     display:inline-block;
@@ -694,7 +622,6 @@ nav a:hover::after{
     border-radius:5px;
 
     font-size:12px;
-
     font-weight:900;
 
     letter-spacing:1px;
@@ -703,7 +630,7 @@ nav a:hover::after{
         background .3s ease,
         color .3s ease,
         box-shadow .3s ease,
-        transform .3s cubic-bezier(.2,.65,.3,1);
+        transform .3s ease;
 }
 
 .btn:hover{
@@ -717,12 +644,6 @@ nav a:hover::after{
     transform:
         translateY(-3px)
         scale(1.02);
-}
-
-.btn:active{
-    transform:
-        translateY(-1px)
-        scale(.98);
 }
 
 .btn.secondary{
@@ -742,9 +663,9 @@ nav a:hover::after{
 }
 
 
-/* =========================
+/* =========================================================
    SECTION
-========================= */
+========================================================= */
 
 section{
     max-width:1250px;
@@ -758,7 +679,6 @@ section{
     display:flex;
 
     align-items:end;
-
     justify-content:space-between;
 
     gap:20px;
@@ -801,26 +721,28 @@ section{
 }
 
 
-/* =========================
-   STATS DATE NOTE
-========================= */
+/* =========================================================
+   STATS DATE
+========================================================= */
 
 .stats-date{
     color:#00e5ff !important;
 
-    margin-top:5px !important;
+    margin-top:7px !important;
 
-    font-size:10px !important;
+    font-size:11px !important;
 
-    letter-spacing:.5px;
+    font-weight:700 !important;
 
-    font-style:normal;
+    font-style:normal !important;
+
+    letter-spacing:.7px;
 }
 
 
-/* =========================
+/* =========================================================
    STATS
-========================= */
+========================================================= */
 
 .stats{
     display:grid;
@@ -852,10 +774,8 @@ section{
 
     transition:
         border-color .35s ease,
-        transform .35s cubic-bezier(.2,.65,.3,1),
+        transform .35s ease,
         box-shadow .35s ease;
-
-    cursor:pointer;
 }
 
 .stat::before{
@@ -882,8 +802,7 @@ section{
     transform:translateY(-6px);
 
     box-shadow:
-        0 15px 35px rgba(0,0,0,.35),
-        0 0 20px rgba(0,229,255,.04);
+        0 15px 35px rgba(0,0,0,.35);
 }
 
 .stat:hover::before{
@@ -918,361 +837,9 @@ section{
 }
 
 
-/* =========================
-   ROSTER
-========================= */
-
-.roster{
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
-}
-
-.player{
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15,21,24,.98),
-            rgba(5,8,9,.98)
-        );
-
-    border:1px solid #20292d;
-
-    padding:28px 22px 18px;
-
-    border-radius:12px;
-
-    text-align:center;
-
-    transition:
-        border-color .35s ease,
-        transform .4s cubic-bezier(.2,.65,.3,1),
-        box-shadow .4s ease;
-
-    cursor:pointer;
-
-    outline:none;
-}
-
-.player::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #00e5ff,
-            transparent
-        );
-
-    opacity:.5;
-
-    transition:.35s;
-}
-
-.player::after{
-    content:"";
-
-    position:absolute;
-
-    width:120px;
-    height:120px;
-
-    right:-60px;
-    bottom:-60px;
-
-    border-radius:50%;
-
-    background:rgba(0,229,255,.04);
-
-    transition:.4s;
-}
-
-.player:hover{
-    transform:translateY(-8px);
-
-    border-color:rgba(0,229,255,.6);
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.4),
-        0 0 25px rgba(0,229,255,.06);
-}
-
-.player:hover::before{
-    opacity:1;
-}
-
-.player:hover::after{
-    background:rgba(0,229,255,.08);
-
-    transform:scale(1.3);
-}
-
-.player:focus-visible{
-    border-color:#00e5ff;
-
-    box-shadow:
-        0 0 0 2px rgba(0,229,255,.15),
-        0 0 30px rgba(0,229,255,.12);
-}
-
-
-/* PROFILE INDICATOR */
-
-.profile-label{
-    position:absolute;
-
-    top:12px;
-    left:14px;
-
-    color:#4f5a60;
-
-    font-size:8px;
-
-    font-weight:900;
-
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-
-    transition:.3s;
-}
-
-.player:hover .profile-label{
-    color:#00e5ff;
-}
-
-
-/* PLAYER PHOTO */
-
-.player-photo{
-    position:relative;
-
-    width:155px;
-    height:155px;
-
-    margin:auto;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    background:#080d0f;
-
-    border:2px solid rgba(0,229,255,.7);
-
-    box-shadow:
-        0 0 0 6px rgba(0,229,255,.025),
-        0 0 30px rgba(0,229,255,.08);
-
-    transition:
-        border-color .35s ease,
-        box-shadow .35s ease,
-        transform .35s ease;
-}
-
-.player:hover .player-photo{
-    border-color:#00e5ff;
-
-    box-shadow:
-        0 0 0 7px rgba(0,229,255,.035),
-        0 0 35px rgba(0,229,255,.14);
-
-    transform:scale(1.02);
-}
-
-.player-photo img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:
-        transform .5s cubic-bezier(.2,.65,.3,1);
-}
-
-.player:hover .player-photo img{
-    transform:scale(1.06);
-}
-
-
-/* PLAYER IMAGE POSITIONING */
-
-.player-photo img.noozy{
-    object-position:center 35%;
-}
-
-.player-photo img.ryuk{
-    object-position:center 35%;
-}
-
-.player-photo img.akatsuki{
-    object-position:center 25%;
-}
-
-
-/* PLAYER NAME */
-
-.player h3{
-    margin-top:20px;
-
-    font-size:19px;
-
-    letter-spacing:.7px;
-
-    transition:
-        color .3s ease,
-        transform .3s ease;
-}
-
-.player:hover h3{
-    color:#fff;
-
-    transform:translateY(-2px);
-}
-
-
-/* ROLE */
-
-.role{
-    display:inline-block;
-
-    margin-top:9px;
-
-    padding:5px 14px;
-
-    border:1px solid rgba(0,229,255,.5);
-
-    background:rgba(0,229,255,.035);
-
-    border-radius:20px;
-
-    color:#00e5ff;
-
-    font-size:10px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    letter-spacing:1.3px;
-
-    transition:
-        background .3s ease,
-        box-shadow .3s ease;
-}
-
-.player:hover .role{
-    background:rgba(0,229,255,.07);
-
-    box-shadow:
-        0 0 15px rgba(0,229,255,.06);
-}
-
-
-/* TOTAL KILLS */
-
-.player-kills{
-    margin-top:20px;
-
-    padding-top:15px;
-
-    border-top:1px solid #1d2529;
-}
-
-.player-kills span{
-    display:block;
-
-    color:#626c72;
-
-    font-size:9px;
-
-    font-weight:900;
-
-    letter-spacing:1.7px;
-
-    text-transform:uppercase;
-}
-
-.player-kills strong{
-    display:block;
-
-    margin-top:3px;
-
-    color:#00e5ff;
-
-    font-size:27px;
-
-    font-weight:900;
-}
-
-
-/* TAP INDICATOR */
-
-.tap-profile{
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:7px;
-
-    margin-top:14px;
-
-    padding-top:12px;
-
-    border-top:1px solid rgba(255,255,255,.04);
-
-    color:#566168;
-
-    font-size:9px;
-
-    font-weight:900;
-
-    letter-spacing:1.4px;
-
-    text-transform:uppercase;
-
-    transition:.3s;
-}
-
-.tap-profile .arrow{
-    color:#566168;
-
-    font-size:13px;
-
-    transition:.3s;
-}
-
-.player:hover .tap-profile{
-    color:#00e5ff;
-}
-
-.player:hover .tap-profile .arrow{
-    color:#00e5ff;
-
-    transform:translateX(5px);
-}
-
-
-/* =========================
+/* =========================================================
    LEADERBOARD
-========================= */
+========================================================= */
 
 .table-wrap{
     overflow-x:auto;
@@ -1303,7 +870,8 @@ table{
     min-width:700px;
 }
 
-th,td{
+th,
+td{
     padding:17px 18px;
 
     text-align:left;
@@ -1358,9 +926,300 @@ tbody tr:hover{
 }
 
 
-/* =========================
+/* =========================================================
+   ROSTER
+========================================================= */
+
+.roster{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.player{
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,21,24,.98),
+            rgba(5,8,9,.98)
+        );
+
+    border:1px solid #20292d;
+
+    padding:28px 22px 18px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    transition:
+        border-color .35s ease,
+        transform .4s ease,
+        box-shadow .4s ease;
+
+    cursor:pointer;
+
+    outline:none;
+}
+
+.player::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00e5ff,
+            transparent
+        );
+
+    opacity:.5;
+}
+
+.player::after{
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    right:-60px;
+    bottom:-60px;
+
+    border-radius:50%;
+
+    background:rgba(0,229,255,.04);
+
+    transition:.4s;
+}
+
+.player:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(0,229,255,.6);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.4),
+        0 0 25px rgba(0,229,255,.06);
+}
+
+.player:hover::after{
+    background:rgba(0,229,255,.08);
+
+    transform:scale(1.3);
+}
+
+.profile-label{
+    position:absolute;
+
+    top:12px;
+    left:14px;
+
+    color:#4f5a60;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+}
+
+.player:hover .profile-label{
+    color:#00e5ff;
+}
+
+.player-photo{
+    position:relative;
+
+    width:155px;
+    height:155px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:#080d0f;
+
+    border:2px solid rgba(0,229,255,.7);
+
+    box-shadow:
+        0 0 0 6px rgba(0,229,255,.025),
+        0 0 30px rgba(0,229,255,.08);
+
+    transition:
+        border-color .35s ease,
+        box-shadow .35s ease,
+        transform .35s ease;
+}
+
+.player:hover .player-photo{
+    border-color:#00e5ff;
+
+    box-shadow:
+        0 0 0 7px rgba(0,229,255,.035),
+        0 0 35px rgba(0,229,255,.14);
+
+    transform:scale(1.02);
+}
+
+.player-photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .5s cubic-bezier(.2,.65,.3,1);
+}
+
+.player:hover .player-photo img{
+    transform:scale(1.06);
+}
+
+.player-photo img.noozy{
+    object-position:center 35%;
+}
+
+.player-photo img.ryuk{
+    object-position:center 35%;
+}
+
+.player-photo img.akatsuki{
+    object-position:center 25%;
+}
+
+.player h3{
+    margin-top:20px;
+
+    font-size:19px;
+
+    letter-spacing:.7px;
+}
+
+.role{
+    display:inline-block;
+
+    margin-top:9px;
+
+    padding:5px 14px;
+
+    border:1px solid rgba(0,229,255,.5);
+
+    background:rgba(0,229,255,.035);
+
+    border-radius:20px;
+
+    color:#00e5ff;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.3px;
+}
+
+.player-kills{
+    margin-top:20px;
+
+    padding-top:15px;
+
+    border-top:1px solid #1d2529;
+}
+
+.player-kills span{
+    display:block;
+
+    color:#626c72;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+}
+
+.player-kills strong{
+    display:block;
+
+    margin-top:3px;
+
+    color:#00e5ff;
+
+    font-size:27px;
+
+    font-weight:900;
+}
+
+.tap-profile{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    margin-top:14px;
+
+    padding-top:12px;
+
+    border-top:1px solid rgba(255,255,255,.04);
+
+    color:#566168;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:1.4px;
+
+    text-transform:uppercase;
+}
+
+.tap-profile .arrow{
+    color:#566168;
+
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.player:hover .tap-profile{
+    color:#00e5ff;
+}
+
+.player:hover .tap-profile .arrow{
+    color:#00e5ff;
+
+    transform:translateX(5px);
+}
+
+
+/* =========================================================
    MANAGEMENT
-========================= */
+========================================================= */
 
 .management{
     display:grid;
@@ -1394,30 +1253,8 @@ tbody tr:hover{
 
     transition:
         border-color .35s ease,
-        transform .4s cubic-bezier(.2,.65,.3,1),
+        transform .4s ease,
         box-shadow .4s ease;
-}
-
-.management-card::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #00e5ff,
-            transparent
-        );
-
-    opacity:.6;
 }
 
 .management-card:hover{
@@ -1426,12 +1263,8 @@ tbody tr:hover{
     border-color:rgba(0,229,255,.45);
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,.35),
-        0 0 20px rgba(0,229,255,.04);
+        0 18px 40px rgba(0,0,0,.35);
 }
-
-
-/* MANAGEMENT PHOTO */
 
 .management-photo{
     width:110px;
@@ -1454,27 +1287,7 @@ tbody tr:hover{
     box-shadow:
         0 0 0 7px rgba(0,229,255,.025),
         0 0 30px rgba(0,229,255,.08);
-
-    transition:
-        transform .4s cubic-bezier(.2,.65,.3,1),
-        border-color .3s ease,
-        box-shadow .3s ease;
 }
-
-.management-card:hover .management-photo{
-    transform:
-        scale(1.05)
-        translateY(-2px);
-
-    border-color:#00e5ff;
-
-    box-shadow:
-        0 0 0 7px rgba(0,229,255,.035),
-        0 0 35px rgba(0,229,255,.14);
-}
-
-
-/* MANAGER PHOTO POSITION */
 
 .management-card:nth-child(2) .management-photo{
     object-position:center 35%;
@@ -1526,7 +1339,6 @@ tbody tr:hover{
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     margin-top:18px;
@@ -1549,11 +1361,7 @@ tbody tr:hover{
 
     letter-spacing:1px;
 
-    transition:
-        border-color .3s ease,
-        color .3s ease,
-        background .3s ease,
-        transform .3s ease;
+    transition:.3s;
 }
 
 .management-facebook:hover{
@@ -1561,15 +1369,13 @@ tbody tr:hover{
 
     color:#00e5ff;
 
-    background:rgba(0,229,255,.04);
-
     transform:translateY(-2px);
 }
 
 
-/* =========================
+/* =========================================================
    OFFICIAL PAGE
-========================= */
+========================================================= */
 
 .official-page{
     position:relative;
@@ -1591,26 +1397,7 @@ tbody tr:hover{
 
     border-radius:12px;
 
-    transition:
-        border-color .35s ease,
-        transform .4s ease,
-        box-shadow .4s ease;
-}
-
-.official-page::before{
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    right:-90px;
-    top:-90px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(0,229,255,.08);
+    transition:.4s;
 }
 
 .official-page:hover{
@@ -1619,8 +1406,7 @@ tbody tr:hover{
     transform:translateY(-4px);
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,.4),
-        0 0 30px rgba(0,229,255,.06);
+        0 18px 45px rgba(0,0,0,.4);
 }
 
 .official-page-label{
@@ -1655,7 +1441,6 @@ tbody tr:hover{
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     margin-top:18px;
@@ -1678,11 +1463,7 @@ tbody tr:hover{
 
     letter-spacing:1.2px;
 
-    transition:
-        background .3s ease,
-        color .3s ease,
-        box-shadow .3s ease,
-        transform .3s ease;
+    transition:.3s;
 }
 
 .official-page-btn:hover{
@@ -1690,16 +1471,269 @@ tbody tr:hover{
 
     color:#020506;
 
-    box-shadow:
-        0 0 25px rgba(0,229,255,.2);
-
     transform:translateY(-2px);
 }
 
 
-/* =========================
+/* =========================================================
+   ACHIEVEMENTS
+========================================================= */
+
+.achievements{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.achievement{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    min-height:190px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c1113,
+            #07090a
+        );
+
+    border:1px solid #1d2529;
+
+    border-radius:12px;
+
+    transition:.35s;
+}
+
+.achievement:hover{
+    transform:translateY(-7px);
+
+    border-color:rgba(0,229,255,.45);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35);
+}
+
+.achievement-number{
+    color:#00e5ff;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+}
+
+.achievement h3{
+    margin-top:15px;
+
+    font-size:20px;
+}
+
+.achievement p{
+    color:#737e84;
+
+    margin-top:8px;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   MATCH RESULTS
+========================================================= */
+
+.matches{
+    display:grid;
+
+    gap:14px;
+}
+
+.match{
+    display:grid;
+
+    grid-template-columns:130px 1fr 130px;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px 22px;
+
+    background:#080b0d;
+
+    border:1px solid #1b2327;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.match:hover{
+    border-color:rgba(0,229,255,.4);
+
+    transform:translateX(4px);
+}
+
+.match-type{
+    color:#00e5ff;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+.match-info h3{
+    font-size:16px;
+}
+
+.match-info p{
+    color:#687278;
+
+    font-size:12px;
+
+    margin-top:3px;
+}
+
+.match-result{
+    text-align:right;
+
+    color:#8d989e;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================================================
+   NEWS
+========================================================= */
+
+.news-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.news-card{
+    background:
+        linear-gradient(
+            145deg,
+            #0c1113,
+            #07090a
+        );
+
+    border:1px solid #1d2529;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    transition:.35s;
+}
+
+.news-card:hover{
+    transform:translateY(-6px);
+
+    border-color:rgba(0,229,255,.45);
+}
+
+.news-date{
+    color:#00e5ff;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+.news-card h3{
+    margin-top:12px;
+
+    font-size:19px;
+}
+
+.news-card p{
+    color:#737e84;
+
+    font-size:13px;
+
+    margin-top:8px;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social-grid{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.social-btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-width:150px;
+
+    padding:12px 20px;
+
+    border:1px solid #30383d;
+
+    border-radius:5px;
+
+    background:#080b0d;
+
+    color:#9ba4a9;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.2px;
+
+    transition:.3s;
+}
+
+.social-btn:hover{
+    border-color:#00e5ff;
+
+    color:#00e5ff;
+
+    background:rgba(0,229,255,.04);
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================================================
    TOURNAMENTS
-========================= */
+========================================================= */
 
 .tournaments{
     display:grid;
@@ -1729,30 +1763,7 @@ tbody tr:hover{
 
     min-height:190px;
 
-    transition:
-        border-color .35s ease,
-        transform .4s cubic-bezier(.2,.65,.3,1),
-        box-shadow .35s ease;
-}
-
-.tournament::after{
-    content:"";
-
-    position:absolute;
-
-    width:150px;
-    height:150px;
-
-    right:-75px;
-    bottom:-75px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(0,229,255,.08);
-
-    transition:
-        transform .5s ease,
-        border-color .3s ease;
+    transition:.35s;
 }
 
 .tournament:hover{
@@ -1762,12 +1773,6 @@ tbody tr:hover{
 
     box-shadow:
         0 18px 40px rgba(0,0,0,.3);
-}
-
-.tournament:hover::after{
-    transform:scale(1.2);
-
-    border-color:rgba(0,229,255,.15);
 }
 
 .tournament .badge{
@@ -1798,14 +1803,12 @@ tbody tr:hover{
     color:#737e84;
 
     font-size:13px;
-
-    max-width:300px;
 }
 
 
-/* =========================
+/* =========================================================
    DIVIDER
-========================= */
+========================================================= */
 
 .divider{
     max-width:1200px;
@@ -1824,9 +1827,9 @@ tbody tr:hover{
 }
 
 
-/* =========================
-   PLAYER PROFILE MODAL
-========================= */
+/* =========================================================
+   MODAL
+========================================================= */
 
 .player-modal{
     position:fixed;
@@ -1838,7 +1841,6 @@ tbody tr:hover{
     display:none;
 
     align-items:center;
-
     justify-content:center;
 
     padding:20px;
@@ -1846,7 +1848,6 @@ tbody tr:hover{
     background:rgba(0,0,0,.82);
 
     backdrop-filter:blur(12px);
-
     -webkit-backdrop-filter:blur(12px);
 }
 
@@ -1857,7 +1858,6 @@ tbody tr:hover{
 }
 
 @keyframes modalBackdrop{
-
     from{
         opacity:0;
     }
@@ -1865,7 +1865,6 @@ tbody tr:hover{
     to{
         opacity:1;
     }
-
 }
 
 .modal-box{
@@ -1903,7 +1902,6 @@ tbody tr:hover{
 }
 
 @keyframes modalOpen{
-
     from{
         opacity:0;
 
@@ -1919,7 +1917,6 @@ tbody tr:hover{
             translateY(0)
             scale(1);
     }
-
 }
 
 .modal-close{
@@ -1943,19 +1940,13 @@ tbody tr:hover{
 
     cursor:pointer;
 
-    transition:
-        color .3s ease,
-        border-color .3s ease,
-        transform .3s ease,
-        background .3s ease;
+    transition:.3s;
 }
 
 .modal-close:hover{
     color:#00e5ff;
 
     border-color:#00e5ff;
-
-    background:rgba(0,229,255,.05);
 
     transform:rotate(90deg);
 }
@@ -1975,23 +1966,6 @@ tbody tr:hover{
     box-shadow:
         0 0 0 7px rgba(0,229,255,.035),
         0 0 35px rgba(0,229,255,.12);
-
-    animation:
-        modalPhotoIn .6s cubic-bezier(.2,.65,.3,1) .08s both;
-}
-
-@keyframes modalPhotoIn{
-
-    from{
-        opacity:0;
-        transform:scale(.82);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-
 }
 
 .modal-photo img{
@@ -2059,16 +2033,6 @@ tbody tr:hover{
     border:1px solid #1d272b;
 
     border-radius:8px;
-
-    transition:
-        border-color .3s ease,
-        transform .3s ease;
-}
-
-.modal-stat:hover{
-    border-color:rgba(0,229,255,.35);
-
-    transform:translateY(-3px);
 }
 
 .modal-stat span{
@@ -2115,7 +2079,6 @@ tbody tr:hover{
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     margin-top:20px;
@@ -2138,11 +2101,7 @@ tbody tr:hover{
 
     letter-spacing:1px;
 
-    transition:
-        background .3s ease,
-        color .3s ease,
-        transform .3s ease,
-        box-shadow .3s ease;
+    transition:.3s;
 }
 
 .facebook-btn:hover{
@@ -2151,9 +2110,6 @@ tbody tr:hover{
     color:#020506;
 
     transform:translateY(-2px);
-
-    box-shadow:
-        0 0 20px rgba(0,229,255,.18);
 }
 
 .facebook-btn.disabled{
@@ -2167,9 +2123,9 @@ tbody tr:hover{
 }
 
 
-/* =========================
+/* =========================================================
    BACK TO TOP
-========================= */
+========================================================= */
 
 .back-top{
     position:fixed;
@@ -2185,7 +2141,6 @@ tbody tr:hover{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border:1px solid rgba(0,229,255,.35);
@@ -2195,8 +2150,6 @@ tbody tr:hover{
     background:rgba(5,9,10,.88);
 
     backdrop-filter:blur(10px);
-
-    -webkit-backdrop-filter:blur(10px);
 
     color:#00e5ff;
 
@@ -2212,12 +2165,7 @@ tbody tr:hover{
         translateY(15px)
         scale(.8);
 
-    transition:
-        opacity .35s ease,
-        visibility .35s ease,
-        transform .35s cubic-bezier(.2,.65,.3,1),
-        background .3s ease,
-        border-color .3s ease;
+    transition:.35s;
 }
 
 .back-top.show{
@@ -2240,15 +2188,12 @@ tbody tr:hover{
     transform:
         translateY(-4px)
         scale(1.05);
-
-    box-shadow:
-        0 8px 25px rgba(0,229,255,.15);
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
     border-top:1px solid #171e21;
@@ -2281,9 +2226,9 @@ footer strong{
 }
 
 
-/* =========================
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
 
 @media(max-width:900px){
 
@@ -2295,7 +2240,9 @@ footer strong{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .tournaments{
+    .tournaments,
+    .achievements,
+    .news-grid{
         grid-template-columns:1fr;
     }
 
@@ -2309,12 +2256,15 @@ footer strong{
         font-size:11px;
     }
 
+    .match{
+        grid-template-columns:100px 1fr 100px;
+    }
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:650px){
 
@@ -2341,8 +2291,6 @@ footer strong{
 
         width:100%;
 
-        max-width:100%;
-
         overflow-x:auto;
 
         overflow-y:hidden;
@@ -2351,13 +2299,7 @@ footer strong{
 
         scrollbar-width:none;
 
-        -ms-overflow-style:none;
-
         padding:4px 0;
-
-        margin:0;
-
-        flex-shrink:0;
     }
 
     nav::-webkit-scrollbar{
@@ -2381,9 +2323,6 @@ footer strong{
     nav a::after{
         bottom:-2px;
     }
-
-
-    /* MOBILE HERO */
 
     .hero{
         min-height:650px;
@@ -2418,9 +2357,6 @@ footer strong{
         font-size:14px;
     }
 
-
-    /* MOBILE SECTIONS */
-
     section{
         padding:70px 18px;
     }
@@ -2433,22 +2369,13 @@ footer strong{
         font-size:28px;
     }
 
-
-    /* MOBILE STATS */
-
     .stats{
         grid-template-columns:1fr 1fr;
     }
 
-
-    /* MOBILE ROSTER */
-
     .roster{
         grid-template-columns:1fr;
     }
-
-
-    /* MOBILE MANAGEMENT */
 
     .management-card{
         padding:28px 20px;
@@ -2458,8 +2385,24 @@ footer strong{
         padding:28px 20px;
     }
 
+    .match{
+        grid-template-columns:1fr;
 
-    /* MOBILE BACK TOP */
+        gap:7px;
+    }
+
+    .match-result{
+        text-align:left;
+    }
+
+    .social-grid{
+        flex-direction:column;
+    }
+
+    .social-btn{
+        width:100%;
+        max-width:300px;
+    }
 
     .back-top{
         right:15px;
@@ -2470,13 +2413,12 @@ footer strong{
 
         font-size:16px;
     }
-
 }
 
 
-/* =========================
+/* =========================================================
    SMALL MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:420px){
 
@@ -2510,13 +2452,12 @@ footer strong{
     .modal-box h2{
         font-size:23px;
     }
-
 }
 
 
-/* =========================
+/* =========================================================
    REDUCED MOTION
-========================= */
+========================================================= */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -2532,8 +2473,6 @@ footer strong{
         animation-iteration-count:1 !important;
 
         transition-duration:.01ms !important;
-
-        scroll-behavior:auto !important;
     }
 
     .reveal{
@@ -2541,20 +2480,18 @@ footer strong{
 
         transform:none !important;
     }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =========================================================
      HEADER
-========================= -->
+========================================================= -->
 
 <header id="siteHeader">
 
@@ -2574,28 +2511,21 @@ footer strong{
 
         </div>
 
-
         <nav>
 
-            <a href="#home">
-                Home
-            </a>
+            <a href="#home">Home</a>
 
-            <a href="#stats">
-                Stats
-            </a>
+            <a href="#stats">Stats</a>
 
-            <a href="#roster">
-                Roster
-            </a>
+            <a href="#roster">Roster</a>
 
-            <a href="#management">
-                Management
-            </a>
+            <a href="#management">Management</a>
 
-            <a href="#tournaments">
-                Tournaments
-            </a>
+            <a href="#tournaments">Tournaments</a>
+
+            <a href="#achievements">Achievements</a>
+
+            <a href="#news">News</a>
 
         </nav>
 
@@ -2604,9 +2534,9 @@ footer strong{
 </header>
 
 
-<!-- =========================
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
 <div class="hero" id="home">
 
@@ -2650,9 +2580,9 @@ footer strong{
 </div>
 
 
-<!-- =========================
-     STATS SECTION
-========================= -->
+<!-- =========================================================
+     STATS
+========================================================= -->
 
 <section id="stats">
 
@@ -2716,87 +2646,21 @@ footer strong{
 
                         <th>#</th>
 
-                        <th>
-                            Player
-                        </th>
+                        <th>Player</th>
 
-                        <th>
-                            Role
-                        </th>
+                        <th>Role</th>
 
-                        <th>
-                            Tournament Kills
-                        </th>
+                        <th>Tournament Kills</th>
 
-                        <th>
-                            Scrim Kills
-                        </th>
+                        <th>Scrim Kills</th>
 
-                        <th>
-                            Total Kills
-                        </th>
+                        <th>Total Kills</th>
 
                     </tr>
 
                 </thead>
 
-
-                <tbody>
-
-                    <tr>
-                        <td class="rank">01</td>
-                        <td>NXvesMONARCH</td>
-                        <td>IGL</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td class="total">0</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">02</td>
-                        <td>NXvesNooZY</td>
-                        <td>Assaulter</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td class="total">0</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">03</td>
-                        <td>NXvesAkaTsukI</td>
-                        <td>Supporter</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td class="total">0</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">04</td>
-                        <td>NXvesGrey</td>
-                        <td>Fragger</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td class="total">0</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">05</td>
-                        <td>NXvesRYUK</td>
-                        <td>Supporter</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td class="total">0</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">06</td>
-                        <td>NXvesUDSOB</td>
-                        <td>Supporter</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td class="total">0</td>
-                    </tr>
-
+                <tbody id="leaderboardBody">
                 </tbody>
 
             </table>
@@ -2839,8 +2703,8 @@ footer strong{
                     Active Players
                 </h3>
 
-                <strong>
-                    6
+                <strong id="activePlayers">
+                    0
                 </strong>
 
             </div>
@@ -2852,7 +2716,7 @@ footer strong{
                     Tournament Kills
                 </h3>
 
-                <strong>
+                <strong id="teamTournamentKills">
                     0
                 </strong>
 
@@ -2865,7 +2729,7 @@ footer strong{
                     Scrim Kills
                 </h3>
 
-                <strong>
+                <strong id="teamScrimKills">
                     0
                 </strong>
 
@@ -2878,7 +2742,7 @@ footer strong{
                     Total Kills
                 </h3>
 
-                <strong>
+                <strong id="teamTotalKills">
                     0
                 </strong>
 
@@ -2894,9 +2758,9 @@ footer strong{
 <div class="divider"></div>
 
 
-<!-- =========================
+<!-- =========================================================
      ROSTER
-========================= -->
+========================================================= -->
 
 <section id="roster">
 
@@ -2921,377 +2785,7 @@ footer strong{
     </div>
 
 
-    <div class="roster">
-
-
-        <!-- MONARCH -->
-
-        <div
-            class="player reveal reveal-delay-1"
-            onclick="openPlayer('monarch')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesMONARCH profile"
-            onkeydown="handleCardKey(event,'monarch')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    src="players/monarch.png.png"
-                    alt="NXvesMONARCH"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesMONARCH
-            </h3>
-
-            <span class="role">
-                IGL
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    0
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- NOOZY -->
-
-        <div
-            class="player reveal reveal-delay-2"
-            onclick="openPlayer('noozy')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesNooZY profile"
-            onkeydown="handleCardKey(event,'noozy')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    class="noozy"
-                    src="players/noozy.png.png"
-                    alt="NXvesNooZY"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesNooZY
-            </h3>
-
-            <span class="role">
-                Assaulter
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    0
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- AKATSUKI -->
-
-        <div
-            class="player reveal reveal-delay-3"
-            onclick="openPlayer('akatsuki')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesAkaTsukI profile"
-            onkeydown="handleCardKey(event,'akatsuki')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    class="akatsuki"
-                    src="players/akatsuki.png.png"
-                    alt="NXvesAkaTsukI"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesAkaTsukI
-            </h3>
-
-            <span class="role">
-                Supporter
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    0
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- GREY -->
-
-        <div
-            class="player reveal reveal-delay-1"
-            onclick="openPlayer('grey')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesGrey profile"
-            onkeydown="handleCardKey(event,'grey')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    src="players/grey.png.png"
-                    alt="NXvesGrey"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesGrey
-            </h3>
-
-            <span class="role">
-                Fragger
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    0
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- RYUK -->
-
-        <div
-            class="player reveal reveal-delay-2"
-            onclick="openPlayer('ryuk')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesRYUK profile"
-            onkeydown="handleCardKey(event,'ryuk')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    class="ryuk"
-                    src="players/ryuk.png.png"
-                    alt="NXvesRYUK"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesRYUK
-            </h3>
-
-            <span class="role">
-                Supporter
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    0
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- UDSOB -->
-
-        <div
-            class="player reveal reveal-delay-3"
-            onclick="openPlayer('udsob')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesUDSOB profile"
-            onkeydown="handleCardKey(event,'udsob')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    src="players/udsob.png.png"
-                    alt="NXvesUDSOB"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesUDSOB
-            </h3>
-
-            <span class="role">
-                Supporter
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    0
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
+    <div class="roster" id="rosterContainer">
     </div>
 
 </section>
@@ -3300,9 +2794,9 @@ footer strong{
 <div class="divider"></div>
 
 
-<!-- =========================
+<!-- =========================================================
      MANAGEMENT
-========================= -->
+========================================================= -->
 
 <section id="management">
 
@@ -3329,9 +2823,6 @@ footer strong{
 
     <div class="management">
 
-
-        <!-- OWNER -->
-
         <div class="management-card reveal reveal-delay-1">
 
             <img
@@ -3339,7 +2830,6 @@ footer strong{
                 src="players/udsob.png.png"
                 alt="Syed Hasibul Hassan Udsob"
                 loading="lazy"
-                decoding="async"
             >
 
             <div class="management-label">
@@ -3366,8 +2856,6 @@ footer strong{
         </div>
 
 
-        <!-- MANAGER -->
-
         <div class="management-card reveal reveal-delay-2">
 
             <img
@@ -3375,7 +2863,6 @@ footer strong{
                 src="players/noozy.png.png"
                 alt="Shamiulla Shitul"
                 loading="lazy"
-                decoding="async"
             >
 
             <div class="management-label">
@@ -3403,8 +2890,6 @@ footer strong{
 
     </div>
 
-
-    <!-- OFFICIAL FACEBOOK PAGE -->
 
     <div class="official-page reveal">
 
@@ -3438,9 +2923,9 @@ footer strong{
 <div class="divider"></div>
 
 
-<!-- =========================
-     TOURNAMENTS
-========================= -->
+<!-- =========================================================
+     TOURNAMENTS / MATCH RESULTS
+========================================================= -->
 
 <section id="tournaments">
 
@@ -3466,7 +2951,6 @@ footer strong{
 
 
     <div class="tournaments">
-
 
         <div class="tournament reveal reveal-delay-1">
 
@@ -3505,15 +2989,181 @@ footer strong{
         <div class="tournament reveal reveal-delay-3">
 
             <span class="badge">
-                ACHIEVEMENT
+                COMPETITIVE
             </span>
 
             <h3>
-                Team Achievements
+                Team Competition
             </h3>
 
             <p>
-                Our tournament achievements and milestones.
+                NEXVORA E-SPORTS continues to compete in PUBG MOBILE events.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div style="margin-top:45px;">
+
+        <div class="section-heading reveal" style="margin-bottom:25px;">
+
+            <div class="section-title">
+
+                <div class="section-number">
+                    MATCH HISTORY
+                </div>
+
+                <h2>
+                    Match Results
+                </h2>
+
+                <p>
+                    Recent competitive matches
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="matches">
+
+            <div class="match reveal">
+
+                <div class="match-type">
+                    UPCOMING
+                </div>
+
+                <div class="match-info">
+
+                    <h3>
+                        Next Competitive Match
+                    </h3>
+
+                    <p>
+                        Match information will be announced here.
+                    </p>
+
+                </div>
+
+                <div class="match-result">
+                    COMING SOON
+                </div>
+
+            </div>
+
+
+            <div class="match reveal">
+
+                <div class="match-type">
+                    SCRIM
+                </div>
+
+                <div class="match-info">
+
+                    <h3>
+                        Scrim Performance
+                    </h3>
+
+                    <p>
+                        Scrim results will be recorded here.
+                    </p>
+
+                </div>
+
+                <div class="match-result">
+                    UPDATED SOON
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================================================
+     ACHIEVEMENTS
+========================================================= -->
+
+<section id="achievements">
+
+    <div class="section-heading reveal">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                05 / ACHIEVEMENTS
+            </div>
+
+            <h2>
+                Team Achievements
+            </h2>
+
+            <p>
+                Competitive milestones of NEXVORA E-SPORTS
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="achievements">
+
+        <div class="achievement reveal reveal-delay-1">
+
+            <div class="achievement-number">
+                ACHIEVEMENT 01
+            </div>
+
+            <h3>
+                Quarter Finalist
+            </h3>
+
+            <p>
+                Reached the Quarter Final stage in a competitive PUBG MOBILE tournament.
+            </p>
+
+        </div>
+
+
+        <div class="achievement reveal reveal-delay-2">
+
+            <div class="achievement-number">
+                ACHIEVEMENT 02
+            </div>
+
+            <h3>
+                Semi Finalist
+            </h3>
+
+            <p>
+                Advanced to the Semi Final stage through strong competitive performance.
+            </p>
+
+        </div>
+
+
+        <div class="achievement reveal reveal-delay-3">
+
+            <div class="achievement-number">
+                ACHIEVEMENT 03
+            </div>
+
+            <h3>
+                Pre Final Qualification
+            </h3>
+
+            <p>
+                Qualified for the Pre Final stage after progressing through competition.
             </p>
 
         </div>
@@ -3523,9 +3173,161 @@ footer strong{
 </section>
 
 
-<!-- =========================
+<div class="divider"></div>
+
+
+<!-- =========================================================
+     NEWS
+========================================================= -->
+
+<section id="news">
+
+    <div class="section-heading reveal">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                06 / UPDATES
+            </div>
+
+            <h2>
+                Latest News
+            </h2>
+
+            <p>
+                Team announcements and updates
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="news-grid">
+
+        <div class="news-card reveal reveal-delay-1">
+
+            <div class="news-date">
+                20 SEPTEMBER 2026
+            </div>
+
+            <h3>
+                Player Statistics Tracking Started
+            </h3>
+
+            <p>
+                NEXVORA E-SPORTS player tournament and scrim statistics are now being tracked.
+            </p>
+
+        </div>
+
+
+        <div class="news-card reveal reveal-delay-2">
+
+            <div class="news-date">
+                TEAM UPDATE
+            </div>
+
+            <h3>
+                Official Team Website
+            </h3>
+
+            <p>
+                The official NEXVORA E-SPORTS website is being used to showcase roster,
+                statistics and competitive achievements.
+            </p>
+
+        </div>
+
+
+        <div class="news-card reveal reveal-delay-3">
+
+            <div class="news-date">
+                NEXVORA E-SPORTS
+            </div>
+
+            <h3>
+                Built For Competition
+            </h3>
+
+            <p>
+                Team performance, player records and competitive milestones will be updated regularly.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- =========================================================
+     SOCIAL
+========================================================= -->
+
+<section>
+
+    <div class="section-heading reveal">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                07 / CONNECT
+            </div>
+
+            <h2>
+                Follow NEXVORA
+            </h2>
+
+            <p>
+                Official team and player links
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="social-grid reveal">
+
+        <a
+            class="social-btn"
+            href="https://www.facebook.com/profile.php?id=61593886864309"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            OFFICIAL FACEBOOK
+        </a>
+
+        <a
+            class="social-btn"
+            href="https://www.facebook.com/syed.hasibul.hassan.udsob"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            OWNER FACEBOOK
+        </a>
+
+        <a
+            class="social-btn"
+            href="https://www.facebook.com/shamiulla.shitul"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            MANAGER FACEBOOK
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
      PLAYER PROFILE MODAL
-========================= -->
+========================================================= -->
 
 <div
     class="player-modal"
@@ -3639,9 +3441,9 @@ footer strong{
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      BACK TO TOP
-========================= -->
+========================================================= -->
 
 <button
     class="back-top"
@@ -3653,9 +3455,9 @@ footer strong{
 </button>
 
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
 <footer>
 
@@ -3672,9 +3474,22 @@ footer strong{
 
 <script>
 
-/* =========================
+/* =========================================================
    PLAYER DATA
-========================= */
+   =========================================================
+
+   IMPORTANT:
+
+   এখান থেকেই player kills edit করবে।
+
+   শুধু:
+       tournament: সংখ্যা,
+       scrim: সংখ্যা
+
+   change করলেই website-এর সব জায়গায়
+   Total Kills automatically calculate হবে।
+
+========================================================= */
 
 const players = {
 
@@ -3683,129 +3498,511 @@ const players = {
         role:"IGL",
         image:"players/monarch.png.png",
         imageClass:"",
+
         tournament:0,
         scrim:0,
-        total:0,
+
         bio:"In-game leader of NEXVORA E-SPORTS.",
+
         facebook:"https://www.facebook.com/profile.php?id=61577703813474"
     },
+
 
     noozy:{
         name:"NXvesNooZY",
         role:"Assaulter",
         image:"players/noozy.png.png",
         imageClass:"noozy",
+
         tournament:0,
         scrim:0,
-        total:0,
+
         bio:"Assaulter of NEXVORA E-SPORTS.",
+
         facebook:"https://www.facebook.com/shamiulla.shitul"
     },
+
 
     akatsuki:{
         name:"NXvesAkaTsukI",
         role:"Supporter",
         image:"players/akatsuki.png.png",
         imageClass:"akatsuki",
+
         tournament:0,
         scrim:0,
-        total:0,
+
         bio:"Supporter of NEXVORA E-SPORTS.",
+
         facebook:"https://www.facebook.com/profile.php?id=61594401750690"
     },
+
 
     grey:{
         name:"NXvesGrey",
         role:"Fragger",
         image:"players/grey.png.png",
         imageClass:"",
+
         tournament:0,
         scrim:0,
-        total:0,
+
         bio:"Fragger of NEXVORA E-SPORTS.",
+
         facebook:"https://www.facebook.com/nahid.hasan.joy.738354"
     },
+
 
     ryuk:{
         name:"NXvesRYUK",
         role:"Supporter",
         image:"players/ryuk.png.png",
         imageClass:"ryuk",
+
         tournament:0,
         scrim:0,
-        total:0,
+
         bio:"Supporter of NEXVORA E-SPORTS.",
+
         facebook:"https://www.facebook.com/Piyash.yash"
     },
+
 
     udsob:{
         name:"NXvesUDSOB",
         role:"Supporter",
         image:"players/udsob.png.png",
         imageClass:"",
+
         tournament:0,
         scrim:0,
-        total:0,
+
         bio:"Supporter of NEXVORA E-SPORTS.",
+
         facebook:"https://www.facebook.com/syed.hasibul.hassan.udsob"
     }
 
 };
 
 
-/* =========================
+/* =========================================================
+   TOTAL KILLS
+========================================================= */
+
+function getTotalKills(player){
+
+    return Number(player.tournament || 0)
+         + Number(player.scrim || 0);
+
+}
+
+
+/* =========================================================
+   SORT PLAYERS BY TOTAL KILLS
+========================================================= */
+
+function getSortedPlayers(){
+
+    return Object.entries(players).sort(
+        function(a,b){
+
+            const totalA =
+                getTotalKills(a[1]);
+
+            const totalB =
+                getTotalKills(b[1]);
+
+            return totalB - totalA;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE LEADERBOARD
+========================================================= */
+
+function updateLeaderboard(){
+
+    const tbody =
+        document.getElementById(
+            "leaderboardBody"
+        );
+
+    if(!tbody){
+        return;
+    }
+
+    tbody.innerHTML = "";
+
+    const sortedPlayers =
+        getSortedPlayers();
+
+
+    sortedPlayers.forEach(
+        function(entry,index){
+
+            const player =
+                entry[1];
+
+            const total =
+                getTotalKills(player);
+
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td class="rank">
+                    ${String(index + 1).padStart(2,"0")}
+                </td>
+
+                <td>
+                    ${player.name}
+                </td>
+
+                <td>
+                    ${player.role}
+                </td>
+
+                <td>
+                    ${player.tournament}
+                </td>
+
+                <td>
+                    ${player.scrim}
+                </td>
+
+                <td class="total">
+                    ${total}
+                </td>
+
+            `;
+
+
+            tbody.appendChild(row);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE TEAM STATISTICS
+========================================================= */
+
+function updateTeamStats(){
+
+    const playerList =
+        Object.values(players);
+
+
+    let tournamentKills = 0;
+
+    let scrimKills = 0;
+
+
+    playerList.forEach(
+        function(player){
+
+            tournamentKills +=
+                Number(player.tournament || 0);
+
+            scrimKills +=
+                Number(player.scrim || 0);
+
+        }
+    );
+
+
+    const totalKills =
+        tournamentKills + scrimKills;
+
+
+    document.getElementById(
+        "activePlayers"
+    ).textContent =
+        playerList.length;
+
+
+    document.getElementById(
+        "teamTournamentKills"
+    ).textContent =
+        tournamentKills;
+
+
+    document.getElementById(
+        "teamScrimKills"
+    ).textContent =
+        scrimKills;
+
+
+    document.getElementById(
+        "teamTotalKills"
+    ).textContent =
+        totalKills;
+
+}
+
+
+/* =========================================================
+   CREATE ROSTER
+========================================================= */
+
+function createRoster(){
+
+    const container =
+        document.getElementById(
+            "rosterContainer"
+        );
+
+    if(!container){
+        return;
+    }
+
+
+    container.innerHTML = "";
+
+
+    const sortedPlayers =
+        getSortedPlayers();
+
+
+    sortedPlayers.forEach(
+        function(entry,index){
+
+            const id =
+                entry[0];
+
+            const player =
+                entry[1];
+
+            const total =
+                getTotalKills(player);
+
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "player reveal " +
+                "reveal-delay-" +
+                ((index % 3) + 1);
+
+
+            card.tabIndex = 0;
+
+            card.setAttribute(
+                "role",
+                "button"
+            );
+
+            card.setAttribute(
+                "aria-label",
+                "View " +
+                player.name +
+                " profile"
+            );
+
+
+            card.onclick =
+                function(){
+
+                    openPlayer(id);
+
+                };
+
+
+            card.onkeydown =
+                function(event){
+
+                    handleCardKey(
+                        event,
+                        id
+                    );
+
+                };
+
+
+            card.innerHTML = `
+
+                <span class="profile-label">
+                    PLAYER PROFILE
+                </span>
+
+                <div class="player-photo">
+
+                    <img
+                        class="${player.imageClass}"
+                        src="${player.image}"
+                        alt="${player.name}"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                </div>
+
+                <h3>
+                    ${player.name}
+                </h3>
+
+                <span class="role">
+                    ${player.role}
+                </span>
+
+                <div class="player-kills">
+
+                    <span>
+                        Total Kills
+                    </span>
+
+                    <strong>
+                        ${total}
+                    </strong>
+
+                </div>
+
+                <div class="tap-profile">
+
+                    <span>
+                        TAP TO VIEW PROFILE
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(card);
+
+        }
+    );
+
+
+    observeNewRevealElements();
+
+}
+
+
+/* =========================================================
+   OBSERVE NEW ROSTER ELEMENTS
+========================================================= */
+
+function observeNewRevealElements(){
+
+    const elements =
+        document.querySelectorAll(
+            "#rosterContainer .reveal"
+        );
+
+
+    elements.forEach(
+        function(element){
+
+            revealObserver.observe(
+                element
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
    OPEN PLAYER PROFILE
-========================= */
+========================================================= */
 
 function openPlayer(playerId){
 
-    const player = players[playerId];
+    const player =
+        players[playerId];
+
 
     if(!player){
         return;
     }
 
+
+    const total =
+        getTotalKills(player);
+
+
     const modal =
-        document.getElementById("playerModal");
+        document.getElementById(
+            "playerModal"
+        );
+
 
     const modalImage =
-        document.getElementById("modalImage");
+        document.getElementById(
+            "modalImage"
+        );
+
 
     modalImage.src =
         player.image;
 
+
     modalImage.alt =
         player.name;
+
 
     modalImage.className =
         player.imageClass;
 
-    document.getElementById("modalName")
-        .textContent =
+
+    document.getElementById(
+        "modalName"
+    ).textContent =
         player.name;
 
-    document.getElementById("modalRole")
-        .textContent =
+
+    document.getElementById(
+        "modalRole"
+    ).textContent =
         player.role;
 
-    document.getElementById("modalTournament")
-        .textContent =
+
+    document.getElementById(
+        "modalTournament"
+    ).textContent =
         player.tournament;
 
-    document.getElementById("modalScrim")
-        .textContent =
+
+    document.getElementById(
+        "modalScrim"
+    ).textContent =
         player.scrim;
 
-    document.getElementById("modalTotal")
-        .textContent =
-        player.total;
 
-    document.getElementById("modalBio")
-        .textContent =
+    document.getElementById(
+        "modalTotal"
+    ).textContent =
+        total;
+
+
+    document.getElementById(
+        "modalBio"
+    ).textContent =
         player.bio;
 
+
     const facebook =
-        document.getElementById("modalFacebook");
+        document.getElementById(
+            "modalFacebook"
+        );
+
 
     if(
         player.facebook &&
@@ -3818,7 +4015,9 @@ function openPlayer(playerId){
         facebook.textContent =
             "FACEBOOK";
 
-        facebook.classList.remove("disabled");
+        facebook.classList.remove(
+            "disabled"
+        );
 
         facebook.style.pointerEvents =
             "auto";
@@ -3831,19 +4030,26 @@ function openPlayer(playerId){
         facebook.textContent =
             "FACEBOOK LINK NOT ADDED";
 
-        facebook.classList.add("disabled");
+        facebook.classList.add(
+            "disabled"
+        );
 
         facebook.style.pointerEvents =
             "none";
 
     }
 
-    modal.classList.add("active");
+
+    modal.classList.add(
+        "active"
+    );
+
 
     modal.setAttribute(
         "aria-hidden",
         "false"
     );
+
 
     document.body.style.overflow =
         "hidden";
@@ -3851,21 +4057,28 @@ function openPlayer(playerId){
 }
 
 
-/* =========================
+/* =========================================================
    CLOSE PLAYER PROFILE
-========================= */
+========================================================= */
 
 function closePlayer(){
 
     const modal =
-        document.getElementById("playerModal");
+        document.getElementById(
+            "playerModal"
+        );
 
-    modal.classList.remove("active");
+
+    modal.classList.remove(
+        "active"
+    );
+
 
     modal.setAttribute(
         "aria-hidden",
         "true"
     );
+
 
     document.body.style.overflow =
         "";
@@ -3873,9 +4086,9 @@ function closePlayer(){
 }
 
 
-/* =========================
+/* =========================================================
    KEYBOARD SUPPORT
-========================= */
+========================================================= */
 
 function handleCardKey(
     event,
@@ -3896,9 +4109,9 @@ function handleCardKey(
 }
 
 
-/* =========================
+/* =========================================================
    MODAL OUTSIDE CLICK
-========================= */
+========================================================= */
 
 document
     .getElementById("playerModal")
@@ -3918,9 +4131,9 @@ document
     );
 
 
-/* =========================
+/* =========================================================
    ESC CLOSE
-========================= */
+========================================================= */
 
 document.addEventListener(
     "keydown",
@@ -3938,15 +4151,20 @@ document.addEventListener(
 );
 
 
-/* =========================
-   HEADER SCROLL ANIMATION
-========================= */
+/* =========================================================
+   HEADER + BACK TOP
+========================================================= */
 
 const siteHeader =
-    document.getElementById("siteHeader");
+    document.getElementById(
+        "siteHeader"
+    );
+
 
 const backTop =
-    document.getElementById("backTop");
+    document.getElementById(
+        "backTop"
+    );
 
 
 function handleScroll(){
@@ -3990,13 +4208,15 @@ function handleScroll(){
 window.addEventListener(
     "scroll",
     handleScroll,
-    {passive:true}
+    {
+        passive:true
+    }
 );
 
 
-/* =========================
+/* =========================================================
    BACK TO TOP
-========================= */
+========================================================= */
 
 backTop.addEventListener(
     "click",
@@ -4011,14 +4231,15 @@ backTop.addEventListener(
 );
 
 
-/* =========================
+/* =========================================================
    SCROLL REVEAL
-========================= */
+========================================================= */
 
 const revealElements =
     document.querySelectorAll(
         ".reveal"
     );
+
 
 const revealObserver =
     new IntersectionObserver(
@@ -4027,15 +4248,11 @@ const revealObserver =
             entries.forEach(
                 function(entry){
 
-                    if(entry.isIntersecting){
+                    if(
+                        entry.isIntersecting
+                    ){
 
                         entry.target.classList.add(
-                            "show"
-                        );
-
-                    }else{
-
-                        entry.target.classList.remove(
                             "show"
                         );
 
@@ -4065,9 +4282,15 @@ revealElements.forEach(
 );
 
 
-/* =========================
-   INITIAL SCROLL CHECK
-========================= */
+/* =========================================================
+   INITIALIZE WEBSITE
+========================================================= */
+
+updateLeaderboard();
+
+updateTeamStats();
+
+createRoster();
 
 handleScroll();
 
