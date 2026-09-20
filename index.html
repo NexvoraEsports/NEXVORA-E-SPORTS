@@ -21,9 +21,24 @@ html{
 }
 
 body{
-    background:#050607;
+    background:#030506;
     color:#fff;
     line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background:
+        linear-gradient(rgba(0,229,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);
+    background-size:45px 45px;
 }
 
 /* HEADER */
@@ -31,16 +46,17 @@ body{
 header{
     position:sticky;
     top:0;
-    z-index:100;
-    background:rgba(5,6,7,.96);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid #202428;
+    z-index:1000;
+    background:rgba(3,5,6,.88);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,229,255,.12);
 }
 
 .nav{
-    max-width:1200px;
+    max-width:1250px;
     margin:auto;
-    padding:14px 25px;
+    padding:10px 25px;
+    min-height:76px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -53,13 +69,14 @@ header{
 }
 
 .team-logo{
-    width:150px;
-    height:150px;
+    width:62px;
+    height:62px;
     object-fit:contain;
+    filter:drop-shadow(0 0 10px rgba(0,229,255,.15));
 }
 
 .logo{
-    font-size:21px;
+    font-size:20px;
     font-weight:900;
     letter-spacing:2px;
 }
@@ -68,12 +85,31 @@ header{
     color:#00e5ff;
 }
 
+nav{
+    display:flex;
+    align-items:center;
+}
+
 nav a{
-    color:#aaa;
+    position:relative;
+    color:#8c969d;
     text-decoration:none;
-    margin-left:25px;
-    font-size:14px;
-    font-weight:bold;
+    margin-left:28px;
+    font-size:13px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    transition:.3s;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#00e5ff;
     transition:.3s;
 }
 
@@ -81,80 +117,184 @@ nav a:hover{
     color:#00e5ff;
 }
 
+nav a:hover::after{
+    width:100%;
+}
+
 /* HERO */
 
 .hero{
-    min-height:650px;
+    position:relative;
+    min-height:720px;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:80px 20px;
+    padding:90px 20px;
+    overflow:hidden;
     background:
-    radial-gradient(circle at 50% 40%,rgba(0,229,255,.14),transparent 35%),
-    linear-gradient(180deg,#07090b,#050607);
+        radial-gradient(circle at 50% 35%,rgba(0,229,255,.13),transparent 28%),
+        radial-gradient(circle at 15% 70%,rgba(0,229,255,.05),transparent 25%),
+        linear-gradient(180deg,#06090b 0%,#030506 100%);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid rgba(0,229,255,.07);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border:1px solid rgba(0,229,255,.05);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:7px 16px;
+    margin-bottom:25px;
+    border:1px solid rgba(0,229,255,.35);
+    background:rgba(0,229,255,.04);
+    color:#00e5ff;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
 }
 
 .hero-logo{
-    width:350px;
-    height:350px;
+    width:270px;
+    height:270px;
     object-fit:contain;
-    margin-bottom:20px;
-    filter:drop-shadow(0 0 20px rgba(0,229,255,.18));
+    margin-bottom:12px;
+    filter:drop-shadow(0 0 25px rgba(0,229,255,.2));
 }
 
 .hero h1{
-    font-size:clamp(42px,8vw,90px);
+    font-size:clamp(42px,7vw,82px);
+    line-height:1;
     font-weight:1000;
     letter-spacing:5px;
+    text-transform:uppercase;
 }
 
 .hero h1 span{
     color:#00e5ff;
 }
 
-.hero p{
-    color:#8d969d;
-    max-width:650px;
-    margin:20px auto;
-    font-size:17px;
+.hero-subtitle{
+    color:#7f898f;
+    max-width:680px;
+    margin:22px auto 0;
+    font-size:16px;
+}
+
+.hero-line{
+    width:80px;
+    height:2px;
+    margin:25px auto;
+    background:#00e5ff;
+    box-shadow:0 0 15px rgba(0,229,255,.5);
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
-    margin-top:20px;
-    padding:13px 28px;
+    margin-top:8px;
+    padding:13px 25px;
     border:1px solid #00e5ff;
     color:#00e5ff;
+    background:rgba(0,229,255,.04);
     text-decoration:none;
-    border-radius:6px;
-    font-weight:bold;
+    border-radius:5px;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
     transition:.3s;
 }
 
 .btn:hover{
     background:#00e5ff;
-    color:#000;
+    color:#020506;
+    box-shadow:0 0 25px rgba(0,229,255,.2);
+    transform:translateY(-2px);
+}
+
+.btn.secondary{
+    border-color:#30383d;
+    color:#aab1b5;
+    background:#080b0d;
+}
+
+.btn.secondary:hover{
+    border-color:#00e5ff;
+    color:#00e5ff;
+    background:#080b0d;
 }
 
 /* SECTION */
 
 section{
-    max-width:1200px;
+    max-width:1250px;
     margin:auto;
-    padding:80px 25px;
+    padding:95px 25px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:40px;
 }
 
 .section-title{
-    margin-bottom:35px;
+    position:relative;
+}
+
+.section-number{
+    color:#00e5ff;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+    margin-bottom:7px;
 }
 
 .section-title h2{
-    font-size:32px;
+    font-size:34px;
+    line-height:1.1;
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
 
 .section-title p{
-    color:#737c83;
+    color:#687278;
+    margin-top:8px;
+    font-size:14px;
 }
 
 /* STATS */
@@ -162,33 +302,50 @@ section{
 .stats{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    gap:16px;
 }
 
 .stat{
-    background:#0c0f11;
-    border:1px solid #202428;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg,#0c1113,#07090a);
+    border:1px solid #1b2327;
     padding:28px;
-    border-radius:12px;
+    min-height:145px;
+    border-radius:10px;
     transition:.3s;
 }
 
+.stat::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:35px;
+    height:2px;
+    background:#00e5ff;
+}
+
 .stat:hover{
-    border-color:#00e5ff;
-    transform:translateY(-3px);
+    border-color:rgba(0,229,255,.45);
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
 .stat h3{
-    color:#7c858c;
-    font-size:13px;
+    color:#6f797f;
+    font-size:11px;
     text-transform:uppercase;
+    letter-spacing:1.5px;
 }
 
 .stat strong{
     display:block;
-    font-size:35px;
-    margin-top:5px;
+    font-size:42px;
+    line-height:1;
+    margin-top:14px;
     color:#00e5ff;
+    font-weight:900;
 }
 
 /* ROSTER */
@@ -202,37 +359,66 @@ section{
 .player{
     position:relative;
     overflow:hidden;
-    background:linear-gradient(145deg,#101417,#080a0c);
-    border:1px solid #242a2e;
-    padding:30px 25px 25px;
-    border-radius:14px;
+    background:
+        linear-gradient(145deg,rgba(15,21,24,.98),rgba(5,8,9,.98));
+    border:1px solid #20292d;
+    padding:28px 22px 22px;
+    border-radius:12px;
     text-align:center;
-    transition:.3s;
+    transition:.35s;
+}
+
+.player::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:2px;
+    background:linear-gradient(90deg,transparent,#00e5ff,transparent);
+    opacity:.5;
+}
+
+.player::after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    right:-60px;
+    bottom:-60px;
+    border-radius:50%;
+    background:rgba(0,229,255,.04);
 }
 
 .player:hover{
-    transform:translateY(-6px);
-    border-color:#00e5ff;
-    box-shadow:0 10px 35px rgba(0,229,255,.08);
+    transform:translateY(-7px);
+    border-color:rgba(0,229,255,.5);
+    box-shadow:0 18px 45px rgba(0,0,0,.4);
 }
 
 .player-photo{
-    width:150px;
-    height:150px;
+    position:relative;
+    width:155px;
+    height:155px;
     margin:auto;
     border-radius:50%;
     overflow:hidden;
-    background:linear-gradient(135deg,#101b1e,#061013);
-    border:2px solid #00e5ff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background:#080d0f;
+    border:2px solid rgba(0,229,255,.7);
+    box-shadow:
+        0 0 0 6px rgba(0,229,255,.025),
+        0 0 30px rgba(0,229,255,.08);
 }
 
 .player-photo img{
     width:100%;
     height:100%;
     object-fit:cover;
+    transition:.4s;
+}
+
+.player:hover .player-photo img{
+    transform:scale(1.04);
 }
 
 /* PLAYER IMAGE POSITIONING */
@@ -252,88 +438,109 @@ section{
 /* PLAYER NAME */
 
 .player h3{
-    margin-top:18px;
+    margin-top:20px;
     font-size:19px;
-    letter-spacing:.5px;
+    letter-spacing:.7px;
 }
 
 /* ROLE */
 
 .role{
     display:inline-block;
-    margin-top:8px;
-    padding:5px 13px;
-    border:1px solid #00e5ff;
+    margin-top:9px;
+    padding:5px 14px;
+    border:1px solid rgba(0,229,255,.5);
+    background:rgba(0,229,255,.035);
     border-radius:20px;
     color:#00e5ff;
-    font-size:11px;
-    font-weight:bold;
+    font-size:10px;
+    font-weight:900;
     text-transform:uppercase;
-    letter-spacing:1px;
+    letter-spacing:1.3px;
 }
 
 /* TOTAL KILLS */
 
 .player-kills{
-    margin-top:18px;
+    margin-top:20px;
     padding-top:15px;
-    border-top:1px solid #202428;
+    border-top:1px solid #1d2529;
 }
 
 .player-kills span{
     display:block;
-    color:#737c83;
-    font-size:10px;
-    font-weight:bold;
-    letter-spacing:1.5px;
+    color:#626c72;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1.7px;
     text-transform:uppercase;
 }
 
 .player-kills strong{
     display:block;
-    margin-top:2px;
+    margin-top:3px;
     color:#00e5ff;
-    font-size:28px;
+    font-size:27px;
     font-weight:900;
 }
 
-/* TABLE */
+/* LEADERBOARD */
 
 .table-wrap{
     overflow-x:auto;
-    background:#0b0e10;
-    border:1px solid #202428;
-    border-radius:12px;
+    background:#080b0d;
+    border:1px solid #1b2327;
+    border-radius:10px;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:650px;
+    min-width:700px;
 }
 
 th,td{
-    padding:17px;
+    padding:17px 18px;
     text-align:left;
-    border-bottom:1px solid #202428;
+    border-bottom:1px solid #171e21;
+}
+
+tr:last-child td{
+    border-bottom:none;
 }
 
 th{
     color:#00e5ff;
-    font-size:13px;
+    background:#0b1012;
+    font-size:10px;
     text-transform:uppercase;
+    letter-spacing:1.2px;
 }
 
 td{
-    color:#d5d9dc;
+    color:#c7cdd0;
+    font-size:13px;
+}
+
+tbody tr{
+    transition:.2s;
+}
+
+tbody tr:hover{
+    background:rgba(0,229,255,.025);
+}
+
+.rank{
+    color:#566167;
+    font-weight:900;
 }
 
 .total{
     color:#00e5ff;
-    font-weight:bold;
+    font-weight:900;
 }
 
-/* TOURNAMENT */
+/* TOURNAMENTS */
 
 .tournaments{
     display:grid;
@@ -342,52 +549,91 @@ td{
 }
 
 .tournament{
-    background:#0c0f11;
-    border:1px solid #202428;
-    border-radius:12px;
-    padding:25px;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(145deg,#0c1113,#07090a);
+    border:1px solid #1d2529;
+    border-radius:10px;
+    padding:28px;
+    min-height:190px;
     transition:.3s;
 }
 
+.tournament::after{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    right:-75px;
+    bottom:-75px;
+    border-radius:50%;
+    border:1px solid rgba(0,229,255,.08);
+}
+
 .tournament:hover{
-    border-color:#00e5ff;
-    transform:translateY(-4px);
+    border-color:rgba(0,229,255,.4);
+    transform:translateY(-5px);
 }
 
 .tournament .badge{
     display:inline-block;
-    padding:5px 10px;
-    border:1px solid #00e5ff;
+    padding:5px 11px;
+    border:1px solid rgba(0,229,255,.45);
     color:#00e5ff;
     border-radius:20px;
-    font-size:11px;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1.3px;
 }
 
 .tournament h3{
-    margin:18px 0 8px;
+    margin:18px 0 9px;
+    font-size:20px;
 }
 
 .tournament p{
-    color:#7c858c;
-    font-size:14px;
+    color:#737e84;
+    font-size:13px;
+    max-width:300px;
+}
+
+/* DIVIDER */
+
+.divider{
+    max-width:1200px;
+    height:1px;
+    margin:auto;
+    background:linear-gradient(90deg,transparent,#1c2529,transparent);
 }
 
 /* FOOTER */
 
 footer{
-    border-top:1px solid #202428;
-    padding:35px 20px;
+    border-top:1px solid #171e21;
+    padding:45px 20px;
     text-align:center;
-    color:#666f75;
+    background:#020405;
+    color:#5e686e;
+}
+
+.footer-logo{
+    font-size:18px;
+    font-weight:900;
+    letter-spacing:2px;
+    margin-bottom:8px;
 }
 
 footer strong{
     color:#00e5ff;
 }
 
+.footer-text{
+    font-size:12px;
+}
+
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width:900px){
 
     .stats{
         grid-template-columns:repeat(2,1fr);
@@ -401,40 +647,106 @@ footer strong{
         grid-template-columns:1fr;
     }
 
-    nav{
-        display:none;
+    nav a{
+        margin-left:15px;
+        font-size:11px;
     }
 
 }
 
-@media(max-width:500px){
+@media(max-width:650px){
+
+    .nav{
+        padding:8px 15px;
+    }
+
+    .team-logo{
+        width:50px;
+        height:50px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        min-height:650px;
+        padding:70px 18px;
+    }
+
+    .hero::before{
+        width:380px;
+        height:380px;
+    }
+
+    .hero::after{
+        width:270px;
+        height:270px;
+    }
+
+    .hero-logo{
+        width:210px;
+        height:210px;
+    }
+
+    .hero h1{
+        font-size:40px;
+        letter-spacing:2px;
+    }
+
+    .hero-subtitle{
+        font-size:14px;
+    }
+
+    section{
+        padding:70px 18px;
+    }
+
+    .section-heading{
+        display:block;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
 
     .stats{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
     }
 
     .roster{
         grid-template-columns:1fr;
     }
 
-    .hero{
-        min-height:560px;
+}
+
+@media(max-width:420px){
+
+    .stats{
+        grid-template-columns:1fr;
     }
 
     .hero-logo{
-        width:120px;
-        height:120px;
+        width:180px;
+        height:180px;
+    }
+
+    .hero h1{
+        font-size:34px;
     }
 
     .player-photo{
-        width:130px;
-        height:130px;
+        width:140px;
+        height:140px;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
@@ -443,482 +755,612 @@ footer strong{
 
 <header>
 
-```
-<div class="nav">
+    <div class="nav">
 
-    <div class="brand">
+        <div class="brand">
 
-        <img
-            class="team-logo"
-            src="assets/Nexvora Logo.png.png"
-            alt="NEXVORA E-SPORTS Logo"
-        >
+            <img
+                class="team-logo"
+                src="assets/Nexvora Logo.png.png"
+                alt="NEXVORA E-SPORTS Logo"
+            >
 
-        <div class="logo">
-            NEXVORA <span>ESPORTS</span>
+            <div class="logo">
+                NEXVORA <span>ESPORTS</span>
+            </div>
+
         </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#roster">Roster</a>
+            <a href="#stats">Stats</a>
+            <a href="#tournaments">Tournaments</a>
+        </nav>
 
     </div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#roster">Roster</a>
-        <a href="#stats">Stats</a>
-        <a href="#tournaments">Tournaments</a>
-    </nav>
-
-</div>
-```
-
 </header>
+
 
 <!-- HERO -->
 
 <div class="hero" id="home">
 
-```
-<div>
+    <div class="hero-content">
 
-    <img
-        class="hero-logo"
-        src="assets/Nexvora Logo.png.png"
-        alt="NEXVORA E-SPORTS Logo"
-    >
+        <div class="hero-badge">
+            BANGLADESH • PUBG MOBILE ESPORTS
+        </div>
 
-    <h1>
-        NEXVORA <span>E-SPORTS</span>
-    </h1>
+        <img
+            class="hero-logo"
+            src="assets/Nexvora Logo.png.png"
+            alt="NEXVORA E-SPORTS Logo"
+        >
 
-    <p>
-        Professional PUBG MOBILE esports team.
-        Follow our players, tournament performances,
-        scrim statistics and competitive journey.
-    </p>
+        <h1>
+            NEXVORA <span>E-SPORTS</span>
+        </h1>
 
-    <a class="btn" href="#roster">
-        VIEW OUR ROSTER
-    </a>
+        <div class="hero-line"></div>
+
+        <p class="hero-subtitle">
+            Competitive PUBG MOBILE esports team.
+            Built for competition, teamwork and the pursuit of excellence.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="btn" href="#roster">
+                VIEW ROSTER
+            </a>
+
+            <a class="btn secondary" href="#tournaments">
+                OUR JOURNEY
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
-```
 
-</div>
 
 <!-- TEAM STATS -->
 
 <section id="stats">
 
-```
-<div class="section-title">
+    <div class="section-heading">
 
-    <h2>TEAM STATISTICS</h2>
+        <div class="section-title">
 
-    <p>
-        Overall competitive statistics
-    </p>
+            <div class="section-number">
+                01 / PERFORMANCE
+            </div>
 
-</div>
+            <h2>Team Statistics</h2>
 
-<div class="stats">
+            <p>
+                Overall competitive statistics
+            </p>
 
-    <div class="stat">
-        <h3>Active Players</h3>
-        <strong>6</strong>
+        </div>
+
     </div>
 
-    <div class="stat">
-        <h3>Tournament Kills</h3>
-        <strong>0</strong>
-    </div>
+    <div class="stats">
 
-    <div class="stat">
-        <h3>Scrim Kills</h3>
-        <strong>0</strong>
-    </div>
+        <div class="stat">
 
-    <div class="stat">
-        <h3>Total Kills</h3>
-        <strong>0</strong>
-    </div>
+            <h3>Active Players</h3>
 
-</div>
-```
+            <strong>6</strong>
+
+        </div>
+
+        <div class="stat">
+
+            <h3>Tournament Kills</h3>
+
+            <strong>0</strong>
+
+        </div>
+
+        <div class="stat">
+
+            <h3>Scrim Kills</h3>
+
+            <strong>0</strong>
+
+        </div>
+
+        <div class="stat">
+
+            <h3>Total Kills</h3>
+
+            <strong>0</strong>
+
+        </div>
+
+    </div>
 
 </section>
+
+
+<div class="divider"></div>
+
 
 <!-- ROSTER -->
 
 <section id="roster">
 
-```
-<div class="section-title">
+    <div class="section-heading">
 
-    <h2>ACTIVE ROSTER</h2>
+        <div class="section-title">
 
-    <p>
-        Meet the current NEXVORA E-SPORTS lineup
-    </p>
+            <div class="section-number">
+                02 / LINEUP
+            </div>
 
-</div>
+            <h2>Active Roster</h2>
 
+            <p>
+                Meet the current NEXVORA E-SPORTS lineup
+            </p>
 
-<div class="roster">
-
-
-    <!-- MONARCH -->
-
-    <div class="player">
-
-        <div class="player-photo">
-
-            <img
-                src="players/monarch.png.png"
-                alt="NXvesMONARCH"
-            >
-
-        </div>
-
-        <h3>NXvesMONARCH</h3>
-
-        <span class="role">
-            IGL
-        </span>
-
-        <div class="player-kills">
-            <span>Total Kills</span>
-            <strong>0</strong>
         </div>
 
     </div>
 
 
-    <!-- NOOZY -->
+    <div class="roster">
 
-    <div class="player">
 
-        <div class="player-photo">
+        <!-- MONARCH -->
 
-            <img
-                class="noozy"
-                src="players/noozy.png.png"
-                alt="NXvesNooZY"
-            >
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    src="players/monarch.png.png"
+                    alt="NXvesMONARCH"
+                >
+
+            </div>
+
+            <h3>NXvesMONARCH</h3>
+
+            <span class="role">
+                IGL
+            </span>
+
+            <div class="player-kills">
+
+                <span>Total Kills</span>
+
+                <strong>0</strong>
+
+            </div>
 
         </div>
 
-        <h3>NXvesNooZY</h3>
 
-        <span class="role">
-            Assaulter
-        </span>
+        <!-- NOOZY -->
 
-        <div class="player-kills">
-            <span>Total Kills</span>
-            <strong>0</strong>
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    class="noozy"
+                    src="players/noozy.png.png"
+                    alt="NXvesNooZY"
+                >
+
+            </div>
+
+            <h3>NXvesNooZY</h3>
+
+            <span class="role">
+                Assaulter
+            </span>
+
+            <div class="player-kills">
+
+                <span>Total Kills</span>
+
+                <strong>0</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- AKATSUKI -->
+
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    class="akatsuki"
+                    src="players/akatsuki.png.png"
+                    alt="NXvesAkaTsukI"
+                >
+
+            </div>
+
+            <h3>NXvesAkaTsukI</h3>
+
+            <span class="role">
+                Supporter
+            </span>
+
+            <div class="player-kills">
+
+                <span>Total Kills</span>
+
+                <strong>0</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- GREY -->
+
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    src="players/grey.png.png"
+                    alt="NXvesGrey"
+                >
+
+            </div>
+
+            <h3>NXvesGrey</h3>
+
+            <span class="role">
+                Fragger
+            </span>
+
+            <div class="player-kills">
+
+                <span>Total Kills</span>
+
+                <strong>0</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- RYUK -->
+
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    class="ryuk"
+                    src="players/ryuk.png.png"
+                    alt="NXvesRYUK"
+                >
+
+            </div>
+
+            <h3>NXvesRYUK</h3>
+
+            <span class="role">
+                Supporter
+            </span>
+
+            <div class="player-kills">
+
+                <span>Total Kills</span>
+
+                <strong>0</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- UDSOB -->
+
+        <div class="player">
+
+            <div class="player-photo">
+
+                <img
+                    src="players/udsob.png.png"
+                    alt="NXvesUDSOB"
+                >
+
+            </div>
+
+            <h3>NXvesUDSOB</h3>
+
+            <span class="role">
+                Supporter
+            </span>
+
+            <div class="player-kills">
+
+                <span>Total Kills</span>
+
+                <strong>0</strong>
+
+            </div>
+
         </div>
 
     </div>
-
-
-    <!-- AKATSUKI -->
-
-    <div class="player">
-
-        <div class="player-photo">
-
-            <img
-                class="akatsuki"
-                src="players/akatsuki.png.png"
-                alt="NXvesAkaTsukI"
-            >
-
-        </div>
-
-        <h3>NXvesAkaTsukI</h3>
-
-        <span class="role">
-            Supporter
-        </span>
-
-        <div class="player-kills">
-            <span>Total Kills</span>
-            <strong>0</strong>
-        </div>
-
-    </div>
-
-
-    <!-- GREY -->
-
-    <div class="player">
-
-        <div class="player-photo">
-
-            <img
-                src="players/grey.png.png"
-                alt="NXvesGrey"
-            >
-
-        </div>
-
-        <h3>NXvesGrey</h3>
-
-        <span class="role">
-            Fragger
-        </span>
-
-        <div class="player-kills">
-            <span>Total Kills</span>
-            <strong>0</strong>
-        </div>
-
-    </div>
-
-
-    <!-- RYUK -->
-
-    <div class="player">
-
-        <div class="player-photo">
-
-            <img
-                class="ryuk"
-                src="players/ryuk.png.png"
-                alt="NXvesRYUK"
-            >
-
-        </div>
-
-        <h3>NXvesRYUK</h3>
-
-        <span class="role">
-            Supporter
-        </span>
-
-        <div class="player-kills">
-            <span>Total Kills</span>
-            <strong>0</strong>
-        </div>
-
-    </div>
-
-
-    <!-- UDSOB -->
-
-    <div class="player">
-
-        <div class="player-photo">
-
-            <img
-                src="players/udsob.png.png"
-                alt="NXvesUDSOB"
-            >
-
-        </div>
-
-        <h3>NXvesUDSOB</h3>
-
-        <span class="role">
-            Supporter
-        </span>
-
-        <div class="player-kills">
-            <span>Total Kills</span>
-            <strong>0</strong>
-        </div>
-
-    </div>
-
-</div>
-```
 
 </section>
+
+
+<div class="divider"></div>
+
 
 <!-- PLAYER LEADERBOARD -->
 
 <section>
 
-```
-<div class="section-title">
+    <div class="section-heading">
 
-    <h2>PLAYER LEADERBOARD</h2>
+        <div class="section-title">
 
-    <p>
-        Combined tournament and scrim statistics
-    </p>
+            <div class="section-number">
+                03 / PERFORMANCE
+            </div>
 
-</div>
+            <h2>Player Leaderboard</h2>
 
+            <p>
+                Combined tournament and scrim statistics
+            </p>
 
-<div class="table-wrap">
+        </div>
 
-    <table>
-
-        <thead>
-
-            <tr>
-                <th>#</th>
-                <th>Player</th>
-                <th>Role</th>
-                <th>Tournament Kills</th>
-                <th>Scrim Kills</th>
-                <th>Total Kills</th>
-            </tr>
-
-        </thead>
+    </div>
 
 
-        <tbody>
+    <div class="table-wrap">
 
-            <tr>
-                <td>01</td>
-                <td>NXvesMONARCH</td>
-                <td>IGL</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="total">0</td>
-            </tr>
+        <table>
 
-            <tr>
-                <td>02</td>
-                <td>NXvesNooZY</td>
-                <td>Assaulter</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="total">0</td>
-            </tr>
+            <thead>
 
-            <tr>
-                <td>03</td>
-                <td>NXvesAkaTsukI</td>
-                <td>Supporter</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="total">0</td>
-            </tr>
+                <tr>
 
-            <tr>
-                <td>04</td>
-                <td>NXvesGrey</td>
-                <td>Fragger</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="total">0</td>
-            </tr>
+                    <th>#</th>
 
-            <tr>
-                <td>05</td>
-                <td>NXvesRYUK</td>
-                <td>Supporter</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="total">0</td>
-            </tr>
+                    <th>Player</th>
 
-            <tr>
-                <td>06</td>
-                <td>NXvesUDSOB</td>
-                <td>Supporter</td>
-                <td>0</td>
-                <td>0</td>
-                <td class="total">0</td>
-            </tr>
+                    <th>Role</th>
 
-        </tbody>
+                    <th>Tournament Kills</th>
 
-    </table>
+                    <th>Scrim Kills</th>
 
-</div>
-```
+                    <th>Total Kills</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td class="rank">01</td>
+
+                    <td>NXvesMONARCH</td>
+
+                    <td>IGL</td>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                    <td class="total">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td class="rank">02</td>
+
+                    <td>NXvesNooZY</td>
+
+                    <td>Assaulter</td>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                    <td class="total">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td class="rank">03</td>
+
+                    <td>NXvesAkaTsukI</td>
+
+                    <td>Supporter</td>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                    <td class="total">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td class="rank">04</td>
+
+                    <td>NXvesGrey</td>
+
+                    <td>Fragger</td>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                    <td class="total">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td class="rank">05</td>
+
+                    <td>NXvesRYUK</td>
+
+                    <td>Supporter</td>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                    <td class="total">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td class="rank">06</td>
+
+                    <td>NXvesUDSOB</td>
+
+                    <td>Supporter</td>
+
+                    <td>0</td>
+
+                    <td>0</td>
+
+                    <td class="total">0</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </section>
+
+
+<div class="divider"></div>
+
 
 <!-- TOURNAMENTS -->
 
 <section id="tournaments">
 
-```
-<div class="section-title">
+    <div class="section-heading">
 
-    <h2>TOURNAMENT HISTORY</h2>
+        <div class="section-title">
 
-    <p>
-        NEXVORA E-SPORTS competitive record
-    </p>
+            <div class="section-number">
+                04 / COMPETITION
+            </div>
 
-</div>
+            <h2>Our Journey</h2>
 
+            <p>
+                NEXVORA E-SPORTS competitive record
+            </p>
 
-<div class="tournaments">
-
-
-    <div class="tournament">
-
-        <span class="badge">
-            TOURNAMENT
-        </span>
-
-        <h3>
-            Upcoming Tournament
-        </h3>
-
-        <p>
-            Match statistics and results will be updated here.
-        </p>
+        </div>
 
     </div>
 
 
-    <div class="tournament">
+    <div class="tournaments">
 
-        <span class="badge">
-            SCRIMS
-        </span>
 
-        <h3>
-            Scrim Statistics
-        </h3>
+        <div class="tournament">
 
-        <p>
-            Player kills and team performance will be tracked here.
-        </p>
+            <span class="badge">
+                TOURNAMENT
+            </span>
+
+            <h3>
+                Upcoming Tournament
+            </h3>
+
+            <p>
+                Match statistics and results will be updated here.
+            </p>
+
+        </div>
+
+
+        <div class="tournament">
+
+            <span class="badge">
+                SCRIMS
+            </span>
+
+            <h3>
+                Scrim Statistics
+            </h3>
+
+            <p>
+                Player kills and team performance will be tracked here.
+            </p>
+
+        </div>
+
+
+        <div class="tournament">
+
+            <span class="badge">
+                ACHIEVEMENT
+            </span>
+
+            <h3>
+                Team Achievements
+            </h3>
+
+            <p>
+                Our tournament achievements and milestones.
+            </p>
+
+        </div>
+
 
     </div>
-
-
-    <div class="tournament">
-
-        <span class="badge">
-            ACHIEVEMENT
-        </span>
-
-        <h3>
-            Team Achievements
-        </h3>
-
-        <p>
-            Our tournament achievements and milestones.
-        </p>
-
-    </div>
-
-
-</div>
-```
 
 </section>
+
 
 <!-- FOOTER -->
 
 <footer>
 
-```
-© 2026
-<strong>NEXVORA E-SPORTS</strong>
-— All Rights Reserved.
-```
+    <div class="footer-logo">
+        NEXVORA <strong>E-SPORTS</strong>
+    </div>
+
+    <div class="footer-text">
+        © 2026 NEXVORA E-SPORTS — All Rights Reserved.
+    </div>
 
 </footer>
+
 
 </body>
 </html>
