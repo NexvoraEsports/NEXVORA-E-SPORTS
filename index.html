@@ -1199,8 +1199,6 @@ section{
 
 /* PLAYER IMAGE POSITIONING */
 
-/* PLAYER IMAGE POSITIONING */
-
 .player-photo img.noozy{
     object-position:center 35%;
 }
@@ -1213,7 +1211,6 @@ section{
     object-position:center 25%;
 }
 
-/* MONARCH / UDSOB — move image slightly down so the head stays visible */
 .player-photo img.monarch{
     object-position:center 18%;
 }
@@ -1222,7 +1219,21 @@ section{
     object-position:center 18%;
 }
 
-/* Keep the same framing inside the player profile modal */
+
+/* MODAL IMAGE POSITIONING */
+
+.modal-photo img.noozy{
+    object-position:center 35%;
+}
+
+.modal-photo img.ryuk{
+    object-position:center 35%;
+}
+
+.modal-photo img.akatsuki{
+    object-position:center 25%;
+}
+
 .modal-photo img.monarch{
     object-position:center 18%;
 }
@@ -1401,6 +1412,8 @@ section{
 .table-wrap{
     overflow-x:auto;
 
+    -webkit-overflow-scrolling:touch;
+
     background:#080B0F;
 
     border:1px solid #1B2430;
@@ -1425,7 +1438,9 @@ table{
 
     border-collapse:collapse;
 
-    min-width:700px;
+    min-width:820px;
+
+    table-layout:auto;
 }
 
 th,td{
@@ -1434,6 +1449,8 @@ th,td{
     text-align:left;
 
     border-bottom:1px solid #171F28;
+
+    white-space:nowrap;
 }
 
 tr:last-child td{
@@ -1483,6 +1500,12 @@ tbody tr:hover{
 
 .total{
     color:#A78BFA;
+
+    font-weight:900;
+}
+
+.matches{
+    color:#7DD3FC;
 
     font-weight:900;
 }
@@ -1608,15 +1631,9 @@ tbody tr:hover{
         0 0 30px rgba(124,58,237,.13);
 }
 
-
-/* OWNER PHOTO POSITION */
-
 .management-card:nth-child(1) .management-photo{
     object-position:center 15%;
 }
-
-
-/* MANAGER PHOTO POSITION */
 
 .management-card:nth-child(2) .management-photo{
     object-position:center 35%;
@@ -2173,18 +2190,6 @@ tbody tr:hover{
     object-fit:cover;
 }
 
-.modal-photo img.noozy{
-    object-position:center 35%;
-}
-
-.modal-photo img.ryuk{
-    object-position:center 35%;
-}
-
-.modal-photo img.akatsuki{
-    object-position:center 25%;
-}
-
 .modal-box h2{
     font-size:28px;
 
@@ -2643,6 +2648,32 @@ footer strong{
     }
 
 
+    /* MOBILE LEADERBOARD */
+
+    .table-wrap{
+        overflow-x:auto;
+
+        border-radius:9px;
+    }
+
+    table{
+        min-width:780px;
+    }
+
+    th,
+    td{
+        padding:13px 12px;
+
+        font-size:11px;
+    }
+
+    th{
+        font-size:8px;
+
+        letter-spacing:.8px;
+    }
+
+
     /* MOBILE MANAGEMENT */
 
     .management-card{
@@ -2704,6 +2735,22 @@ footer strong{
 
     .modal-box h2{
         font-size:23px;
+    }
+
+    .modal-stats{
+        gap:7px;
+    }
+
+    .modal-stat{
+        padding:13px 5px;
+    }
+
+    .modal-stat span{
+        font-size:8px;
+    }
+
+    .modal-stat strong{
+        font-size:19px;
     }
 
 }
@@ -2818,6 +2865,9 @@ footer strong{
             class="hero-logo"
             src="assets/Nexvora Logo.png.png"
             alt="NEXVORA E-SPORTS Logo"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
         >
 
         <h1>
@@ -2920,6 +2970,10 @@ footer strong{
 
                         <th>
                             Role
+                        </th>
+
+                        <th>
+                            Matches
                         </th>
 
                         <th>
@@ -3118,7 +3172,7 @@ footer strong{
 
             <img
                 class="management-photo"
-                src="players/udsob.png"
+                src="players/udsob.png.png"
                 alt="Syed Hasibul Hassan Udsob"
                 loading="lazy"
                 decoding="async"
@@ -3360,6 +3414,19 @@ footer strong{
             <div class="modal-stat">
 
                 <span>
+                    Matches
+                </span>
+
+                <strong id="modalMatches">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="modal-stat">
+
+                <span>
                     Tournament
                 </span>
 
@@ -3470,6 +3537,11 @@ const players = {
 
         imageClass:"monarch",
 
+        /*
+         * ACTUAL MATCH COUNT বসাও
+         */
+        matches:7,
+
         tournament:2,
 
         scrim:6,
@@ -3492,6 +3564,8 @@ const players = {
         image:"players/noozy.png.png",
 
         imageClass:"noozy",
+
+        matches:8,
 
         tournament:3,
 
@@ -3516,6 +3590,8 @@ const players = {
 
         imageClass:"akatsuki",
 
+        matches:4,
+
         tournament:1,
 
         scrim:0,
@@ -3538,6 +3614,8 @@ const players = {
         image:"players/grey.png.png",
 
         imageClass:"",
+
+        matches:7,
 
         tournament:3,
 
@@ -3562,6 +3640,8 @@ const players = {
 
         imageClass:"ryuk",
 
+        matches:4,
+
         tournament:0,
 
         scrim:4,
@@ -3581,9 +3661,11 @@ const players = {
 
         role:"Supporter",
 
-        image:"players/udsob.png",
+        image:"players/udsob.png.png",
 
         imageClass:"udsob",
+
+        matches:0,
 
         tournament:0,
 
@@ -3609,6 +3691,17 @@ function getTotalKills(player){
     return Number(player.tournament || 0)
          +
            Number(player.scrim || 0);
+
+}
+
+
+/* =========================================================
+   GET MATCHES
+========================================================= */
+
+function getMatches(player){
+
+    return Number(player.matches || 0);
 
 }
 
@@ -3672,6 +3765,10 @@ function updateLeaderboard(){
                 getTotalKills(player);
 
 
+            const matches =
+                getMatches(player);
+
+
             const row =
                 document.createElement("tr");
 
@@ -3688,6 +3785,10 @@ function updateLeaderboard(){
 
                 <td>
                     ${player.role}
+                </td>
+
+                <td class="matches">
+                    ${matches}
                 </td>
 
                 <td>
@@ -4024,6 +4125,10 @@ function openPlayer(playerId){
         getTotalKills(player);
 
 
+    const matches =
+        getMatches(player);
+
+
     modalImage.src =
         player.image;
 
@@ -4046,6 +4151,12 @@ function openPlayer(playerId){
         "modalRole"
     ).textContent =
         player.role;
+
+
+    document.getElementById(
+        "modalMatches"
+    ).textContent =
+        matches;
 
 
     document.getElementById(
