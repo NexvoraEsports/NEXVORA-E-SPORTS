@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -2741,61 +2741,9 @@ footer strong{
                 </thead>
 
 
-                <tbody>
+                <tbody id="leaderboardBody">
 
-                    <tr>
-                        <td class="rank">01</td>
-                        <td>NXvesMONARCH</td>
-                        <td>IGL</td>
-                        <td>0</td>
-                        <td>6</td>
-                        <td class="total">6</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">02</td>
-                        <td>NXvesNooZY</td>
-                        <td>Assaulter</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td class="total">2</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">03</td>
-                        <td>NXvesAkaTsukI</td>
-                        <td>Supporter</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td class="total">0</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">04</td>
-                        <td>NXvesGrey</td>
-                        <td>Fragger</td>
-                        <td>0</td>
-                        <td>2</td>
-                        <td class="total">2</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">05</td>
-                        <td>NXvesRYUK</td>
-                        <td>Supporter</td>
-                        <td>0</td>
-                        <td>4</td>
-                        <td class="total">4</td>
-                    </tr>
-
-                    <tr>
-                        <td class="rank">06</td>
-                        <td>NXvesUDSOB</td>
-                        <td>Supporter</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td class="total">0</td>
-                    </tr>
+                    <!-- Generated automatically -->
 
                 </tbody>
 
@@ -2839,8 +2787,8 @@ footer strong{
                     Active Players
                 </h3>
 
-                <strong>
-                    6
+                <strong id="activePlayersCount">
+                    0
                 </strong>
 
             </div>
@@ -2852,7 +2800,7 @@ footer strong{
                     Tournament Kills
                 </h3>
 
-                <strong>
+                <strong id="teamTournamentKills">
                     0
                 </strong>
 
@@ -2865,8 +2813,8 @@ footer strong{
                     Scrim Kills
                 </h3>
 
-                <strong>
-                    14
+                <strong id="teamScrimKills">
+                    0
                 </strong>
 
             </div>
@@ -2878,8 +2826,8 @@ footer strong{
                     Total Kills
                 </h3>
 
-                <strong>
-                    14
+                <strong id="teamTotalKills">
+                    0
                 </strong>
 
             </div>
@@ -2921,376 +2869,12 @@ footer strong{
     </div>
 
 
-    <div class="roster">
-
-
-        <!-- MONARCH -->
-
-        <div
-            class="player reveal reveal-delay-1"
-            onclick="openPlayer('monarch')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesMONARCH profile"
-            onkeydown="handleCardKey(event,'monarch')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    src="players/monarch.png.png"
-                    alt="NXvesMONARCH"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesMONARCH
-            </h3>
-
-            <span class="role">
-                IGL
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    6
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- NOOZY -->
-
-        <div
-            class="player reveal reveal-delay-2"
-            onclick="openPlayer('noozy')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesNooZY profile"
-            onkeydown="handleCardKey(event,'noozy')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    class="noozy"
-                    src="players/noozy.png.png"
-                    alt="NXvesNooZY"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesNooZY
-            </h3>
-
-            <span class="role">
-                Assaulter
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    2
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- AKATSUKI -->
-
-        <div
-            class="player reveal reveal-delay-3"
-            onclick="openPlayer('akatsuki')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesAkaTsukI profile"
-            onkeydown="handleCardKey(event,'akatsuki')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    class="akatsuki"
-                    src="players/akatsuki.png.png"
-                    alt="NXvesAkaTsukI"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesAkaTsukI
-            </h3>
-
-            <span class="role">
-                Supporter
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    0
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- GREY -->
-
-        <div
-            class="player reveal reveal-delay-1"
-            onclick="openPlayer('grey')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesGrey profile"
-            onkeydown="handleCardKey(event,'grey')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    src="players/grey.png.png"
-                    alt="NXvesGrey"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesGrey
-            </h3>
-
-            <span class="role">
-                Fragger
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    2
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- RYUK -->
-
-        <div
-            class="player reveal reveal-delay-2"
-            onclick="openPlayer('ryuk')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesRYUK profile"
-            onkeydown="handleCardKey(event,'ryuk')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    class="ryuk"
-                    src="players/ryuk.png.png"
-                    alt="NXvesRYUK"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesRYUK
-            </h3>
-
-            <span class="role">
-                Supporter
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    4
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- UDSOB -->
-
-        <div
-            class="player reveal reveal-delay-3"
-            onclick="openPlayer('udsob')"
-            tabindex="0"
-            role="button"
-            aria-label="View NXvesUDSOB profile"
-            onkeydown="handleCardKey(event,'udsob')"
-        >
-
-            <span class="profile-label">
-                PLAYER PROFILE
-            </span>
-
-            <div class="player-photo">
-
-                <img
-                    src="players/udsob.png.png"
-                    alt="NXvesUDSOB"
-                    loading="lazy"
-                    decoding="async"
-                >
-
-            </div>
-
-            <h3>
-                NXvesUDSOB
-            </h3>
-
-            <span class="role">
-                Supporter
-            </span>
-
-            <div class="player-kills">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong>
-                    0
-                </strong>
-
-            </div>
-
-            <div class="tap-profile">
-
-                <span>
-                    TAP TO VIEW PROFILE
-                </span>
-
-                <span class="arrow">
-                    →
-                </span>
-
-            </div>
-
-        </div>
+    <div
+        class="roster"
+        id="rosterContainer"
+    >
+
+        <!-- Player cards generated automatically -->
 
     </div>
 
@@ -3672,140 +3256,645 @@ footer strong{
 
 <script>
 
-/* =========================
+/* =========================================================
    PLAYER DATA
-========================= */
+=========================================================
+
+   IMPORTANT:
+
+   ভবিষ্যতে শুধু এই দুইটা number change করবে:
+
+   tournament:  = Tournament Kills
+   scrim:       = Scrim Kills
+
+   Total Kills automatically calculated হবে।
+
+========================================================= */
 
 const players = {
 
     monarch:{
+
         name:"NXvesMONARCH",
+
         role:"IGL",
+
         image:"players/monarch.png.png",
+
         imageClass:"",
+
         tournament:0,
+
         scrim:6,
-        total:6,
-        bio:"In-game leader of NEXVORA E-SPORTS.",
-        facebook:"https://www.facebook.com/profile.php?id=61577703813474"
+
+        bio:
+            "In-game leader of NEXVORA E-SPORTS.",
+
+        facebook:
+            "https://www.facebook.com/profile.php?id=61577703813474"
+
     },
+
 
     noozy:{
+
         name:"NXvesNooZY",
+
         role:"Assaulter",
+
         image:"players/noozy.png.png",
+
         imageClass:"noozy",
+
         tournament:0,
+
         scrim:2,
-        total:2,
-        bio:"Assaulter of NEXVORA E-SPORTS.",
-        facebook:"https://www.facebook.com/shamiulla.shitul"
+
+        bio:
+            "Assaulter of NEXVORA E-SPORTS.",
+
+        facebook:
+            "https://www.facebook.com/shamiulla.shitul"
+
     },
+
 
     akatsuki:{
+
         name:"NXvesAkaTsukI",
+
         role:"Supporter",
+
         image:"players/akatsuki.png.png",
+
         imageClass:"akatsuki",
+
         tournament:0,
+
         scrim:0,
-        total:0,
-        bio:"Supporter of NEXVORA E-SPORTS.",
-        facebook:"https://www.facebook.com/profile.php?id=61594401750690"
+
+        bio:
+            "Supporter of NEXVORA E-SPORTS.",
+
+        facebook:
+            "https://www.facebook.com/profile.php?id=61594401750690"
+
     },
+
 
     grey:{
+
         name:"NXvesGrey",
+
         role:"Fragger",
+
         image:"players/grey.png.png",
+
         imageClass:"",
+
         tournament:0,
+
         scrim:2,
-        total:2,
-        bio:"Fragger of NEXVORA E-SPORTS.",
-        facebook:"https://www.facebook.com/nahid.hasan.joy.738354"
+
+        bio:
+            "Fragger of NEXVORA E-SPORTS.",
+
+        facebook:
+            "https://www.facebook.com/nahid.hasan.joy.738354"
+
     },
+
 
     ryuk:{
+
         name:"NXvesRYUK",
+
         role:"Supporter",
+
         image:"players/ryuk.png.png",
+
         imageClass:"ryuk",
+
         tournament:0,
+
         scrim:4,
-        total:4,
-        bio:"Supporter of NEXVORA E-SPORTS.",
-        facebook:"https://www.facebook.com/Piyash.yash"
+
+        bio:
+            "Supporter of NEXVORA E-SPORTS.",
+
+        facebook:
+            "https://www.facebook.com/Piyash.yash"
+
     },
 
+
     udsob:{
+
         name:"NXvesUDSOB",
+
         role:"Supporter",
+
         image:"players/udsob.png.png",
+
         imageClass:"",
+
         tournament:0,
+
         scrim:0,
-        total:0,
-        bio:"Supporter of NEXVORA E-SPORTS.",
-        facebook:"https://www.facebook.com/syed.hasibul.hassan.udsob"
+
+        bio:
+            "Supporter of NEXVORA E-SPORTS.",
+
+        facebook:
+            "https://www.facebook.com/syed.hasibul.hassan.udsob"
+
     }
 
 };
 
 
-/* =========================
+/* =========================================================
+   GET TOTAL KILLS
+========================================================= */
+
+function getTotalKills(player){
+
+    return Number(player.tournament || 0)
+         +
+           Number(player.scrim || 0);
+
+}
+
+
+/* =========================================================
+   SORT PLAYERS BY TOTAL KILLS
+========================================================= */
+
+function getSortedPlayers(){
+
+    return Object.entries(players)
+
+        .sort(
+            function(a,b){
+
+                const totalA =
+                    getTotalKills(a[1]);
+
+                const totalB =
+                    getTotalKills(b[1]);
+
+                return totalB - totalA;
+
+            }
+        );
+
+}
+
+
+/* =========================================================
+   UPDATE LEADERBOARD
+========================================================= */
+
+function updateLeaderboard(){
+
+    const tbody =
+        document.getElementById(
+            "leaderboardBody"
+        );
+
+    if(!tbody){
+        return;
+    }
+
+
+    tbody.innerHTML = "";
+
+
+    const sortedPlayers =
+        getSortedPlayers();
+
+
+    sortedPlayers.forEach(
+        function(entry,index){
+
+            const player =
+                entry[1];
+
+
+            const total =
+                getTotalKills(player);
+
+
+            const row =
+                document.createElement("tr");
+
+
+            row.innerHTML = `
+
+                <td class="rank">
+                    ${String(index + 1).padStart(2,"0")}
+                </td>
+
+                <td>
+                    ${player.name}
+                </td>
+
+                <td>
+                    ${player.role}
+                </td>
+
+                <td>
+                    ${player.tournament}
+                </td>
+
+                <td>
+                    ${player.scrim}
+                </td>
+
+                <td class="total">
+                    ${total}
+                </td>
+
+            `;
+
+
+            tbody.appendChild(row);
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE ROSTER
+========================================================= */
+
+function updateRoster(){
+
+    const roster =
+        document.getElementById(
+            "rosterContainer"
+        );
+
+
+    if(!roster){
+        return;
+    }
+
+
+    roster.innerHTML = "";
+
+
+    const sortedPlayers =
+        getSortedPlayers();
+
+
+    sortedPlayers.forEach(
+        function(entry,index){
+
+            const playerId =
+                entry[0];
+
+            const player =
+                entry[1];
+
+            const total =
+                getTotalKills(player);
+
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "player reveal " +
+                "reveal-delay-" +
+                ((index % 4) + 1);
+
+
+            card.setAttribute(
+                "tabindex",
+                "0"
+            );
+
+
+            card.setAttribute(
+                "role",
+                "button"
+            );
+
+
+            card.setAttribute(
+                "aria-label",
+                "View " +
+                player.name +
+                " profile"
+            );
+
+
+            card.addEventListener(
+                "click",
+                function(){
+
+                    openPlayer(playerId);
+
+                }
+            );
+
+
+            card.addEventListener(
+                "keydown",
+                function(event){
+
+                    handleCardKey(
+                        event,
+                        playerId
+                    );
+
+                }
+            );
+
+
+            card.innerHTML = `
+
+                <span class="profile-label">
+                    PLAYER PROFILE
+                </span>
+
+
+                <div class="player-photo">
+
+                    <img
+                        class="${player.imageClass}"
+                        src="${player.image}"
+                        alt="${player.name}"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                </div>
+
+
+                <h3>
+                    ${player.name}
+                </h3>
+
+
+                <span class="role">
+                    ${player.role}
+                </span>
+
+
+                <div class="player-kills">
+
+                    <span>
+                        Total Kills
+                    </span>
+
+                    <strong>
+                        ${total}
+                    </strong>
+
+                </div>
+
+
+                <div class="tap-profile">
+
+                    <span>
+                        TAP TO VIEW PROFILE
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </div>
+
+            `;
+
+
+            roster.appendChild(card);
+
+        }
+    );
+
+
+    /*
+       নতুন cards-এর জন্য reveal observer
+       একটু পরে observe করা হবে।
+    */
+
+    setTimeout(
+        function(){
+
+            const newCards =
+                roster.querySelectorAll(
+                    ".reveal"
+                );
+
+
+            newCards.forEach(
+                function(card){
+
+                    revealObserver.observe(
+                        card
+                    );
+
+                }
+            );
+
+        },
+        50
+    );
+
+}
+
+
+/* =========================================================
+   UPDATE TEAM STATISTICS
+========================================================= */
+
+function updateTeamStatistics(){
+
+    let tournamentKills = 0;
+
+    let scrimKills = 0;
+
+
+    const playerList =
+        Object.values(players);
+
+
+    playerList.forEach(
+        function(player){
+
+            tournamentKills +=
+                Number(
+                    player.tournament || 0
+                );
+
+
+            scrimKills +=
+                Number(
+                    player.scrim || 0
+                );
+
+        }
+    );
+
+
+    const totalKills =
+        tournamentKills +
+        scrimKills;
+
+
+    const activePlayers =
+        playerList.length;
+
+
+    const activePlayersElement =
+        document.getElementById(
+            "activePlayersCount"
+        );
+
+
+    const tournamentElement =
+        document.getElementById(
+            "teamTournamentKills"
+        );
+
+
+    const scrimElement =
+        document.getElementById(
+            "teamScrimKills"
+        );
+
+
+    const totalElement =
+        document.getElementById(
+            "teamTotalKills"
+        );
+
+
+    if(activePlayersElement){
+
+        activePlayersElement.textContent =
+            activePlayers;
+
+    }
+
+
+    if(tournamentElement){
+
+        tournamentElement.textContent =
+            tournamentKills;
+
+    }
+
+
+    if(scrimElement){
+
+        scrimElement.textContent =
+            scrimKills;
+
+    }
+
+
+    if(totalElement){
+
+        totalElement.textContent =
+            totalKills;
+
+    }
+
+}
+
+
+/* =========================================================
    OPEN PLAYER PROFILE
-========================= */
+========================================================= */
 
 function openPlayer(playerId){
 
-    const player = players[playerId];
+    const player =
+        players[playerId];
+
 
     if(!player){
         return;
     }
 
+
     const modal =
-        document.getElementById("playerModal");
+        document.getElementById(
+            "playerModal"
+        );
+
 
     const modalImage =
-        document.getElementById("modalImage");
+        document.getElementById(
+            "modalImage"
+        );
+
+
+    const total =
+        getTotalKills(player);
+
 
     modalImage.src =
         player.image;
 
+
     modalImage.alt =
         player.name;
+
 
     modalImage.className =
         player.imageClass;
 
-    document.getElementById("modalName")
-        .textContent =
+
+    document.getElementById(
+        "modalName"
+    ).textContent =
         player.name;
 
-    document.getElementById("modalRole")
-        .textContent =
+
+    document.getElementById(
+        "modalRole"
+    ).textContent =
         player.role;
 
-    document.getElementById("modalTournament")
-        .textContent =
+
+    document.getElementById(
+        "modalTournament"
+    ).textContent =
         player.tournament;
 
-    document.getElementById("modalScrim")
-        .textContent =
+
+    document.getElementById(
+        "modalScrim"
+    ).textContent =
         player.scrim;
 
-    document.getElementById("modalTotal")
-        .textContent =
-        player.total;
 
-    document.getElementById("modalBio")
-        .textContent =
+    document.getElementById(
+        "modalTotal"
+    ).textContent =
+        total;
+
+
+    document.getElementById(
+        "modalBio"
+    ).textContent =
         player.bio;
 
+
     const facebook =
-        document.getElementById("modalFacebook");
+        document.getElementById(
+            "modalFacebook"
+        );
+
 
     if(
         player.facebook &&
@@ -3815,35 +3904,52 @@ function openPlayer(playerId){
         facebook.href =
             player.facebook;
 
+
         facebook.textContent =
             "FACEBOOK";
 
-        facebook.classList.remove("disabled");
+
+        facebook.classList.remove(
+            "disabled"
+        );
+
 
         facebook.style.pointerEvents =
             "auto";
 
-    }else{
+    }
+
+    else{
 
         facebook.href =
             "#";
 
+
         facebook.textContent =
             "FACEBOOK LINK NOT ADDED";
 
-        facebook.classList.add("disabled");
+
+        facebook.classList.add(
+            "disabled"
+        );
+
 
         facebook.style.pointerEvents =
             "none";
 
     }
 
-    modal.classList.add("active");
+
+    modal.classList.add(
+        "active"
+    );
+
 
     modal.setAttribute(
         "aria-hidden",
         "false"
     );
+
 
     document.body.style.overflow =
         "hidden";
@@ -3851,21 +3957,28 @@ function openPlayer(playerId){
 }
 
 
-/* =========================
+/* =========================================================
    CLOSE PLAYER PROFILE
-========================= */
+========================================================= */
 
 function closePlayer(){
 
     const modal =
-        document.getElementById("playerModal");
+        document.getElementById(
+            "playerModal"
+        );
 
-    modal.classList.remove("active");
+
+    modal.classList.remove(
+        "active"
+    );
+
 
     modal.setAttribute(
         "aria-hidden",
         "true"
     );
+
 
     document.body.style.overflow =
         "";
@@ -3873,9 +3986,9 @@ function closePlayer(){
 }
 
 
-/* =========================
+/* =========================================================
    KEYBOARD SUPPORT
-========================= */
+========================================================= */
 
 function handleCardKey(
     event,
@@ -3889,16 +4002,19 @@ function handleCardKey(
 
         event.preventDefault();
 
-        openPlayer(playerId);
+
+        openPlayer(
+            playerId
+        );
 
     }
 
 }
 
 
-/* =========================
+/* =========================================================
    MODAL OUTSIDE CLICK
-========================= */
+========================================================= */
 
 document
     .getElementById("playerModal")
@@ -3918,9 +4034,9 @@ document
     );
 
 
-/* =========================
+/* =========================================================
    ESC CLOSE
-========================= */
+========================================================= */
 
 document.addEventListener(
     "keydown",
@@ -3938,15 +4054,20 @@ document.addEventListener(
 );
 
 
-/* =========================
-   HEADER SCROLL ANIMATION
-========================= */
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
 
 const siteHeader =
-    document.getElementById("siteHeader");
+    document.getElementById(
+        "siteHeader"
+    );
+
 
 const backTop =
-    document.getElementById("backTop");
+    document.getElementById(
+        "backTop"
+    );
 
 
 function handleScroll(){
@@ -3961,7 +4082,9 @@ function handleScroll(){
             "scrolled"
         );
 
-    }else{
+    }
+
+    else{
 
         siteHeader.classList.remove(
             "scrolled"
@@ -3976,7 +4099,9 @@ function handleScroll(){
             "show"
         );
 
-    }else{
+    }
+
+    else{
 
         backTop.classList.remove(
             "show"
@@ -3990,50 +4115,61 @@ function handleScroll(){
 window.addEventListener(
     "scroll",
     handleScroll,
-    {passive:true}
+    {
+        passive:true
+    }
 );
 
 
-/* =========================
+/* =========================================================
    BACK TO TOP
-========================= */
+========================================================= */
 
 backTop.addEventListener(
     "click",
     function(){
 
         window.scrollTo({
+
             top:0,
+
             behavior:"smooth"
+
         });
 
     }
 );
 
 
-/* =========================
+/* =========================================================
    SCROLL REVEAL
-========================= */
+========================================================= */
 
 const revealElements =
     document.querySelectorAll(
         ".reveal"
     );
 
+
 const revealObserver =
     new IntersectionObserver(
+
         function(entries){
 
             entries.forEach(
                 function(entry){
 
-                    if(entry.isIntersecting){
+                    if(
+                        entry.isIntersecting
+                    ){
 
                         entry.target.classList.add(
                             "show"
                         );
 
-                    }else{
+                    }
+
+                    else{
 
                         entry.target.classList.remove(
                             "show"
@@ -4045,12 +4181,14 @@ const revealObserver =
             );
 
         },
+
         {
             threshold:.12,
 
             rootMargin:
                 "0px 0px -55px 0px"
         }
+
     );
 
 
@@ -4065,9 +4203,15 @@ revealElements.forEach(
 );
 
 
-/* =========================
-   INITIAL SCROLL CHECK
-========================= */
+/* =========================================================
+   INITIALIZE WEBSITE
+========================================================= */
+
+updateLeaderboard();
+
+updateRoster();
+
+updateTeamStatistics();
 
 handleScroll();
 
@@ -4075,4 +4219,5 @@ handleScroll();
 
 
 </body>
+
 </html>
