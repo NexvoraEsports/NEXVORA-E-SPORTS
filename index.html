@@ -4028,6 +4028,65 @@ footer strong{
 
 }
 
+
+/* =========================================================
+   PLAYER CARD / PROFILE MODAL - STABLE MODE
+   Disables card + profile modal motion to prevent visual glitches
+========================================================= */
+
+.player{
+    transform-style:flat !important;
+    will-change:auto !important;
+}
+
+.player:hover{
+    transform:none !important;
+}
+
+.player .card-shine{
+    animation:none !important;
+    display:none !important;
+}
+
+.player-photo,
+.player-photo::before,
+.player-photo::after,
+.player-photo img,
+.player h3,
+.player .role,
+.player .tap-profile,
+.player .tap-profile .arrow{
+    animation:none !important;
+    transform:none !important;
+}
+
+.player:hover .player-photo,
+.player:hover .player-photo img,
+.player:hover h3,
+.player:hover .tap-profile .arrow{
+    transform:none !important;
+}
+
+.player-modal,
+.player-modal *{
+    animation:none !important;
+    transition:none !important;
+}
+
+.player-modal.active{
+    display:flex !important;
+}
+
+.modal-box,
+.modal-photo,
+.modal-photo img{
+    transform:none !important;
+}
+
+.modal-close:hover{
+    transform:none !important;
+}
+
 </style>
 
 </head>
@@ -5694,42 +5753,24 @@ function openPlayer(playerId){
             ".modal-box"
         );
 
-
+    /* Keep the profile card completely static. */
     modalBox.style.animation =
         "none";
 
-
-    void modalBox.offsetWidth;
-
-
-    modalBox.style.animation =
-        "modalOpen .45s cubic-bezier(.2,.65,.3,1)";
+    modalBox.style.transform =
+        "none";
 
 
-    setTimeout(
-        function(){
+    /* Stable profile mode: show modal stats instantly.
+       This prevents number-count animation glitches inside the card. */
+    modalTournament.textContent =
+        player.tournament;
 
-            animateNumber(
-                modalTournament,
-                player.tournament,
-                650
-            );
+    modalScrim.textContent =
+        player.scrim;
 
-            animateNumber(
-                modalScrim,
-                player.scrim,
-                750
-            );
-
-            animateNumber(
-                modalTotal,
-                total,
-                900
-            );
-
-        },
-        180
-    );
+    modalTotal.textContent =
+        total;
 
 }
 
@@ -6065,101 +6106,10 @@ revealElements.forEach(
 
 function setupTiltCards(){
 
-    if(prefersReducedMotion){
-        return;
-    }
+    /* Disabled intentionally.
+       Player cards remain completely static to avoid visual glitches. */
 
-
-    if(
-        window.matchMedia(
-            "(pointer: coarse)"
-        ).matches
-    ){
-        return;
-    }
-
-
-    document
-        .querySelectorAll(
-            ".player"
-        )
-        .forEach(
-            function(card){
-
-                if(
-                    card.dataset.tiltReady ===
-                    "true"
-                ){
-                    return;
-                }
-
-
-                card.dataset.tiltReady =
-                    "true";
-
-
-                card.addEventListener(
-                    "pointermove",
-                    function(event){
-
-                        const rect =
-                            card.getBoundingClientRect();
-
-
-                        const x =
-                            event.clientX -
-                            rect.left;
-
-
-                        const y =
-                            event.clientY -
-                            rect.top;
-
-
-                        const centerX =
-                            rect.width / 2;
-
-
-                        const centerY =
-                            rect.height / 2;
-
-
-                        const rotateY =
-                            ((x - centerX) /
-                            centerX) *
-                            5;
-
-
-                        const rotateX =
-                            ((centerY - y) /
-                            centerY) *
-                            5;
-
-
-                        card.style.transform =
-                            `
-                            perspective(900px)
-                            rotateX(${rotateX}deg)
-                            rotateY(${rotateY}deg)
-                            translateY(-6px)
-                            `;
-                    
-                    }
-                );
-
-
-                card.addEventListener(
-                    "pointerleave",
-                    function(){
-
-                        card.style.transform =
-                            "";
-
-                    }
-                );
-
-            }
-        );
+    return;
 
 }
 
