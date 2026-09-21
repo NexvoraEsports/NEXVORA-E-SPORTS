@@ -1199,6 +1199,8 @@ section{
 
 /* PLAYER IMAGE POSITIONING */
 
+/* PLAYER IMAGE POSITIONING */
+
 .player-photo img.noozy{
     object-position:center 35%;
 }
@@ -1209,6 +1211,24 @@ section{
 
 .player-photo img.akatsuki{
     object-position:center 25%;
+}
+
+/* MONARCH / UDSOB — move image slightly down so the head stays visible */
+.player-photo img.monarch{
+    object-position:center 18%;
+}
+
+.player-photo img.udsob{
+    object-position:center 18%;
+}
+
+/* Keep the same framing inside the player profile modal */
+.modal-photo img.monarch{
+    object-position:center 18%;
+}
+
+.modal-photo img.udsob{
+    object-position:center 18%;
 }
 
 
@@ -3438,7 +3458,7 @@ const players = {
 
         image:"players/monarch.png.png",
 
-        imageClass:"",
+        imageClass:"monarch",
 
         tournament:0,
 
@@ -3553,7 +3573,7 @@ const players = {
 
         image:"players/udsob.png",
 
-        imageClass:"",
+        imageClass:"udsob",
 
         tournament:0,
 
