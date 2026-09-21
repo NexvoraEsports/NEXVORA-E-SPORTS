@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -182,7 +182,6 @@ header.scrolled{
 
 .nav{
     max-width:1250px;
-
     margin:auto;
 
     padding:10px 25px;
@@ -190,9 +189,7 @@ header.scrolled{
     min-height:76px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     transition:
@@ -214,9 +211,7 @@ header.scrolled .nav{
 
 .brand{
     display:flex;
-
     align-items:center;
-
     gap:12px;
 
     opacity:0;
@@ -267,14 +262,9 @@ header.scrolled .team-logo{
 
 .logo{
     font-size:20px;
-
     font-weight:900;
-
     letter-spacing:2px;
-
     white-space:nowrap;
-
-    transition:.3s;
 }
 
 .logo span{
@@ -288,7 +278,6 @@ header.scrolled .team-logo{
 
 nav{
     display:flex;
-
     align-items:center;
 }
 
@@ -302,11 +291,9 @@ nav a{
     margin-left:28px;
 
     font-size:13px;
-
     font-weight:800;
 
     text-transform:uppercase;
-
     letter-spacing:.8px;
 
     transition:
@@ -354,9 +341,7 @@ nav a:hover::after{
     min-height:720px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
@@ -439,11 +424,9 @@ nav a:hover::after{
 
 .hero-content{
     position:relative;
-
     z-index:2;
 
     width:100%;
-
     max-width:900px;
 }
 
@@ -468,7 +451,6 @@ nav a:hover::after{
     border-radius:30px;
 
     font-size:11px;
-
     font-weight:900;
 
     letter-spacing:2px;
@@ -694,7 +676,6 @@ nav a:hover::after{
     border-radius:5px;
 
     font-size:12px;
-
     font-weight:900;
 
     letter-spacing:1px;
@@ -802,7 +783,7 @@ section{
 
 
 /* =========================
-   STATS DATE NOTE
+   STATS DATE
 ========================= */
 
 .stats-date{
@@ -920,6 +901,8 @@ section{
 
 /* =========================
    ROSTER
+   PLAYER CARDS
+   SIMPLE / CLEAN VERSION
 ========================= */
 
 .roster{
@@ -950,88 +933,38 @@ section{
 
     text-align:center;
 
-    transition:
-        border-color .35s ease,
-        transform .4s cubic-bezier(.2,.65,.3,1),
-        box-shadow .4s ease;
-
     cursor:pointer;
 
     outline:none;
+
+    /* Simple card only */
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
-.player::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #00e5ff,
-            transparent
-        );
-
-    opacity:.5;
-
-    transition:.35s;
-}
-
+/* No running line / no sweep animation */
+.player::before,
 .player::after{
-    content:"";
-
-    position:absolute;
-
-    width:120px;
-    height:120px;
-
-    right:-60px;
-    bottom:-60px;
-
-    border-radius:50%;
-
-    background:rgba(0,229,255,.04);
-
-    transition:.4s;
+    display:none;
 }
 
 .player:hover{
-    transform:translateY(-8px);
-
-    border-color:rgba(0,229,255,.6);
+    border-color:rgba(0,229,255,.45);
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,.4),
-        0 0 25px rgba(0,229,255,.06);
-}
-
-.player:hover::before{
-    opacity:1;
-}
-
-.player:hover::after{
-    background:rgba(0,229,255,.08);
-
-    transform:scale(1.3);
+        0 12px 30px rgba(0,0,0,.3);
 }
 
 .player:focus-visible{
     border-color:#00e5ff;
 
     box-shadow:
-        0 0 0 2px rgba(0,229,255,.15),
-        0 0 30px rgba(0,229,255,.12);
+        0 0 0 2px rgba(0,229,255,.15);
 }
 
 
-/* PROFILE INDICATOR */
+/* PROFILE LABEL */
 
 .profile-label{
     position:absolute;
@@ -1048,8 +981,6 @@ section{
     letter-spacing:1.5px;
 
     text-transform:uppercase;
-
-    transition:.3s;
 }
 
 .player:hover .profile-label{
@@ -1079,20 +1010,18 @@ section{
         0 0 0 6px rgba(0,229,255,.025),
         0 0 30px rgba(0,229,255,.08);
 
+    /* No photo zoom animation */
     transition:
-        border-color .35s ease,
-        box-shadow .35s ease,
-        transform .35s ease;
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
 .player:hover .player-photo{
     border-color:#00e5ff;
 
     box-shadow:
-        0 0 0 7px rgba(0,229,255,.035),
-        0 0 35px rgba(0,229,255,.14);
-
-    transform:scale(1.02);
+        0 0 0 6px rgba(0,229,255,.025),
+        0 0 30px rgba(0,229,255,.08);
 }
 
 .player-photo img{
@@ -1101,12 +1030,8 @@ section{
 
     object-fit:cover;
 
-    transition:
-        transform .5s cubic-bezier(.2,.65,.3,1);
-}
-
-.player:hover .player-photo img{
-    transform:scale(1.06);
+    /* Completely static image */
+    transform:none !important;
 }
 
 
@@ -1133,16 +1058,6 @@ section{
     font-size:19px;
 
     letter-spacing:.7px;
-
-    transition:
-        color .3s ease,
-        transform .3s ease;
-}
-
-.player:hover h3{
-    color:#fff;
-
-    transform:translateY(-2px);
 }
 
 
@@ -1170,17 +1085,6 @@ section{
     text-transform:uppercase;
 
     letter-spacing:1.3px;
-
-    transition:
-        background .3s ease,
-        box-shadow .3s ease;
-}
-
-.player:hover .role{
-    background:rgba(0,229,255,.07);
-
-    box-shadow:
-        0 0 15px rgba(0,229,255,.06);
 }
 
 
@@ -1247,16 +1151,12 @@ section{
     letter-spacing:1.4px;
 
     text-transform:uppercase;
-
-    transition:.3s;
 }
 
 .tap-profile .arrow{
     color:#566168;
 
     font-size:13px;
-
-    transition:.3s;
 }
 
 .player:hover .tap-profile{
@@ -1265,8 +1165,6 @@ section{
 
 .player:hover .tap-profile .arrow{
     color:#00e5ff;
-
-    transform:translateX(5px);
 }
 
 
@@ -1454,27 +1352,7 @@ tbody tr:hover{
     box-shadow:
         0 0 0 7px rgba(0,229,255,.025),
         0 0 30px rgba(0,229,255,.08);
-
-    transition:
-        transform .4s cubic-bezier(.2,.65,.3,1),
-        border-color .3s ease,
-        box-shadow .3s ease;
 }
-
-.management-card:hover .management-photo{
-    transform:
-        scale(1.05)
-        translateY(-2px);
-
-    border-color:#00e5ff;
-
-    box-shadow:
-        0 0 0 7px rgba(0,229,255,.035),
-        0 0 35px rgba(0,229,255,.14);
-}
-
-
-/* MANAGER PHOTO POSITION */
 
 .management-card:nth-child(2) .management-photo{
     object-position:center 35%;
@@ -1826,6 +1704,7 @@ tbody tr:hover{
 
 /* =========================
    PLAYER PROFILE MODAL
+   CLEAN VERSION
 ========================= */
 
 .player-modal{
@@ -1838,7 +1717,6 @@ tbody tr:hover{
     display:none;
 
     align-items:center;
-
     justify-content:center;
 
     padding:20px;
@@ -1846,7 +1724,6 @@ tbody tr:hover{
     background:rgba(0,0,0,.82);
 
     backdrop-filter:blur(12px);
-
     -webkit-backdrop-filter:blur(12px);
 }
 
@@ -1872,7 +1749,6 @@ tbody tr:hover{
     position:relative;
 
     width:100%;
-
     max-width:500px;
 
     max-height:90vh;
@@ -2115,7 +1991,6 @@ tbody tr:hover{
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     margin-top:20px;
@@ -2185,7 +2060,6 @@ tbody tr:hover{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border:1px solid rgba(0,229,255,.35);
@@ -2195,7 +2069,6 @@ tbody tr:hover{
     background:rgba(5,9,10,.88);
 
     backdrop-filter:blur(10px);
-
     -webkit-backdrop-filter:blur(10px);
 
     color:#00e5ff;
@@ -2205,7 +2078,6 @@ tbody tr:hover{
     cursor:pointer;
 
     opacity:0;
-
     visibility:hidden;
 
     transform:
@@ -2577,25 +2449,15 @@ footer strong{
 
         <nav>
 
-            <a href="#home">
-                Home
-            </a>
+            <a href="#home">Home</a>
 
-            <a href="#stats">
-                Stats
-            </a>
+            <a href="#stats">Stats</a>
 
-            <a href="#roster">
-                Roster
-            </a>
+            <a href="#roster">Roster</a>
 
-            <a href="#management">
-                Management
-            </a>
+            <a href="#management">Management</a>
 
-            <a href="#tournaments">
-                Tournaments
-            </a>
+            <a href="#tournaments">Tournaments</a>
 
         </nav>
 
@@ -2677,8 +2539,6 @@ footer strong{
     </div>
 
 
-    <!-- PLAYER LEADERBOARD -->
-
     <div style="margin-bottom:55px;">
 
         <div class="section-heading reveal" style="margin-bottom:25px;">
@@ -2715,26 +2575,11 @@ footer strong{
                     <tr>
 
                         <th>#</th>
-
-                        <th>
-                            Player
-                        </th>
-
-                        <th>
-                            Role
-                        </th>
-
-                        <th>
-                            Tournament Kills
-                        </th>
-
-                        <th>
-                            Scrim Kills
-                        </th>
-
-                        <th>
-                            Total Kills
-                        </th>
+                        <th>Player</th>
+                        <th>Role</th>
+                        <th>Tournament Kills</th>
+                        <th>Scrim Kills</th>
+                        <th>Total Kills</th>
 
                     </tr>
 
@@ -2805,8 +2650,6 @@ footer strong{
 
     </div>
 
-
-    <!-- TEAM STATISTICS -->
 
     <div>
 
@@ -3404,8 +3247,6 @@ footer strong{
     </div>
 
 
-    <!-- OFFICIAL FACEBOOK PAGE -->
-
     <div class="official-page reveal">
 
         <div class="official-page-label">
@@ -3531,7 +3372,7 @@ footer strong{
     class="player-modal"
     id="playerModal"
     aria-hidden="true"
-
+>
 
     <div
         class="modal-box"
@@ -3648,7 +3489,7 @@ footer strong{
     id="backTop"
     aria-label="Back to top"
     title="Back to top"
-
+>
     ↑
 </button>
 
@@ -3939,7 +3780,7 @@ document.addEventListener(
 
 
 /* =========================
-   HEADER SCROLL ANIMATION
+   HEADER SCROLL
 ========================= */
 
 const siteHeader =
