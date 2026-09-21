@@ -4,10 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#020406">
-<meta name="description" content="NEXVORA E-SPORTS — Competitive PUBG MOBILE esports team from Bangladesh.">
-<link rel="preload" as="image" href="assets/Nexvora Logo.png.png" fetchpriority="high">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>NEXVORA E-SPORTS</title>
 
@@ -21,7 +18,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Inter,"Segoe UI",Roboto,Arial,Helvetica,sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 html{
@@ -31,20 +28,11 @@ html{
 
 body{
     background:#020406;
-    min-width:0;
-    -webkit-text-size-adjust:100%;
-    text-rendering:optimizeLegibility;
     color:#F8FAFC;
     line-height:1.6;
     overflow-x:hidden;
 }
 
-
-/* GLOBAL RESPONSIVE SAFETY */
-
-img{max-width:100%;}
-button,a{-webkit-tap-highlight-color:transparent;}
-button{font:inherit;}
 
 /* =========================
    ANIMATED BACKGROUND
@@ -302,62 +290,69 @@ header.scrolled .team-logo{
    NAVIGATION
 ========================= */
 
-.nav-controls{display:flex;align-items:center;gap:14px;}
+nav{
+    display:flex;
 
-nav{display:flex;align-items:center;gap:8px;}
+    align-items:center;
+}
 
 nav a{
     position:relative;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:38px;
-    padding:0 13px;
-    color:#A8B4C2;
+
+    color:#94A3B8;
+
     text-decoration:none;
-    margin-left:0;
-    border:1px solid transparent;
-    border-radius:8px;
-    background:rgba(255,255,255,.015);
-    font-size:12px;
-    font-weight:850;
+
+    margin-left:28px;
+
+    font-size:13px;
+
+    font-weight:800;
+
     text-transform:uppercase;
+
     letter-spacing:.8px;
-    transition:color .25s ease,background .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
 }
 
 nav a::after{
     content:"";
+
     position:absolute;
-    left:12px;right:12px;bottom:5px;
-    width:auto;height:1px;
-    transform:scaleX(0);
-    transform-origin:center;
-    background:linear-gradient(90deg,#7DD3FC,#A78BFA,#7C3AED);
-    box-shadow:0 0 10px rgba(125,211,252,.35);
-    transition:transform .25s ease;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7DD3FC,
+            #7C3AED
+        );
+
+    box-shadow:
+        0 0 10px rgba(125,211,252,.45),
+        0 0 15px rgba(124,58,237,.25);
+
+    transition:width .3s ease;
 }
 
-nav a:hover,nav a:focus-visible{
-    color:#F8FAFC;
-    border-color:rgba(125,211,252,.20);
-    background:linear-gradient(135deg,rgba(125,211,252,.08),rgba(124,58,237,.08));
+nav a:hover{
+    color:#7DD3FC;
+
     transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(0,0,0,.18);
-    outline:none;
 }
-nav a:hover::after,nav a:focus-visible::after{transform:scaleX(1);}
 
-.menu-toggle{
-    display:none;width:42px;height:42px;padding:0;
-    border:1px solid rgba(125,211,252,.24);border-radius:9px;
-    background:rgba(125,211,252,.05);color:#7DD3FC;cursor:pointer;
-    align-items:center;justify-content:center;flex-direction:column;gap:5px;
+nav a:hover::after{
+    width:100%;
 }
-.menu-toggle span{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform .25s ease,opacity .25s ease;}
-.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
-.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
 
 /* =========================
    HERO
@@ -517,49 +512,18 @@ nav a:hover::after,nav a:focus-visible::after{transform:scaleX(1);}
 
 
 /* =========================
-   HERO ARMOR VISUAL
-========================= */
-
-.hero-visual{
-    position:relative;width:min(540px,78vw);aspect-ratio:1;
-    margin:0 auto 18px;display:grid;place-items:center;isolation:isolate;
-}
-.hero-visual::before{
-    content:"";position:absolute;inset:5%;
-    border:1px solid rgba(125,211,252,.20);
-    clip-path:polygon(14% 0,86% 0,100% 14%,100% 86%,86% 100%,14% 100%,0 86%,0 14%);
-    opacity:.9;
-}
-.hero-visual::after{
-    content:"NXV // 01";position:absolute;left:8%;bottom:7%;padding:3px 8px;
-    border-left:2px solid #7DD3FC;color:#64748B;font-size:8px;font-weight:900;
-    letter-spacing:1.8px;background:rgba(2,4,6,.62);
-}
-.armor-frame{
-    position:absolute;inset:2%;z-index:-1;
-    background:linear-gradient(135deg,rgba(125,211,252,.55),rgba(124,58,237,.45) 48%,rgba(125,211,252,.12));
-    clip-path:polygon(12% 0,88% 0,100% 12%,100% 88%,88% 100%,12% 100%,0 88%,0 12%);
-    opacity:.55;filter:drop-shadow(0 0 18px rgba(125,211,252,.12));
-}
-.armor-frame::after{
-    content:"";position:absolute;inset:1px;background:linear-gradient(180deg,rgba(8,12,17,.95),rgba(2,4,6,.55));clip-path:inherit;
-}
-
-/* =========================
    HERO LOGO
 ========================= */
 
 .hero-logo{
-    position:relative;
-    z-index:2;
     display:block;
 
-    width:92%;
-    height:92%;
+    width:500px;
+    height:500px;
 
     object-fit:contain;
 
-    margin:0;
+    margin:0 auto 18px;
 
     filter:
         drop-shadow(0 0 20px rgba(125,211,252,.18))
@@ -2513,15 +2477,6 @@ footer strong{
 
 
 /* =========================
-   VISUAL REFINEMENT
-========================= */
-
-section,footer{position:relative;}
-.section-title h2,.management-card h3,.player h3,.modal-box h2{text-wrap:balance;}
-.btn{box-shadow:0 8px 24px rgba(0,0,0,.18);}
-.btn:hover{box-shadow:0 10px 28px rgba(0,0,0,.25),0 0 18px rgba(125,211,252,.08);}
-
-/* =========================
    TABLET
 ========================= */
 
@@ -2558,74 +2513,201 @@ section,footer{position:relative;}
 
 @media(max-width:650px){
 
-    .nav{position:relative;padding:9px 14px;min-height:64px;display:flex;align-items:center;justify-content:flex-end;}
-    .brand{display:flex;margin-right:auto;opacity:1;transform:none;pointer-events:auto;}
-    .team-logo{width:40px;height:40px;}
-    .logo{font-size:14px;letter-spacing:1.2px;}
-    .menu-toggle{display:flex;flex-shrink:0;}
+    .nav{
+        padding:8px 15px;
+
+        min-height:64px;
+
+        display:block;
+    }
+
+    .brand{
+        display:none;
+    }
 
     nav{
-        position:absolute;top:calc(100% + 8px);left:12px;right:12px;z-index:20;
-        display:flex;flex-direction:column;align-items:stretch;gap:6px;padding:10px;
-        border:1px solid rgba(125,211,252,.14);border-radius:12px;
-        background:rgba(5,8,12,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-        box-shadow:0 20px 45px rgba(0,0,0,.45);opacity:0;visibility:hidden;
-        transform:translateY(-8px);pointer-events:none;
-        transition:opacity .22s ease,transform .22s ease,visibility .22s ease;
+        display:flex !important;
+
+        align-items:center;
+
+        justify-content:flex-start;
+
+        gap:18px;
+
+        width:100%;
+
+        max-width:100%;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        white-space:nowrap;
+
+        scrollbar-width:none;
+
+        -ms-overflow-style:none;
+
+        padding:4px 0;
+
+        margin:0;
+
+        flex-shrink:0;
     }
-    nav.open{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-    nav a{width:100%;min-height:44px;justify-content:flex-start;padding:0 14px;margin:0;border-color:rgba(148,163,184,.08);background:rgba(255,255,255,.02);font-size:11px;}
-    nav a::after{left:14px;right:auto;width:28px;bottom:7px;}
 
-    .hero{min-height:calc(100svh - 64px);padding:58px 18px 70px;}
-    .hero::before{width:360px;height:360px;}
-    .hero::after{width:255px;height:255px;}
-    .hero-content{max-width:560px;}
-    .hero-visual{width:min(310px,78vw);margin-bottom:14px;}
-    .hero-badge{max-width:100%;padding:6px 11px;font-size:9px;letter-spacing:1.4px;}
-    .hero h1{font-size:clamp(27px,8vw,36px);line-height:1.08;letter-spacing:1.5px;}
-    .hero-subtitle{max-width:520px;margin-top:18px;font-size:13px;line-height:1.65;}
-    .hero-line{margin:20px auto;}
-    .hero-buttons{width:100%;gap:9px;}
-    .hero-buttons .btn{flex:1 1 145px;min-width:0;}
+    nav::-webkit-scrollbar{
+        display:none;
+    }
 
-    section{padding:64px 16px;}
-    .section-heading{display:block;}
-    .section-title h2{font-size:clamp(25px,7vw,30px);line-height:1.1;}
-    .stats{grid-template-columns:1fr 1fr;gap:10px;}
-    .roster{grid-template-columns:1fr;gap:16px;}
-    .player{min-width:0;}
-    .management{grid-template-columns:1fr;gap:16px;}
-    .management-card{padding:28px 18px;}
-    .official-page{padding:26px 18px;}
-    .table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    nav a{
+        display:block !important;
 
-    .player-modal{padding:12px;align-items:flex-start;padding-top:20px;}
-    .modal-box{width:min(100%,500px);max-height:calc(100svh - 40px);padding:30px 15px 24px;border-radius:14px;}
-    .modal-photo{width:min(180px,46vw);height:min(180px,46vw);}
-    .modal-box h2{font-size:clamp(22px,6vw,28px);}
+        flex-shrink:0;
 
-    .back-top{right:14px;bottom:14px;width:40px;height:40px;font-size:16px;}
+        margin-left:0;
+
+        font-size:10px;
+
+        letter-spacing:.6px;
+
+        padding:5px 0;
+    }
+
+    nav a::after{
+        bottom:-2px;
+    }
+
+
+    /* MOBILE HERO */
+
+    .hero{
+        min-height:650px;
+
+        padding:65px 18px;
+    }
+
+    .hero::before{
+        width:380px;
+        height:380px;
+    }
+
+    .hero::after{
+        width:270px;
+        height:270px;
+    }
+
+    .hero-logo{
+        width:185px;
+        height:185px;
+
+        margin-bottom:18px;
+    }
+
+    .hero h1{
+        font-size:32px;
+
+        letter-spacing:2px;
+    }
+
+    .hero-subtitle{
+        font-size:14px;
+    }
+
+
+    /* MOBILE SECTIONS */
+
+    section{
+        padding:70px 18px;
+    }
+
+    .section-heading{
+        display:block;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+
+    /* MOBILE STATS */
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+
+    /* MOBILE ROSTER */
+
+    .roster{
+        grid-template-columns:1fr;
+    }
+
+
+    /* MOBILE MANAGEMENT */
+
+    .management-card{
+        padding:28px 20px;
+    }
+
+    .official-page{
+        padding:28px 20px;
+    }
+
+
+    /* MOBILE BACK TOP */
+
+    .back-top{
+        right:15px;
+        bottom:15px;
+
+        width:40px;
+        height:40px;
+
+        font-size:16px;
+    }
+
 }
+
 
 /* =========================
    SMALL MOBILE
 ========================= */
 
 @media(max-width:420px){
-    .brand .logo{font-size:12px;letter-spacing:1px;}
-    .team-logo{width:36px;height:36px;}
-    .stats{grid-template-columns:1fr;}
-    .hero{padding-left:14px;padding-right:14px;}
-    .hero-visual{width:min(270px,78vw);}
-    .hero h1{font-size:27px;}
-    .hero-buttons{flex-direction:column;}
-    .hero-buttons .btn{width:100%;flex-basis:auto;}
-    .player-photo{width:140px;height:140px;}
-    .modal-box{padding:28px 13px 22px;}
-    .modal-photo{width:145px;height:145px;}
-    .modal-box h2{font-size:23px;}
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .hero-logo{
+        width:165px;
+        height:165px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .player-photo{
+        width:140px;
+        height:140px;
+    }
+
+    .modal-box{
+        padding:30px 18px 25px;
+    }
+
+    .modal-photo{
+        width:145px;
+        height:145px;
+    }
+
+    .modal-box h2{
+        font-size:23px;
+    }
+
 }
+
 
 /* =========================
    REDUCED MOTION
@@ -2679,10 +2761,6 @@ section,footer{position:relative;}
                 class="team-logo"
                 src="assets/Nexvora Logo.png.png"
                 alt="NEXVORA E-SPORTS Logo"
-                width="62"
-                height="62"
-                loading="eager"
-                decoding="async"
             >
 
             <div class="logo">
@@ -2692,11 +2770,8 @@ section,footer{position:relative;}
         </div>
 
 
-        <div class="nav-controls">
-            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
-                <span></span><span></span><span></span>
-            </button>
-            <nav id="mainNav">
+        <nav>
+
             <a href="#home">
                 Home
             </a>
@@ -2716,8 +2791,8 @@ section,footer{position:relative;}
             <a href="#tournaments">
                 Tournaments
             </a>
-            </nav>
-        </div>
+
+        </nav>
 
     </div>
 
@@ -2736,19 +2811,11 @@ section,footer{position:relative;}
             BANGLADESH • PUBG MOBILE ESPORTS
         </div>
 
-        <div class="hero-visual" aria-label="NEXVORA E-SPORTS emblem">
-            <div class="armor-frame" aria-hidden="true"></div>
-            <img
-                class="hero-logo"
-                src="assets/Nexvora Logo.png.png"
-                alt="NEXVORA E-SPORTS Logo"
-                width="500"
-                height="500"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-            >
-        </div>
+        <img
+            class="hero-logo"
+            src="assets/Nexvora Logo.png.png"
+            alt="NEXVORA E-SPORTS Logo"
+        >
 
         <h1>
             NEXVORA <span>E-SPORTS</span>
@@ -3050,7 +3117,7 @@ section,footer{position:relative;}
                 class="management-photo"
                 src="players/udsob.png.png"
                 alt="Syed Hasibul Hassan Udsob"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
             >
 
@@ -3086,7 +3153,7 @@ section,footer{position:relative;}
                 class="management-photo"
                 src="players/noozy.png.png"
                 alt="Shamiulla Shitul"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
             >
 
@@ -3746,7 +3813,7 @@ function updateRoster(){
                         class="${player.imageClass}"
                         src="${player.image}"
                         alt="${player.name}"
-                        loading="eager"
+                        loading="lazy"
                         decoding="async"
                     >
 
@@ -4164,36 +4231,6 @@ document.addEventListener(
 
     }
 );
-
-
-/* =========================================================
-   MOBILE NAVIGATION
-========================================================= */
-
-const menuToggle=document.getElementById("menuToggle");
-const mainNav=document.getElementById("mainNav");
-
-if(menuToggle && mainNav){
-    menuToggle.addEventListener("click",function(){
-        const isOpen=mainNav.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded",String(isOpen));
-        menuToggle.setAttribute("aria-label",isOpen?"Close navigation menu":"Open navigation menu");
-    });
-    mainNav.querySelectorAll("a").forEach(function(link){
-        link.addEventListener("click",function(){
-            mainNav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded","false");
-            menuToggle.setAttribute("aria-label","Open navigation menu");
-        });
-    });
-    window.addEventListener("resize",function(){
-        if(window.innerWidth>650){
-            mainNav.classList.remove("open");
-            menuToggle.setAttribute("aria-expanded","false");
-            menuToggle.setAttribute("aria-label","Open navigation menu");
-        }
-    });
-}
 
 
 /* =========================================================
