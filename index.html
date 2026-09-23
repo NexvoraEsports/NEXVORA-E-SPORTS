@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -2790,9 +2791,7 @@ footer strong{
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      HEADER
@@ -2800,54 +2799,53 @@ footer strong{
 
 <header id="siteHeader">
 
-    <div class="nav">
+<div class="nav">
 
-        <div class="brand">
+    <div class="brand">
 
-            <img
-              class="team-logo"
-              src="assets/Nexvora Logo.png.png"
-              alt="NEXVORA E-SPORTS Logo"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            >
+        <img
+          class="team-logo"
+          src="assets/Nexvora Logo.png.png"
+          alt="NEXVORA E-SPORTS Logo"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
 
-            <div class="logo">
-                NEXVORA <span>ESPORTS</span>
-            </div>
-
+        <div class="logo">
+            NEXVORA <span>ESPORTS</span>
         </div>
-
-
-        <nav>
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#stats">
-                Stats
-            </a>
-
-            <a href="#roster">
-                Roster
-            </a>
-
-            <a href="#management">
-                Management
-            </a>
-
-            <a href="#tournaments">
-                Tournaments
-            </a>
-
-        </nav>
 
     </div>
 
-</header>
 
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#stats">
+            Stats
+        </a>
+
+        <a href="#roster">
+            Roster
+        </a>
+
+        <a href="#management">
+            Management
+        </a>
+
+        <a href="#tournaments">
+            Tournaments
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
 
 <!-- =========================
      HERO
@@ -2855,48 +2853,47 @@ footer strong{
 
 <div class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="hero-badge">
-            BANGLADESH • PUBG MOBILE ESPORTS
-        </div>
+    <div class="hero-badge">
+        BANGLADESH • PUBG MOBILE ESPORTS
+    </div>
 
-        <img
-            class="hero-logo"
-            src="assets/Nexvora Logo.png.png"
-            alt="NEXVORA E-SPORTS Logo"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-        >
+    <img
+        class="hero-logo"
+        src="assets/Nexvora Logo.png.png"
+        alt="NEXVORA E-SPORTS Logo"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+    >
 
-        <h1>
-            NEXVORA <span>E-SPORTS</span>
-        </h1>
+    <h1>
+        NEXVORA <span>E-SPORTS</span>
+    </h1>
 
-        <div class="hero-line"></div>
+    <div class="hero-line"></div>
 
-        <p class="hero-subtitle">
-            Competitive PUBG MOBILE esports team.
-            Built for competition, teamwork and the pursuit of excellence.
-        </p>
+    <p class="hero-subtitle">
+        Competitive PUBG MOBILE esports team.
+        Built for competition, teamwork and the pursuit of excellence.
+    </p>
 
-        <div class="hero-buttons">
+    <div class="hero-buttons">
 
-            <a class="btn" href="#roster">
-                VIEW ROSTER
-            </a>
+        <a class="btn" href="#roster">
+            VIEW ROSTER
+        </a>
 
-            <a class="btn secondary" href="#tournaments">
-                OUR JOURNEY
-            </a>
-
-        </div>
+        <a class="btn secondary" href="#tournaments">
+            OUR JOURNEY
+        </a>
 
     </div>
 
 </div>
 
+</div>
 
 <!-- =========================
      STATS SECTION
@@ -2904,20 +2901,49 @@ footer strong{
 
 <section id="stats">
 
-    <div class="section-heading reveal">
+<div class="section-heading reveal">
+
+    <div class="section-title">
+
+        <div class="section-number">
+            01 / PERFORMANCE
+        </div>
+
+        <h2>
+            Team Performance
+        </h2>
+
+        <p>
+            Player leaderboard and overall team statistics
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PLAYER LEADERBOARD -->
+
+<div style="margin-bottom:55px;">
+
+    <div class="section-heading reveal" style="margin-bottom:25px;">
 
         <div class="section-title">
 
             <div class="section-number">
-                01 / PERFORMANCE
+                PLAYER RANKING
             </div>
 
             <h2>
-                Team Performance
+                Player Leaderboard
             </h2>
 
             <p>
-                Player leaderboard and overall team statistics
+                Combined tournament and scrim statistics
+            </p>
+
+            <p class="stats-date">
+                Stats counted from 20 September 2026
             </p>
 
         </div>
@@ -2925,174 +2951,143 @@ footer strong{
     </div>
 
 
-    <!-- PLAYER LEADERBOARD -->
+    <div class="table-wrap reveal">
 
-    <div style="margin-bottom:55px;">
+        <table>
 
-        <div class="section-heading reveal" style="margin-bottom:25px;">
+            <thead>
 
-            <div class="section-title">
+                <tr>
 
-                <div class="section-number">
-                    PLAYER RANKING
-                </div>
+                    <th>#</th>
 
-                <h2>
-                    Player Leaderboard
-                </h2>
+                    <th>
+                        Player
+                    </th>
 
-                <p>
-                    Combined tournament and scrim statistics
-                </p>
+                    <th>
+                        Role
+                    </th>
 
-                <p class="stats-date">
-                    Stats counted from 20 September 2026
-                </p>
+                    <th>
+                        Matches
+                    </th>
 
+                    <th>
+                        Tournament Kills
+                    </th>
+
+                    <th>
+                        Scrim Kills
+                    </th>
+
+                    <th>
+                        Total Kills
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="leaderboardBody">
+
+                <!-- Generated automatically -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<!-- TEAM STATISTICS -->
+
+<div>
+
+    <div class="section-heading reveal" style="margin-bottom:25px;">
+
+        <div class="section-title">
+
+            <div class="section-number">
+                TEAM OVERVIEW
             </div>
 
-        </div>
+            <h2>
+                Team Statistics
+            </h2>
 
-
-        <div class="table-wrap reveal">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>#</th>
-
-                        <th>
-                            Player
-                        </th>
-
-                        <th>
-                            Role
-                        </th>
-
-                        <th>
-                            Matches
-                        </th>
-
-                        <th>
-                            Tournament Kills
-                        </th>
-
-                        <th>
-                            Scrim Kills
-                        </th>
-
-                        <th>
-                            Total Kills
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody id="leaderboardBody">
-
-                    <!-- Generated automatically -->
-
-                </tbody>
-
-            </table>
+            <p>
+                Overall competitive statistics
+            </p>
 
         </div>
 
     </div>
 
 
-    <!-- TEAM STATISTICS -->
+    <div class="stats">
 
-    <div>
+        <div class="stat reveal reveal-delay-1">
 
-        <div class="section-heading reveal" style="margin-bottom:25px;">
+            <h3>
+                Active Players
+            </h3>
 
-            <div class="section-title">
-
-                <div class="section-number">
-                    TEAM OVERVIEW
-                </div>
-
-                <h2>
-                    Team Statistics
-                </h2>
-
-                <p>
-                    Overall competitive statistics
-                </p>
-
-            </div>
+            <strong id="activePlayersCount">
+                0
+            </strong>
 
         </div>
 
 
-        <div class="stats">
+        <div class="stat reveal reveal-delay-2">
 
-            <div class="stat reveal reveal-delay-1">
+            <h3>
+                Tournament Kills
+            </h3>
 
-                <h3>
-                    Active Players
-                </h3>
+            <strong id="teamTournamentKills">
+                0
+            </strong>
 
-                <strong id="activePlayersCount">
-                    0
-                </strong>
-
-            </div>
+        </div>
 
 
-            <div class="stat reveal reveal-delay-2">
+        <div class="stat reveal reveal-delay-3">
 
-                <h3>
-                    Tournament Kills
-                </h3>
+            <h3>
+                Scrim Kills
+            </h3>
 
-                <strong id="teamTournamentKills">
-                    0
-                </strong>
+            <strong id="teamScrimKills">
+                0
+            </strong>
 
-            </div>
-
-
-            <div class="stat reveal reveal-delay-3">
-
-                <h3>
-                    Scrim Kills
-                </h3>
-
-                <strong id="teamScrimKills">
-                    0
-                </strong>
-
-            </div>
+        </div>
 
 
-            <div class="stat reveal reveal-delay-4">
+        <div class="stat reveal reveal-delay-4">
 
-                <h3>
-                    Total Kills
-                </h3>
+            <h3>
+                Total Kills
+            </h3>
 
-                <strong id="teamTotalKills">
-                    0
-                </strong>
-
-            </div>
+            <strong id="teamTotalKills">
+                0
+            </strong>
 
         </div>
 
     </div>
+
+</div>
 
 </section>
 
-
 <div class="divider"></div>
-
 
 <!-- =========================
      ROSTER
@@ -3100,41 +3095,39 @@ footer strong{
 
 <section id="roster">
 
-    <div class="section-heading reveal">
+<div class="section-heading reveal">
 
-        <div class="section-title">
+    <div class="section-title">
 
-            <div class="section-number">
-                02 / LINEUP
-            </div>
-
-            <h2>
-                Active Roster
-            </h2>
-
-            <p>
-                Tap any player card to view profile
-            </p>
-
+        <div class="section-number">
+            02 / LINEUP
         </div>
 
-    </div>
+        <h2>
+            Active Roster
+        </h2>
 
-
-    <div
-        class="roster"
-        id="rosterContainer"
-    >
-
-        <!-- Player cards generated automatically -->
+        <p>
+            Tap any player card to view profile
+        </p>
 
     </div>
+
+</div>
+
+
+<div
+    class="roster"
+    id="rosterContainer"
+>
+
+    <!-- Player cards generated automatically -->
+
+</div>
 
 </section>
 
-
 <div class="divider"></div>
-
 
 <!-- =========================
      MANAGEMENT
@@ -3142,341 +3135,93 @@ footer strong{
 
 <section id="management">
 
-    <div class="section-heading reveal">
+<div class="section-heading reveal">
 
-        <div class="section-title">
+    <div class="section-title">
 
-            <div class="section-number">
-                03 / MANAGEMENT
-            </div>
-
-            <h2>
-                Team Management
-            </h2>
-
-            <p>
-                The people behind NEXVORA E-SPORTS
-            </p>
-
+        <div class="section-number">
+            03 / MANAGEMENT
         </div>
+
+        <h2>
+            Team Management
+        </h2>
+
+        <p>
+            The people behind NEXVORA E-SPORTS
+        </p>
 
     </div>
 
-
-    <div class="management">
-
-
-        <!-- OWNER -->
-
-        <div class="management-card reveal reveal-delay-1">
-
-            <img
-                class="management-photo"
-                src="players/udsob.png"
-                alt="Syed Hasibul Hassan Udsob"
-                loading="lazy"
-                decoding="async"
-            >
-
-            <div class="management-label">
-                OWNER
-            </div>
-
-            <h3>
-                Syed Hasibul Hassan Udsob
-            </h3>
-
-            <span class="management-role">
-                TEAM OWNER
-            </span>
-
-            <a
-                class="management-facebook"
-                href="https://www.facebook.com/syed.hasibul.hassan.udsob"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                FACEBOOK
-            </a>
-
-        </div>
+</div>
 
 
-        <!-- MANAGER -->
-
-        <div class="management-card reveal reveal-delay-2">
-
-            <img
-                class="management-photo"
-                src="players/noozy.png.png"
-                alt="Shamiulla Shitul"
-                loading="lazy"
-                decoding="async"
-            >
-
-            <div class="management-label">
-                MANAGER
-            </div>
-
-            <h3>
-                Shamiulla Shitul
-            </h3>
-
-            <span class="management-role">
-                TEAM MANAGER
-            </span>
-
-            <a
-                class="management-facebook"
-                href="https://www.facebook.com/shamiulla.shitul"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                FACEBOOK
-            </a>
-
-        </div>
-
-    </div>
+<div class="management">
 
 
-    <!-- OFFICIAL FACEBOOK PAGE -->
+    <!-- OWNER -->
 
-    <div class="official-page reveal">
+    <div class="management-card reveal reveal-delay-1">
 
-        <div class="official-page-label">
-            OFFICIAL TEAM PAGE
+        <img
+            class="management-photo"
+            src="players/udsob.png"
+            alt="Syed Hasibul Hassan Udsob"
+            loading="lazy"
+            decoding="async"
+        >
+
+        <div class="management-label">
+            OWNER
         </div>
 
         <h3>
-            NEXVORA E-SPORTS
+            Syed Hasibul Hassan Udsob
         </h3>
 
-        <p>
-            Follow our official Facebook page for announcements,
-            tournament updates and team news.
-        </p>
+        <span class="management-role">
+            TEAM OWNER
+        </span>
 
         <a
-            class="official-page-btn"
-            href="https://www.facebook.com/profile.php?id=61593886864309"
+            class="management-facebook"
+            href="https://www.facebook.com/syed.hasibul.hassan.udsob"
             target="_blank"
             rel="noopener noreferrer"
         >
-            VISIT OFFICIAL FACEBOOK PAGE →
+            FACEBOOK
         </a>
 
     </div>
 
-</section>
 
+    <!-- MANAGER -->
 
-<div class="divider"></div>
+    <div class="management-card reveal reveal-delay-2">
 
-
-<!-- =========================
-     TOURNAMENTS
-========================= -->
-
-<section id="tournaments">
-
-    <div class="section-heading reveal">
-
-        <div class="section-title">
-
-            <div class="section-number">
-                04 / COMPETITION
-            </div>
-
-            <h2>
-                Our Journey
-            </h2>
-
-            <p>
-                NEXVORA E-SPORTS competitive record
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="tournaments">
-
-
-        <div class="tournament reveal reveal-delay-1">
-
-            <span class="badge">
-                TOURNAMENT
-            </span>
-
-            <h3>
-                Upcoming Tournament
-            </h3>
-
-            <p>
-                Match statistics and results will be updated here.
-            </p>
-
-        </div>
-
-
-        <div class="tournament reveal reveal-delay-2">
-
-            <span class="badge">
-                SCRIMS
-            </span>
-
-            <h3>
-                Scrim Statistics
-            </h3>
-
-            <p>
-                Player kills and team performance will be tracked here.
-            </p>
-
-        </div>
-
-
-        <div class="tournament reveal reveal-delay-3">
-
-            <span class="badge">
-                ACHIEVEMENT
-            </span>
-
-            <h3>
-                Team Achievements
-            </h3>
-
-            <p>
-                Our tournament achievements and milestones.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PLAYER PROFILE MODAL
-========================= -->
-
-<div
-    class="player-modal"
-    id="playerModal"
-    aria-hidden="true"
-
-
-    <div
-        class="modal-box"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modalName"
-    >
-
-        <button
-            class="modal-close"
-            onclick="closePlayer()"
-            aria-label="Close player profile"
+        <img
+            class="management-photo"
+            src="players/noozy.png.png"
+            alt="Shamiulla Shitul"
+            loading="lazy"
+            decoding="async"
         >
-            ×
-        </button>
 
-
-        <div class="modal-photo">
-
-            <img
-                id="modalImage"
-                src=""
-                alt="Player"
-            >
-
+        <div class="management-label">
+            MANAGER
         </div>
 
+        <h3>
+            Shamiulla Shitul
+        </h3>
 
-        <h2 id="modalName">
-            Player Name
-        </h2>
-
-
-        <span
-            class="modal-role"
-            id="modalRole"
-        >
-            ROLE
+        <span class="management-role">
+            TEAM MANAGER
         </span>
 
-
-        <div class="modal-stats">
-
-            <div class="modal-stat">
-
-                <span>
-                    Matches
-                </span>
-
-                <strong id="modalMatches">
-                    0
-                </strong>
-
-            </div>
-
-
-            <div class="modal-stat">
-
-                <span>
-                    Tournament
-                </span>
-
-                <strong id="modalTournament">
-                    0
-                </strong>
-
-            </div>
-
-
-            <div class="modal-stat">
-
-                <span>
-                    Scrims
-                </span>
-
-                <strong id="modalScrim">
-                    0
-                </strong>
-
-            </div>
-
-
-            <div class="modal-stat">
-
-                <span>
-                    Total Kills
-                </span>
-
-                <strong id="modalTotal">
-                    0
-                </strong>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="modal-bio"
-            id="modalBio"
-        >
-            NEXVORA E-SPORTS player.
-        </div>
-
-
         <a
-            class="facebook-btn"
-            id="modalFacebook"
-            href="#"
+            class="management-facebook"
+            href="https://www.facebook.com/shamiulla.shitul"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -3488,19 +3233,265 @@ footer strong{
 </div>
 
 
+<!-- OFFICIAL FACEBOOK PAGE -->
+
+<div class="official-page reveal">
+
+    <div class="official-page-label">
+        OFFICIAL TEAM PAGE
+    </div>
+
+    <h3>
+        NEXVORA E-SPORTS
+    </h3>
+
+    <p>
+        Follow our official Facebook page for announcements,
+        tournament updates and team news.
+    </p>
+
+    <a
+        class="official-page-btn"
+        href="https://www.facebook.com/profile.php?id=61593886864309"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        VISIT OFFICIAL FACEBOOK PAGE →
+    </a>
+
+</div>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- =========================
+     TOURNAMENTS
+========================= -->
+
+<section id="tournaments">
+
+<div class="section-heading reveal">
+
+    <div class="section-title">
+
+        <div class="section-number">
+            04 / COMPETITION
+        </div>
+
+        <h2>
+            Our Journey
+        </h2>
+
+        <p>
+            NEXVORA E-SPORTS competitive record
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="tournaments">
+
+
+    <div class="tournament reveal reveal-delay-1">
+
+        <span class="badge">
+            TOURNAMENT
+        </span>
+
+        <h3>
+            Upcoming Tournament
+        </h3>
+
+        <p>
+            Match statistics and results will be updated here.
+        </p>
+
+    </div>
+
+
+    <div class="tournament reveal reveal-delay-2">
+
+        <span class="badge">
+            SCRIMS
+        </span>
+
+        <h3>
+            Scrim Statistics
+        </h3>
+
+        <p>
+            Player kills and team performance will be tracked here.
+        </p>
+
+    </div>
+
+
+    <div class="tournament reveal reveal-delay-3">
+
+        <span class="badge">
+            ACHIEVEMENT
+        </span>
+
+        <h3>
+            Team Achievements
+        </h3>
+
+        <p>
+            Our tournament achievements and milestones.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =========================
+     PLAYER PROFILE MODAL
+========================= -->
+
+<div
+    class="player-modal"
+    id="playerModal"
+    aria-hidden="true"
+>
+
+<div
+    class="modal-box"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalName"
+>
+
+    <button
+        class="modal-close"
+        onclick="closePlayer()"
+        aria-label="Close player profile"
+    >
+        ×
+    </button>
+
+
+    <div class="modal-photo">
+
+        <img
+            id="modalImage"
+            src=""
+            alt="Player"
+        >
+
+    </div>
+
+
+    <h2 id="modalName">
+        Player Name
+    </h2>
+
+
+    <span
+        class="modal-role"
+        id="modalRole"
+    >
+        ROLE
+    </span>
+
+
+    <div class="modal-stats">
+
+        <div class="modal-stat">
+
+            <span>
+                Matches
+            </span>
+
+            <strong id="modalMatches">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="modal-stat">
+
+            <span>
+                Tournament
+            </span>
+
+            <strong id="modalTournament">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="modal-stat">
+
+            <span>
+                Scrims
+            </span>
+
+            <strong id="modalScrim">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="modal-stat">
+
+            <span>
+                Total Kills
+            </span>
+
+            <strong id="modalTotal">
+                0
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="modal-bio"
+        id="modalBio"
+    >
+        NEXVORA E-SPORTS player.
+    </div>
+
+
+    <a
+        class="facebook-btn"
+        id="modalFacebook"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        FACEBOOK
+    </a>
+
+</div>
+
+</div>
+
 <!-- =========================
      BACK TO TOP
 ========================= -->
 
 <button
-    class="back-top"
-    id="backTop"
-    aria-label="Back to top"
-    title="Back to top"
+class="back-top"
+id="backTop"
+aria-label="Back to top"
+title="Back to top"
 
-    ↑
+
+
+↑
+
 </button>
-
 
 <!-- =========================
      FOOTER
@@ -3508,16 +3499,15 @@ footer strong{
 
 <footer>
 
-    <div class="footer-logo">
-        NEXVORA <strong>E-SPORTS</strong>
-    </div>
+<div class="footer-logo">
+    NEXVORA <strong>E-SPORTS</strong>
+</div>
 
-    <div class="footer-text">
-        © 2026 NEXVORA E-SPORTS — All Rights Reserved.
-    </div>
+<div class="footer-text">
+    © 2026 NEXVORA E-SPORTS — All Rights Reserved.
+</div>
 
 </footer>
-
 
 <script>
 
@@ -4509,7 +4499,6 @@ updateTeamStatistics();
 handleScroll();
 
 </script>
-
 
 </body>
 
