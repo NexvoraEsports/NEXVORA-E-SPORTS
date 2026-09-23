@@ -3456,7 +3456,7 @@ footer strong{
                     Total Kills
                 </span>
 
-                <strong id="modalTotal">
+                <strong id="">
                     0
                 </strong>
 
@@ -3497,7 +3497,7 @@ footer strong{
     id="backTop"
     aria-label="Back to top"
     title="Back to top"
-
+>
     ↑
 </button>
 
@@ -3759,13 +3759,7 @@ function updateLeaderboard(){
 
             const player =
                 entry[1];
-
-
-            const total =
-                getTotalKills(player);
-
-
-            const matches =
+const matches =
                 getMatches(player);
 
 
@@ -3846,12 +3840,7 @@ function updateRoster(){
 
             const player =
                 entry[1];
-
-            const total =
-                getTotalKills(player);
-
-
-            const card =
+const card =
                 document.createElement("div");
 
 
@@ -4119,13 +4108,7 @@ function openPlayer(playerId){
         document.getElementById(
             "modalImage"
         );
-
-
-    const total =
-        getTotalKills(player);
-
-
-    const matches =
+const matches =
         getMatches(player);
 
 
@@ -4169,15 +4152,7 @@ function openPlayer(playerId){
         "modalScrim"
     ).textContent =
         player.scrim;
-
-
-    document.getElementById(
-        "modalTotal"
-    ).textContent =
-        total;
-
-
-    document.getElementById(
+document.getElementById(
         "modalBio"
     ).textContent =
         player.bio;
